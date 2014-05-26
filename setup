@@ -1,0 +1,20 @@
+DOTFILES=`pwd`
+
+rm -rf ~/.ackrc
+rm -rf ~/.bashrc
+rm -rf ~/.gitconfig
+rm -rf ~/.hgconfig
+rm -rf ~/.hgrc
+rm -rf ~/.tmux.conf
+rm -rf ~/.vim
+rm -rf ~/.vimrc
+
+ln -s $DOTFILES/ackrc     ~/.ackrc
+ln -s $DOTFILES/bashrc    ~/.bashrc
+ln -s $DOTFILES/gitconfig ~/.gitconfig
+ln -s $DOTFILES/hgconfig  ~/.hgconfig
+ln -s $DOTFILES/hgrc      ~/.hgrc
+ln -s $DOTFILES/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES/vim       ~/.vim
+ln -s $DOTFILES/vimrc     ~/.vimrc
+
