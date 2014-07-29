@@ -6,10 +6,10 @@
 # SETTINGS
 #==============================================================================
 
-export EDITOR=vim                  # editor
-PS1="\u@\e[0;32m\h\e[m:\w\$ "      # prompt
-HISTCONTROL=ignoredups:ignorespace # don't duplicate lines in history
-HISTSIZE=1000                      # history length
+export EDITOR=vim                       # editor
+PS1="\u@\[\e[0;32m\]\h\[\e[m:\]\w\$ "   # prompt
+HISTCONTROL=ignoredups:ignorespace      # don't duplicate lines in history
+HISTSIZE=1000                           # history length
 HISTFILESIZE=2000
 
 shopt -s histappend                # append to history, don't overwrite it
