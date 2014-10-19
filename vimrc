@@ -33,6 +33,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'godlygeek/tabular'
+Plugin 'Keithbsmiley/swift.vim'
 call vundle#end()
 filetype plugin indent on
 
