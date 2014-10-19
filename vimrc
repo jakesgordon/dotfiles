@@ -17,23 +17,24 @@
 " =======
 set nocompatible
 filetype off
-set rtp+=~/.vim/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-vinegar'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'majutsushi/tagbar'
-Bundle 'bling/vim-airline'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'godlygeek/tabular'
+set rtp+=~/.vim/vundle
+call vundle#begin('~/.vim/bundle')
+Plugin 'gmarik/vundle'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'godlygeek/tabular'
+call vundle#end()
+filetype plugin indent on
 
 set nocompatible                 " dump the old fashioned vi support!
 set backspace=indent,eol,start   " allow backspacing over everything in insert mode
