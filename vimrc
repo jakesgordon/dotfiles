@@ -35,7 +35,6 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'godlygeek/tabular'
 Plugin 'Keithbsmiley/swift.vim'
 call vundle#end()
-filetype plugin indent on
 
 set nocompatible                 " dump the old fashioned vi support!
 set backspace=indent,eol,start   " allow backspacing over everything in insert mode
