@@ -43,3 +43,7 @@ alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
 alias tmux="TERM=xterm-256color tmux"
+
+alias rc='bin/rails console'
+alias rs='bin/rails server'
+alias rg='bin/rails generate'
