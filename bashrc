@@ -47,3 +47,8 @@ alias tmux="TERM=xterm-256color tmux"
 alias rc='bin/rails console'
 alias rs='bin/rails server'
 alias rg='bin/rails generate'
+alias rr='bin/rake'
+alias be='bundle exec'
+
+alias app='cd ~/app'
+alias ops='cd ~/ops'

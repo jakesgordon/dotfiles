@@ -12,8 +12,6 @@ mq=
 progress=
 graphlog=
 remotebranches=~/.hgconfig/hg_remotebranches.py
-hgext.bookmarks=
-hggit=
 
 [bookmarks]
 track.current = True
