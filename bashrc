@@ -48,6 +48,7 @@ alias rc='bin/rails console'
 alias rs='bin/rails server'
 alias rg='bin/rails generate'
 alias rr='bin/rake'
+alias bi='bundle install'
 alias be='bundle exec'
 
 alias app='cd ~/app'
