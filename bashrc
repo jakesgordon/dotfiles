@@ -46,6 +46,19 @@ if [ -d "$HOME/android" ]; then
 fi
 
 #==============================================================================
+# DIGITAL OCEAN ENVIRONMENT
+#==============================================================================
+
+if [ -d "$HOME/.digitalocean" ]; then
+  if [ -e "$HOME/.digitalocean/do_client_id" ]; then
+    export DO_CLIENT_ID=`cat $HOME/.digitalocean/do_client_id`
+  fi
+  if [ -e "$HOME/.digitalocean/do_api_key" ]; then
+    export DO_API_KEY=`cat $HOME/.digitalocean/do_api_key`
+  fi
+fi
+
+#==============================================================================
 # ALIASES
 #==============================================================================
 
