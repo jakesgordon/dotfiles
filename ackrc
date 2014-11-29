@@ -1,4 +1,5 @@
 --smart-case
 --ignore-file=match:/.*\.orig/
 --ignore-file=match:/.*\.d/
+--ignore-dir=.vagrant
 
