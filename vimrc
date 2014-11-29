@@ -34,6 +34,7 @@ Plugin 'bling/vim-airline'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'godlygeek/tabular'
 Plugin 'Keithbsmiley/swift.vim'
+Plugin 'chase/vim-ansible-yaml'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
