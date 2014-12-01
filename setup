@@ -11,9 +11,11 @@ rm -rf ~/.vimrc
 ln -s ~/.dotfiles/ackrc     ~/.ackrc
 ln -s ~/.dotfiles/bashrc    ~/.bashrc
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/hgconfig  ~/.hgconfig
-ln -s ~/.dotfiles/hgrc      ~/.hgrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vim       ~/.vim
 ln -s ~/.dotfiles/vimrc     ~/.vimrc
 
+if [ -z "$NOHG" ]; then
+  ln -s ~/.dotfiles/hgconfig  ~/.hgconfig
+  ln -s ~/.dotfiles/hgrc      ~/.hgrc
+fi
