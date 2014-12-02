@@ -50,6 +50,9 @@ fi
 #==============================================================================
 
 if [ -d "$HOME/.digitalocean" ]; then
+  if [ -e "$HOME/.digitalocean/do_access_token" ]; then
+    export DO_ACCESS_TOKEN=`cat $HOME/.digitalocean/do_access_token`
+  fi
   if [ -e "$HOME/.digitalocean/do_client_id" ]; then
     export DO_CLIENT_ID=`cat $HOME/.digitalocean/do_client_id`
   fi
