@@ -1,3 +1,6 @@
+    " ERB content
+    syntax match Statement /<%=.*%>/
+
     " YAML front matter
     syntax match Comment /\%^---\_.\{-}---$/ contains=@Spell
     
