@@ -96,7 +96,7 @@ alias vimbash="vim -c EditBash"
 alias tmux="TERM=xterm-256color tmux"
 
 alias rc='bin/rails console'
-alias rs='bin/rails server'
+alias rs='bin/rails server -b 0.0.0.0'
 alias rg='bin/rails generate'
 alias rr='bin/rake'
 alias bi='bundle install'
