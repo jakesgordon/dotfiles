@@ -99,6 +99,8 @@ alias rc='bin/rails console'
 alias rs='bin/rails server -b 0.0.0.0'
 alias rg='bin/rails generate'
 alias rr='bin/rake'
+alias rt='bin/rake test'
+alias rit='ruby -Itest'
 alias bi='bundle install'
 alias be='bundle exec'
 
