@@ -7,6 +7,7 @@ rm -rf ~/.hgrc
 rm -rf ~/.tmux.conf
 rm -rf ~/.vim
 rm -rf ~/.vimrc
+rm -rf ~/.irbrc
 
 ln -s ~/.dotfiles/ackrc     ~/.ackrc
 ln -s ~/.dotfiles/bashrc    ~/.bashrc
@@ -14,6 +15,7 @@ ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vim       ~/.vim
 ln -s ~/.dotfiles/vimrc     ~/.vimrc
+ln -s ~/.dotfiles/irbrc     ~/.irbrc
 
 if [ -z "$NOHG" ]; then
   ln -s ~/.dotfiles/hgconfig  ~/.hgconfig
