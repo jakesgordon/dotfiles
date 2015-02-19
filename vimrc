@@ -219,3 +219,16 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline_section_y = ""
+
+" Customize VimRails
+" ==================
+
+let g:rails_projections = {
+ \   "lib/*.rb": {
+ \     "test": "test/lib/%s_test.rb"
+ \   },
+ \   "test/lib/*_test.rb": {
+ \     "alternate": "lib/%s.rb"
+ \   }
+ \ }
+
