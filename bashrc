@@ -107,3 +107,4 @@ alias be='bundle exec'
 
 alias app='cd ~/app'
 alias ops='cd ~/ops'
+alias dev='cd ~/dev'
