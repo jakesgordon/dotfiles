@@ -1,5 +1,5 @@
 [ui]
-username=jake
+username=Jake Gordon <jake@codeincomplete.com>
 style=~/.hgconfig/ci
 
 [extensions]
