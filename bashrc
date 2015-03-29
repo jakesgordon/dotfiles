@@ -106,5 +106,10 @@ alias bi='bundle install'
 alias be='bundle exec'
 
 alias app='cd ~/app'
+alias api='cd ~/api'
 alias ops='cd ~/ops'
 alias dev='cd ~/dev'
+alias www='cd ~/www'
+alias core='cd ~/core'
+
+
