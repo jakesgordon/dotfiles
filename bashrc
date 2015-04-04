@@ -101,7 +101,7 @@ alias rg='bin/rails generate'
 alias rr='bin/rake'
 alias rt='bin/rake test'
 alias db='bin/rails db'
-alias rit='ruby -Itest'
+alias rit='ruby -Itest -Ilib'
 alias bi='bundle install'
 alias be='bundle exec'
 
