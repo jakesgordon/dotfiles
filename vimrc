@@ -211,7 +211,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 
 " Customize NERD tree
 " ===================
-let NERDTreeIgnore=['\~$', '\.swp', 'gen', 'obj']
+let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$']
 
 " Customize Airline
 " =================
