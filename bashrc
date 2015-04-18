@@ -78,18 +78,18 @@ fi
 function bi()
 {
   if [ -e "Gemfile.local" ]; then
-    BUNDLE_GEMFILE=Gemfile.local bundle install
+    BUNDLE_GEMFILE=Gemfile.local bundle install "$@"
   else
-    bundle install
+    bundle install "$@"
   fi
 }
 
 function be()
 {
   if [ -e "Gemfile.local" ]; then
-    BUNDLE_GEMFILE=Gemfile.local bundle exec $1 $2 $3 $4 $5 $6 $7 $8 $9 $10
+    BUNDLE_GEMFILE=Gemfile.local bundle exec "$@"
   else
-    bundle exec $1 $2 $3 $4 $5 $6 $7 $8 $9 $10
+    bundle exec "$@"
   fi
 }
 
