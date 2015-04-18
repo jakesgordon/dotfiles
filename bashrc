@@ -93,13 +93,28 @@ function be()
   fi
 }
 
-alias rc='be rails console'
-alias rs='be rails server -b 0.0.0.0'
 alias rg='be rails generate'
-alias db='be rails db'
 alias rr='be rake'
 alias rt='be rake test'
 alias rit='be ruby -Itest -Ilib -Iapp'
+
+function rs()
+{
+  if [ -e "bin/rails" ]; then
+    be rails server -b 0.0.0.0
+  else
+    rr server
+  fi
+}
+
+function rc()
+{
+  if [ -e "bin/rails" ]; then
+    be rails console
+  else
+    rr console
+  fi
+}
 
 #==============================================================================
 # ALIASES
