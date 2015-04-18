@@ -72,6 +72,36 @@ if [ -d "$HOME/.digitalocean" ]; then
 fi
 
 #==============================================================================
+# BUNDLER/RUBY HELPERS
+#==============================================================================
+
+function bi()
+{
+  if [ -e "Gemfile.local" ]; then
+    BUNDLE_GEMFILE=Gemfile.local bundle install
+  else
+    bundle install
+  fi
+}
+
+function be()
+{
+  if [ -e "Gemfile.local" ]; then
+    BUNDLE_GEMFILE=Gemfile.local bundle exec $1 $2 $3 $4 $5 $6 $7 $8 $9 $10
+  else
+    bundle exec $1 $2 $3 $4 $5 $6 $7 $8 $9 $10
+  fi
+}
+
+alias rc='be rails console'
+alias rs='be rails server -b 0.0.0.0'
+alias rg='be rails generate'
+alias db='be rails db'
+alias rr='be rake'
+alias rt='be rake test'
+alias rit='be ruby -Itest -Ilib -Iapp'
+
+#==============================================================================
 # ALIASES
 #==============================================================================
 
@@ -95,21 +125,10 @@ alias vimbash="vim -c EditBash"
 
 alias tmux="TERM=xterm-256color tmux"
 
-alias rc='bin/rails console'
-alias rs='bin/rails server -b 0.0.0.0'
-alias rg='bin/rails generate'
-alias rr='bin/rake'
-alias rt='bin/rake test'
-alias db='bin/rails db'
-alias rit='ruby -Itest -Ilib -Iapp'
-alias bi='bundle install'
-alias be='bundle exec'
-
 alias app='cd ~/app'
 alias api='cd ~/api'
 alias ops='cd ~/ops'
 alias dev='cd ~/dev'
 alias www='cd ~/www'
 alias core='cd ~/core'
-
 
