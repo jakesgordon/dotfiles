@@ -75,27 +75,12 @@ fi
 # BUNDLER/RUBY HELPERS
 #==============================================================================
 
-function bi()
-{
-  if [ -e "Gemfile.local" ]; then
-    BUNDLE_GEMFILE=Gemfile.local bundle install "$@"
-  else
-    bundle install "$@"
-  fi
-}
-
-function be()
-{
-  if [ -e "Gemfile.local" ]; then
-    BUNDLE_GEMFILE=Gemfile.local bundle exec "$@"
-  else
-    bundle exec "$@"
-  fi
-}
-
+alias bi='bundle install'
+alias be='bundle exec'
 alias rg='be rails generate'
-alias rr='be rake'
-alias rt='be rake test'
+alias r='be rake'
+alias rr='r routes'
+alias rt='r test'
 alias rit='be ruby -Itest -Ilib -Iapp'
 
 function rs()

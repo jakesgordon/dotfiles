@@ -2,5 +2,6 @@
 --ignore-file=match:/.*\.orig/
 --ignore-file=match:/.*\.d/
 --ignore-dir=.vagrant
---ignore-dir=tmp/cache
+--ignore-dir=tmp
+--ignore-dir=log
 
