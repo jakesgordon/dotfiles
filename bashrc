@@ -131,4 +131,5 @@ alias ops='cd ~/ops'
 alias dev='cd ~/dev'
 alias www='cd ~/www'
 alias core='cd ~/core'
+alias player='cd ~/player'
 
