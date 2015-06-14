@@ -36,6 +36,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'godlygeek/tabular'
 Plugin 'Keithbsmiley/swift.vim'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
@@ -70,6 +71,7 @@ set wildignore+=*.svn,*.git      " (ditto)
 set wildignore+=*.swp            " (ditto)
 set wildignore+=*.o,*.a,*.d,*.gch   " (ditto)
 set wildignore+=bin,gen,depends  " (ditto)
+set wildignore=node_modules      " (ditto)
 set ttyfast                      " faster terminal updates
 set virtualedit+=block           " allow virtual-block select to go past end of lines
 set timeoutlen=1000              " timeout on mappings after 1 second
@@ -85,7 +87,7 @@ call yankstack#setup()           " needs to happen before remapping any yank rel
 " ================
 set t_Co=256
 let g:solarized_termcolors=256
-set background=light
+set background=dark
 colorscheme solarized
 set guifont=Consolas:h9:cANSI
 
@@ -214,7 +216,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 
 " Customize NERD tree
 " ===================
-let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$']
+let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules']
 
 " Customize Airline
 " =================
