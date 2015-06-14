@@ -174,13 +174,6 @@ nnoremap <Space> i<Space>
 nnoremap <Del>   i<Del>
 inoremap jj      <ESC>
 
-" HOME/PAGEDOWN/PAGEUP/END
-" ========================
-nnoremap <C-h> ^
-nnoremap <C-j> 20j
-nnoremap <C-k> 20k
-nnoremap <C-l> $
-
 " USE VERY-MAGIC (PERL-STYLE) REGEXP FOR SEARCH
 " =============================================
 nnoremap / /\v
