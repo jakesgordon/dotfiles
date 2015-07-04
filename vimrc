@@ -118,6 +118,8 @@ nnoremap <leader>mr :Make run<CR>
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
+nmap <Leader><Enter> i<Enter><Esc>
+
 nnoremap <Leader>, :Tabularize /,\zs<CR>
 vnoremap <Leader>, :Tabularize /,\zs<CR>
 nnoremap <Leader>: :Tabularize /:\zs<CR>
@@ -222,12 +224,12 @@ let g:airline_section_y = ""
 " ==================
 
 let g:rails_projections = {
- \   "lib/*.rb": {
- \     "test": "test/lib/%s_test.rb"
- \   },
- \   "test/lib/*_test.rb": {
- \     "alternate": "lib/%s.rb"
- \   }
+ \   "lib/app/*.rb": { "test": "test/app/%s_test.rb" },
+ \   "lib/api/*.rb": { "test": "test/api/%s_test.rb" },
+ \   "lib/*.rb":     { "test": "test/lib/%s_test.rb" },
+ \   "test/app/*_test.rb": { "alternate": "lib/app/%s.rb" },
+ \   "test/api/*_test.rb": { "alternate": "lib/api/%s.rb" },
+ \   "test/lib/*_test.rb": { "alternate": "lib/%s.rb" }
  \ }
 
 " sometimes, after ack-grep, my console charset gets corrupted and needs a kick (http://stackoverflow.com/questions/19236090/bash-shell-turns-to-symbols-when-using-vim-ack-plugin)
