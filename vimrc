@@ -71,7 +71,8 @@ set wildignore+=*.svn,*.git      " (ditto)
 set wildignore+=*.swp            " (ditto)
 set wildignore+=*.o,*.a,*.d,*.gch   " (ditto)
 set wildignore+=bin,gen,depends  " (ditto)
-set wildignore=node_modules      " (ditto)
+set wildignore+=tmp              " (ditto)
+set wildignore+=node_modules     " (ditto)
 set ttyfast                      " faster terminal updates
 set virtualedit+=block           " allow virtual-block select to go past end of lines
 set timeoutlen=1000              " timeout on mappings after 1 second
@@ -87,7 +88,7 @@ call yankstack#setup()           " needs to happen before remapping any yank rel
 " ================
 set t_Co=256
 let g:solarized_termcolors=256
-set background=dark
+set background=light
 colorscheme solarized
 set guifont=Consolas:h9:cANSI
 
