@@ -56,6 +56,19 @@ if [ -d "$HOME/go" ]; then
 fi
 
 #==============================================================================
+# AWS ENVIRONMENT
+#==============================================================================
+
+if [ -d "$HOME/.aws" ]; then
+  if [ -e "$HOME/.aws/aws_access_key" ]; then
+    export AWS_ACCESS_KEY=`cat $HOME/.aws/aws_access_key`
+  fi
+  if [ -e "$HOME/.aws/aws_secret_key" ]; then
+    export AWS_SECRET_KEY=`cat $HOME/.aws/aws_secret_key`
+  fi
+fi
+
+#==============================================================================
 # DIGITAL OCEAN ENVIRONMENT
 #==============================================================================
 
