@@ -24,7 +24,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-commentary'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-surround'
@@ -199,15 +199,6 @@ vnoremap / /\v
 let g:ctrlp_max_height = 20
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 0
-
-" Customize vim-commentary
-" ========================
-autocmd FileType c,cpp,java     set commentstring=//\ %s
-autocmd FileType js,javascript  set commentstring=//\ %s
-autocmd FileType vim            set commentstring=\"\ %s
-autocmd FileType sh,ruby,python set commentstring=#\ %s
-
-autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 
 " Customize NERD tree
 " ===================

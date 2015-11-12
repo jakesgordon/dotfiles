@@ -96,13 +96,15 @@ alias r='be rake'
 alias rr='r routes'
 alias rt='r test'
 alias rit='be ruby -Itest -Ilib -Iapp'
+alias gs='git status'
+alias gp='git pull --rebase'
 
 function rs()
 {
   if [ -e "bin/rails" ]; then
     be rails server -b 0.0.0.0
   else
-    rr server
+    r server
   fi
 }
 
@@ -111,7 +113,7 @@ function rc()
   if [ -e "bin/rails" ]; then
     be rails console
   else
-    rr console
+    r console
   fi
 }
 
