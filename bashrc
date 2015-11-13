@@ -89,6 +89,7 @@ fi
 #==============================================================================
 
 alias c='clear'
+alias ni='npm install'
 alias bi='bundle install'
 alias be='bundle exec'
 alias rg='be rails generate'
