@@ -100,6 +100,11 @@ alias rit='be ruby -Itest -Ilib -Iapp'
 alias gs='git status'
 alias gp='git pull --rebase'
 
+alias tgc='cd ~/app/apps/common'
+alias tga='cd ~/app/apps/account'
+alias tgadmin='cd ~/app/apps/admin'
+alias tgp='cd ~/app/apps/plan'
+
 function rs()
 {
   if [ -e "bin/rails" ]; then
