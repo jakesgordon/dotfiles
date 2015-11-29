@@ -99,6 +99,8 @@ alias rt='r test'
 alias rit='be ruby -Itest -Ilib -Iapp'
 alias gs='git status'
 alias gp='git pull --rebase'
+alias gb='git branch -a'
+alias gl='git log --graph --all --decorate'
 
 alias tgc='cd ~/app/apps/common'
 alias tga='cd ~/app/apps/account'
