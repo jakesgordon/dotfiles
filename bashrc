@@ -103,6 +103,7 @@ alias gb='git branch -a'
 alias gl='git log --graph --all --decorate'
 alias gd='git diff HEAD'
 alias gf='git fetch'
+alias gc='git reset --hard'
 
 alias tgc='cd ~/app/apps/common'
 alias tga='cd ~/app/apps/account'
