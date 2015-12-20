@@ -226,4 +226,6 @@ let g:rails_projections = {
 " sometimes, after ack-grep, my console charset gets corrupted and needs a kick (http://stackoverflow.com/questions/19236090/bash-shell-turns-to-symbols-when-using-vim-ack-plugin)
 command FIXIT :!echo -e '\ec\e(K\e[J'
 
+" disable auto-comment on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
