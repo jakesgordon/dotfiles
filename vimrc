@@ -37,6 +37,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'godlygeek/tabular'
 Plugin 'Keithbsmiley/swift.vim'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'elixir-lang/vim-elixir'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
