@@ -21,3 +21,5 @@ if [ -z "$NOHG" ]; then
   ln -s ~/.dotfiles/hgconfig  ~/.hgconfig
   ln -s ~/.dotfiles/hgrc      ~/.hgrc
 fi
+
+git -C ~/.dotfiles remote set-url origin git@github.com:jakesgordon/dotfiles.git
