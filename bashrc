@@ -53,6 +53,9 @@ fi
 if [ -d "$HOME/go" ]; then
   export GOPATH=$HOME/go
   append_path "$GOPATH/bin"
+elif [ -d "/usr/local/go" ]; then
+  export GOPATH=/usr/local/go
+  append_path "$GOPATH/bin"
 fi
 
 #==============================================================================
