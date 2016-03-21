@@ -35,6 +35,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'Keithbsmiley/swift.vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'elixir-lang/vim-elixir'
@@ -79,6 +80,7 @@ set virtualedit+=block           " allow virtual-block select to go past end of 
 set timeoutlen=1000              " timeout on mappings after 1 second
 set ttimeoutlen=0                " timeout on key codes immediately (to avoid pause after ESC)
 set colorcolumn=100              " highlight the 100th column
+set nofoldenable                 " disable code folding (I find it annoying)
 
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
