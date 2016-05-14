@@ -75,6 +75,8 @@ set wildignore+=*.o,*.a,*.d,*.gch   " (ditto)
 set wildignore+=bin,gen,depends  " (ditto)
 set wildignore+=tmp              " (ditto)
 set wildignore+=node_modules     " (ditto)
+set wildignore+=_build           " (ditto)
+set wildignore+=deps             " (ditto)
 set ttyfast                      " faster terminal updates
 set virtualedit+=block           " allow virtual-block select to go past end of lines
 set timeoutlen=1000              " timeout on mappings after 1 second
@@ -206,7 +208,7 @@ let g:ctrlp_working_path_mode = 0
 
 " Customize NERD tree
 " ===================
-let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules']
+let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules', '_build', 'deps' ]
 
 " Customize Airline
 " =================
