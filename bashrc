@@ -117,11 +117,6 @@ alias hd='hg diff'
 alias hin='hg incoming'
 alias hout='hg outgoing'
 
-alias tgc='cd ~/app/apps/common'
-alias tga='cd ~/app/apps/account'
-alias tgadmin='cd ~/app/apps/admin'
-alias tgp='cd ~/app/apps/plan'
-
 function rs()
 {
   if [ -e "bin/rails" ]; then
@@ -169,6 +164,6 @@ alias api='cd ~/api'
 alias ops='cd ~/ops'
 alias dev='cd ~/dev'
 alias www='cd ~/www'
-alias core='cd ~/core'
-alias player='cd ~/player'
 
+alias wl='ssh wastelytics'
+alias tg='ssh tripgrid'
