@@ -167,3 +167,4 @@ alias www='cd ~/www'
 
 alias wl='ssh wastelytics'
 alias tg='ssh tripgrid'
+alias ci='ssh ci'
