@@ -119,20 +119,12 @@ alias hout='hg outgoing'
 
 function rs()
 {
-  if [ -e "bin/rails" ]; then
-    be rails server -b 0.0.0.0
-  else
-    r server
-  fi
+  be rails server -b 0.0.0.0
 }
 
 function rc()
 {
-  if [ -e "bin/rails" ]; then
-    be rails console
-  else
-    r console
-  fi
+  be rails console
 }
 
 #==============================================================================
