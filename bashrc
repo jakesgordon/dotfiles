@@ -156,6 +156,7 @@ alias api='cd ~/api'
 alias ops='cd ~/ops'
 alias dev='cd ~/dev'
 alias www='cd ~/www'
+alias demo='cd ~/demo'
 
 alias wl='ssh wastelytics'
 alias tg='ssh tripgrid'
