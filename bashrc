@@ -163,3 +163,20 @@ alias wl='ssh wastelytics'
 alias tg='ssh tripgrid'
 alias ci='ssh ci'
 alias lp='ssh lp'
+
+#==============================================================================
+
+dmix() {
+  iex --name `hostname`@127.0.0.1 --cookie debug --erl "-kernel inet_dist_listen_min 9001 inet_dist_listen_max 9001" -S mix $1
+}
+
+dtunnel() {
+  ssh -N -L 9001:localhost:9001 -L 4369:localhost:4369 ${1:jake@192.168.56.100}
+}
+
+dobserve() {
+  erl -name `hostname`@127.0.0.1 -setcookie debug -run observer
+}
+
+#==============================================================================
+
