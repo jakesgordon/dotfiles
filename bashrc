@@ -171,7 +171,7 @@ dmix() {
 }
 
 dtunnel() {
-  ssh -N -L 9001:localhost:9001 -L 4369:localhost:4369 ${1:jake@192.168.56.100}
+  ssh -N -L 9001:localhost:9001 -L 4369:localhost:4369 ${1:-jake@192.168.56.100}
 }
 
 dobserve() {
