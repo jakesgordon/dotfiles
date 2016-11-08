@@ -45,6 +45,7 @@ set nocompatible                 " dump the old fashioned vi support!
 set backspace=indent,eol,start   " allow backspacing over everything in insert mode
 set backup                       " keep a backup file
 set backupdir=~/.backup          " custom backup directory
+set backupcopy=yes               " use overwrite strategy for backups (to avoid issues with node file watchers)
 set history=100                  " keep 100 lines of command line history
 set ruler                        " show the cursor position all the time
 set showcmd                      " display incomplete commands

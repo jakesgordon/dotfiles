@@ -164,6 +164,8 @@ alias tg='ssh tripgrid'
 alias ci='ssh ci'
 alias lp='ssh lp'
 
+alias pss='python -m SimpleHTTPServer'
+
 #==============================================================================
 
 dmix() {
