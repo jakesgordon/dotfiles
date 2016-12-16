@@ -39,6 +39,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'Keithbsmiley/swift.vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'thinca/vim-localrc'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
