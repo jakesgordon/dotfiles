@@ -157,7 +157,6 @@ alias ops='cd ~/ops'
 alias dev='cd ~/dev'
 alias www='cd ~/www'
 alias demo='cd ~/demo'
-alias imix='iex -S mix'
 
 alias wl='ssh wastelytics'
 alias tg='ssh tripgrid'
@@ -165,6 +164,11 @@ alias ci='ssh ci'
 alias lp='ssh lp'
 
 alias pss='python -m SimpleHTTPServer'
+
+alias imix='iex -S mix'
+alias mps='mix phoenix.server'
+alias mpr='mix phoenix.routes'
+alias mi='mix deps.get'
 
 #==============================================================================
 

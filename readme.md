@@ -5,5 +5,5 @@ Jake's Dotfiles
     >> cd ~/.dotfiles
     >> ./setup              # symlink dotfiles
     >> vim
-    :BundleInstall          # vundle install vim plugins
+    :PluginInstall          # vundle install vim plugins
 
