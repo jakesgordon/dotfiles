@@ -90,9 +90,6 @@ fi
 # BUNDLER/RUBY HELPERS
 #==============================================================================
 
-alias c='clear'
-alias ni='npm install'
-alias nt='npm test'
 alias bi='bundle install'
 alias be='bundle exec'
 alias rg='be rails generate'
@@ -100,6 +97,21 @@ alias r='be rake'
 alias rr='r routes'
 alias rt='r test'
 alias rit='be ruby -Itest -Ilib -Iapp'
+
+function rs()
+{
+  be rails server -b 0.0.0.0
+}
+
+function rc()
+{
+  be rails console
+}
+
+#==============================================================================
+# GIT & MERCURIAL HELPERS
+#==============================================================================
+
 alias gs='git status'
 alias gr='git pull --rebase'
 alias gb='git branch -a'
@@ -117,18 +129,45 @@ alias hd='hg diff'
 alias hin='hg incoming'
 alias hout='hg outgoing'
 
-function rs()
-{
-  be rails server -b 0.0.0.0
+#==============================================================================
+# NODE HELPERS
+#==============================================================================
+
+alias ni='npm install'
+alias nt='npm test'
+alias ns='npm start'
+alias nb='npm run bundle'
+alias nr='npm run'
+
+#==============================================================================
+# ELIXIR/MIX HELPERS
+#==============================================================================
+
+alias imix='iex -S mix'
+alias mps='mix phoenix.server'
+alias mpr='mix phoenix.routes'
+alias mi='mix deps.get'
+
+dmix() {
+  iex --name `hostname`@127.0.0.1 --cookie debug --erl "-kernel inet_dist_listen_min 9001 inet_dist_listen_max 9001" -S mix $1
 }
 
-function rc()
-{
-  be rails console
+dtunnel() {
+  ssh -N -L 9001:localhost:9001 -L 4369:localhost:4369 ${1:-jake@192.168.56.100}
+}
+
+dobserve() {
+  erl -name `hostname`@127.0.0.1 -setcookie debug -run observer
 }
 
 #==============================================================================
-# ALIASES
+# PYTHON HELPERS
+#==============================================================================
+
+alias pss='python -m SimpleHTTPServer'
+
+#==============================================================================
+# OTHER ALIASES
 #==============================================================================
 
 if [ -x /usr/bin/dircolors ]; then  # enable color support of ls and grep
@@ -139,6 +178,7 @@ if [ -x /usr/bin/dircolors ]; then  # enable color support of ls and grep
   alias egrep='egrep --color=auto'
 fi
 
+alias c='clear'
 alias less='less -r'
 
 alias ll='ls -Al'
@@ -163,26 +203,4 @@ alias tg='ssh tripgrid'
 alias ci='ssh ci'
 alias lp='ssh lp'
 
-alias pss='python -m SimpleHTTPServer'
-
-alias imix='iex -S mix'
-alias mps='mix phoenix.server'
-alias mpr='mix phoenix.routes'
-alias mi='mix deps.get'
-
 #==============================================================================
-
-dmix() {
-  iex --name `hostname`@127.0.0.1 --cookie debug --erl "-kernel inet_dist_listen_min 9001 inet_dist_listen_max 9001" -S mix $1
-}
-
-dtunnel() {
-  ssh -N -L 9001:localhost:9001 -L 4369:localhost:4369 ${1:-jake@192.168.56.100}
-}
-
-dobserve() {
-  erl -name `hostname`@127.0.0.1 -setcookie debug -run observer
-}
-
-#==============================================================================
-
