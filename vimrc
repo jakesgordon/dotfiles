@@ -36,10 +36,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'Keithbsmiley/swift.vim'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'thinca/vim-localrc'
+Plugin 'sheerun/vim-polyglot'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
