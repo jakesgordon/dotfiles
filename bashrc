@@ -134,9 +134,9 @@ alias hout='hg outgoing'
 #==============================================================================
 
 alias ni='npm install'
-alias nt='npm test'
-alias ns='npm start'
-alias nb='npm run bundle'
+alias nt='npm run test'
+alias ns='npm run start'
+alias nb='npm run build'
 alias nr='npm run'
 
 #==============================================================================
