@@ -38,6 +38,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'thinca/vim-localrc'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
