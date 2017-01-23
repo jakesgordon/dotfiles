@@ -34,11 +34,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'thinca/vim-localrc'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'fatih/vim-go'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
@@ -236,4 +233,4 @@ command FIXIT :!echo -e '\ec\e(K\e[J'
 
 " disable auto-comment on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
+autocmd FileType * setlocal noautoindent nosmartindent
