@@ -206,6 +206,12 @@ alias ci='ssh ci'
 alias lp='ssh lp'
 
 #==============================================================================
+# BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)
+#==============================================================================
+export DEBFULLNAME="Jake Gordon"
+export DEBEMAIL="jake@codeincomplete.com"
+
+#==============================================================================
 
 if type brew > /dev/null 2>&1; then
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
