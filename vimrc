@@ -92,7 +92,6 @@ call yankstack#setup()           " needs to happen before remapping any yank rel
 " Colors and Fonts
 " ================
 set t_Co=256
-let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
 set guifont=Consolas:h9:cANSI
