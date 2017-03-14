@@ -85,7 +85,7 @@ set nofoldenable                 " disable code folding (I find it annoying)
 
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
-set synmaxcol=150                " disable syntax highlighting after column 200 (it makes vim very slow - https://github.com/vim/vim/issues/555)
+" set synmaxcol=150                " disable syntax highlighting after column 200 (it makes vim very slow - https://github.com/vim/vim/issues/555)
 
 call yankstack#setup()           " needs to happen before remapping any yank related keys
 
