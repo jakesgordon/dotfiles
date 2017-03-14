@@ -69,6 +69,7 @@ set showmatch                    " show matching parens
 set hidden                       " allow hidden buffers with unsaved changes
 set whichwrap+=<,>,[,]           " allow arrow keys to line wrap
 set wildmenu                     " enable enhanced command line completion
+set wildmode=longest,list        " and show bash like auto complete list
 set wildignore+=*.pui,*.prj      " ignore these when completing file or directory names
 set wildignore+=*.svn,*.git      " (ditto)
 set wildignore+=*.swp            " (ditto)
