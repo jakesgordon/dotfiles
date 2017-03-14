@@ -37,6 +37,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'thinca/vim-localrc'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-entire'
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
