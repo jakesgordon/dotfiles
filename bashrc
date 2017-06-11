@@ -201,6 +201,7 @@ alias www='cd ~/www'
 alias demo='cd ~/demo'
 alias admin='cd ~/admin'
 alias explore='cd ~/explore'
+alias rat='cd ~/rat'
 
 alias wl='ssh wastelytics'
 alias tg='ssh tripgrid'
