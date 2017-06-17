@@ -77,6 +77,7 @@ set wildignore+=*.o,*.a,*.d,*.gch   " (ditto)
 set wildignore+=bin,gen,depends  " (ditto)
 set wildignore+=tmp              " (ditto)
 set wildignore+=node_modules     " (ditto)
+set wildignore+=deps             " (ditto)
 set wildignore+=_build           " (ditto)
 set ttyfast                      " faster terminal updates
 set virtualedit+=block           " allow virtual-block select to go past end of lines
@@ -204,7 +205,7 @@ vnoremap / /\v
 " Customize CtrlP
 " ===============
 let g:ctrlp_max_height = 20
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_working_path_mode = 0
 
 " Customize NERD tree
