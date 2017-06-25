@@ -202,6 +202,7 @@ alias demo='cd ~/demo'
 alias admin='cd ~/admin'
 alias explore='cd ~/explore'
 alias rat='cd ~/rat'
+alias up='cd ~/up'
 
 alias wl='ssh wastelytics'
 alias tg='ssh tripgrid'
