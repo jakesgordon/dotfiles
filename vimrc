@@ -30,15 +30,24 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rails'
-Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'thinca/vim-localrc'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
+
+" Plugin 'sheerun/vim-polyglot' " has unfortunate side effects (vue syntax highlight broken, css indent wierd)
+Plugin 'vim-ruby/vim-ruby'      " ... so load favorite language packs individually instead
+Plugin 'fatih/vim-go'
+Plugin 'posva/vim-vue'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'stephpy/vim-yaml'
+
 call vundle#end()
 
 set nocompatible                 " dump the old fashioned vi support!
