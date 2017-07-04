@@ -95,10 +95,12 @@ fi
 alias bi='bundle install'
 alias be='bundle exec'
 alias rg='be rails generate'
-alias r='be rake'
 alias rr='r routes'
 alias rt='r test'
 alias rit='be ruby -Itest -Ilib -Iapp'
+
+alias fs='foreman start -p 3000'
+alias fr='foreman run'
 
 function rs()
 {
@@ -130,6 +132,7 @@ alias hr='hg recent'
 alias hd='hg diff'
 alias hin='hg incoming'
 alias hout='hg outgoing'
+alias hp='hg pull && hg update'
 
 #==============================================================================
 # NODE HELPERS
