@@ -95,8 +95,8 @@ fi
 alias bi='bundle install'
 alias be='bundle exec'
 alias rg='be rails generate'
-alias rr='r routes'
-alias rt='r test'
+alias rr='be rake routes'
+alias rt='be rake test'
 alias rit='be ruby -Itest -Ilib -Iapp'
 
 alias fs='foreman start -p 3000'
@@ -125,14 +125,12 @@ alias gp='git pull --ff-only'
 alias gf='git fetch'
 alias gc='git reset --hard'
 
-alias hs='hg status'
-alias hb='hg branches -a'
-alias hl='hg log'
-alias hr='hg recent'
-alias hd='hg diff'
-alias hin='hg incoming'
-alias hout='hg outgoing'
-alias hp='hg pull && hg update'
+alias hgs='hg status'
+alias hgb='hg branches -a'
+alias hgl='hg log'
+alias hgr='hg recent'
+alias hgd='hg diff'
+alias hgp='hg pull && hg update'
 
 #==============================================================================
 # NODE HELPERS
