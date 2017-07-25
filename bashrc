@@ -201,21 +201,37 @@ alias vimbash="vim -c EditBash"
 
 alias tmux="TERM=xterm-256color tmux"
 
-alias app='cd ~/app'
 alias api='cd ~/api'
-alias ops='cd ~/ops'
-alias dev='cd ~/dev'
 alias www='cd ~/www'
 alias demo='cd ~/demo'
-alias admin='cd ~/admin'
-alias explore='cd ~/explore'
-alias rat='cd ~/rat'
 alias up='cd ~/up'
 
-alias wl='ssh wastelytics'
-alias tg='ssh tripgrid'
 alias ci='ssh ci'
 alias lp='ssh lp'
+
+app() {
+  if [ -d "$HOME/app" ]; then
+    cd "$HOME/app"
+  elif [ -d "$HOME/application" ]; then
+    cd "$HOME/application"
+  fi
+}
+
+dev() {
+  if [ -d "$HOME/dev" ]; then
+    cd "$HOME/dev"
+  elif [ -d "$HOME/development" ]; then
+    cd "$HOME/development"
+  fi
+}
+
+ops() {
+  if [ -d "$HOME/ops" ]; then
+    cd "$HOME/ops"
+  elif [ -d "$HOME/operations" ]; then
+    cd "$HOME/operations"
+  fi
+}
 
 #==============================================================================
 # BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)
