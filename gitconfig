@@ -10,3 +10,5 @@
   insteadOf = https://bitbucket.org/jakesgordon
 [url "git@github.com:jakesgordon"]
   insteadOf = https://github.com/jakesgordon
+[include]
+  path = .gitconfig.local
