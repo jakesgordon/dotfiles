@@ -233,6 +233,12 @@ ops() {
   fi
 }
 
+services() {
+  if [ -d "$GOPATH/src/github.com/chemistrygroup/services" ]; then
+    cd "$GOPATH/src/github.com/chemistrygroup/services"
+  fi
+}
+
 #==============================================================================
 # BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)
 #==============================================================================
