@@ -23,3 +23,5 @@ if [ -z "$NOHG" ]; then
 fi
 
 git -C ~/.dotfiles remote set-url origin git@github.com:jakesgordon/dotfiles.git
+git -C ~/.dotfiles config --local user.name "Jake Gordon"
+git -C ~/.dotfiles config --local user.email "jake@codeincomplete.com"
