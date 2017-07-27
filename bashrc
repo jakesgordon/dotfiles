@@ -95,11 +95,11 @@ fi
 alias bi='bundle install'
 alias be='bundle exec'
 alias rg='be rails generate'
-alias rr='be rake routes'
+alias routes='be rake routes'
 alias rt='be rake test'
 alias rit='be ruby -Itest -Ilib -Iapp'
 
-alias fs='foreman start -p 3000'
+alias fs='foreman start'
 alias fr='foreman run'
 
 function rs()
@@ -131,6 +131,16 @@ alias hgl='hg log'
 alias hgr='hg recent'
 alias hgd='hg diff'
 alias hgp='hg pull && hg update'
+
+#==============================================================================
+# MAKE HELPERS
+#==============================================================================
+
+alias mt='make test'
+alias mr='make run'
+alias md='make deps'
+alias mi='make install'
+alias mw='make watch'
 
 #==============================================================================
 # NODE HELPERS
