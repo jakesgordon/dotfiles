@@ -152,6 +152,10 @@ alias ns='npm run start'
 alias nb='npm run build'
 alias nr='npm run'
 
+alias yi='yarn install'
+alias yt='yarn test'
+alias yr='yarn run'
+
 #==============================================================================
 # ELIXIR/MIX HELPERS
 #==============================================================================
