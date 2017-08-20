@@ -1,3 +1,4 @@
 *.swp
 vim/bundle/*
 *.pyc
+.DS_Store
