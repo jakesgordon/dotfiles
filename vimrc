@@ -42,7 +42,7 @@ Plugin 'kana/vim-textobj-entire'
 Plugin 'vim-ruby/vim-ruby'      " ... so load favorite language packs individually instead
 Plugin 'fatih/vim-go'
 Plugin 'posva/vim-vue'
-Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
