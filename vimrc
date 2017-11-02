@@ -193,10 +193,10 @@ nnoremap <Space> i<Space>
 nnoremap <Del>   i<Del>
 inoremap jj      <ESC>
 
-" USE VERY-MAGIC (PERL-STYLE) REGEXP FOR SEARCH
-" =============================================
-nnoremap / /\v
-vnoremap / /\v
+" " USE VERY-MAGIC (PERL-STYLE) REGEXP FOR SEARCH
+" " =============================================
+" nnoremap / /\v
+" vnoremap / /\v
 
 " FORCE ME TO USE HJKL INSTEAD OF ARROWS
 " ======================================
