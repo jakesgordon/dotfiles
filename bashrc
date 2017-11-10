@@ -172,6 +172,7 @@ alias imix='iex -S mix'
 alias mixi='mix deps.get'
 alias mixc='mix compile'
 alias mixt='mix test'
+alias mixl='mix lint'
 
 dmix() {
   iex --name `hostname`@127.0.0.1 --cookie debug --erl "-kernel inet_dist_listen_min 9001 inet_dist_listen_max 9001" -S mix $1
