@@ -228,6 +228,7 @@ alias api='cd ~/api'
 alias www='cd ~/www'
 alias demo='cd ~/demo'
 alias up='cd ~/up'
+alias etl='cd ~/etl'
 
 alias ci='ssh ci'
 alias lp='ssh lp'
