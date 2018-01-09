@@ -222,6 +222,9 @@ alias h=history
 alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
+alias get='http GET'
+alias post='http POST'
+
 alias tmux="TERM=xterm-256color tmux"
 
 alias api='cd ~/api'
