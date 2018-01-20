@@ -1,4 +1,4 @@
 *.swp
-vim/bundle/*
+vim/pack/minpac/start/*
 *.pyc
 .DS_Store

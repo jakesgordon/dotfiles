@@ -1,56 +1,36 @@
-"
-" TODO
-" ====
-
-"  * supertab
-"  * unimpaired
-"  * snipmate
-"  * gundo
-"  * syntastic
-"  * ShowMarks
-"  * follow tags, in new splits, tag stacking (pg 268)
-"  * ruby autoindent rules (pg 251)
-"  * autocompletion (pg 260)
-
-" =======
-" Bundles
-" =======
 set nocompatible
 filetype off
-set rtp+=~/.vim/vundle
-call vundle#begin('~/.vim/bundle')
-Plugin 'gmarik/vundle'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rails'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'thinca/vim-localrc'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-entire'
 
-" Plugin 'sheerun/vim-polyglot' " has unfortunate side effects (vue syntax highlight broken, css indent wierd)
-Plugin 'vim-ruby/vim-ruby'      " ... so load favorite language packs individually instead
-Plugin 'fatih/vim-go'
-Plugin 'posva/vim-vue'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'pangloss/vim-javascript'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'stephpy/vim-yaml'
+packadd minpac
+call minpac#init()
+call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('mileszs/ack.vim')
+call minpac#add('kien/ctrlp.vim')
+call minpac#add('scrooloose/nerdtree')
+call minpac#add('tomtom/tcomment_vim')
+call minpac#add('tpope/vim-vinegar')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-rails')
+call minpac#add('majutsushi/tagbar')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('maxbrunsfeld/vim-yankstack')
+call minpac#add('thinca/vim-localrc')
+call minpac#add('kana/vim-textobj-user')
+call minpac#add('kana/vim-textobj-entire')
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('fatih/vim-go')
+call minpac#add('posva/vim-vue')
+call minpac#add('hail2u/vim-css3-syntax')
+call minpac#add('elixir-lang/vim-elixir')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('plasticboy/vim-markdown')
+call minpac#add('stephpy/vim-yaml')
 
-call vundle#end()
+command! InstallPlugins :call minpac#update()
 
-set nocompatible                 " dump the old fashioned vi support!
 set backspace=indent,eol,start   " allow backspacing over everything in insert mode
 set backup                       " keep a backup file
 set backupdir=~/.backup          " custom backup directory
@@ -97,9 +77,6 @@ set nofoldenable                 " disable code folding (I find it annoying)
 
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
-" set synmaxcol=150                " disable syntax highlighting after column 200 (it makes vim very slow - https://github.com/vim/vim/issues/555)
-
-call yankstack#setup()           " needs to happen before remapping any yank related keys
 
 " Colors and Fonts
 " ================
