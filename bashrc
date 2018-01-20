@@ -133,12 +133,12 @@ alias gp='git pull --ff-only'
 alias gf='git fetch'
 alias gc='git reset --hard'
 
-alias hgs='hg status'
-alias hgb='hg branches -a'
-alias hgl='hg log'
-alias hgr='hg recent'
-alias hgd='hg diff'
-alias hgp='hg pull && hg update'
+alias hs='hg status'
+alias hb='hg branches -a'
+alias hl='hg log'
+alias hr='hg recent'
+alias hd='hg diff'
+alias hp='hg pull && hg update'
 
 #==============================================================================
 # MAKE HELPERS
