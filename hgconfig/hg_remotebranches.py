@@ -1,3 +1,54 @@
+'''keep track of remote branch heads
+
+With this extension installed, Mercurial gains one new feature: when
+you pull from a repository listed in .hg/hgrc's ``[paths]`` section,
+you get output similar to the following::
+
+ @  3[tip]   7c2fd3b9020c   2009-04-27 18:04 -0500   durin42
+ |    Add delta
+ |
+ o  2[default/default]   030b686bedc4   2009-04-27 18:04 -0500   durin42
+ |    Add gamma
+ |
+ o  1[stable/default]   c561b4e977df   2009-04-27 18:04 -0500   durin42
+ |    Add beta
+ |
+ o  0   d8d2fcd0e319   2009-04-27 18:04 -0500   durin42
+      Add alpha
+
+What this output is showing is that the head of the default branch in
+a repo at path ``stable`` is ``c561b4e977df``, and the head of default
+in the repo at path ``default`` is at ``030b686bedc4``. This is
+accomplished by sending a single extra request to the Mercurial server
+after the pull is complete.  The nature of this request (branchheads)
+requires that the server be Mercurial 1.3 or newer.
+
+This extension should work properly with paths from the schemes extension
+included with Mercurial 1.4 and later. Other extensions which perform varying
+kinds of manipulation on the repository path may not function as expected.
+
+When revsets are available (Mercurial 1.7 and later), remotebranches
+makes three new revsets available: ``pushed()``, ``upstream()`` and
+``remotebranches()``. The ``pushed()`` revset returns all revisions
+that are have been pushed to any repository tracked by
+remotebranches. The ``upstream()`` set is those revisions which are in
+a repository whose path is listed in the ``upstream`` field of the
+``[remotebranches]`` configuration section. If there is no
+``remotebranches.upstream`` setting, it defaults to behaving
+identically to ``pushed()``. The ``remotebranches()`` revset simply
+returns all remote branches head changesets.
+
+When template keywords can be registered (Mercurial 1.5 and later),
+remotebranches adds a ``remotebranches`` keyword returning a space
+separated list of all names of remote branches heads on a changeset.
+
+For more information:
+https://bitbucket.org/durin42/hg-remotebranches
+
+See also :hg:`help revset.upstream`, :hg:`help revset.pushed`, and
+:hg:`help revset.remotebranches`.
+'''
+
 import os
 
 from mercurial import config
@@ -5,7 +56,6 @@ from mercurial import context
 from mercurial import extensions
 from mercurial import hg
 from mercurial import node
-from mercurial import ui
 from mercurial import url
 from mercurial import util
 
@@ -17,11 +67,21 @@ except ImportError:
    revset = None
 
 try:
+    from mercurial import smartset
+    smartset.baseset
+except ImportError:
+    smartset = None
+
+
+try:
     from mercurial import templatekw
     # force demandimport to load templatekw
     templatekw.keywords
 except ImportError:
     templatekw = None
+
+testedwith = ('1.7 1.8 1.9 2.0 2.9 3.1 3.2 3.3 3.4 3.5 '
+              '3.6 3.7 3.8 3.9 4.0 4.1 4.2')
 
 from hgext import schemes
 
@@ -41,11 +101,11 @@ def expush(orig, repo, remote, *args, **kwargs):
             if path:
                 repo.saveremotebranches(path, remote.branchmap())
         except Exception, e:
-            ui.debug('remote branches for path %s not saved: %s\n'
+            repo.ui.debug('remote branches for path %s not saved: %s\n'
                      % (path, e))
     finally:
         lock.release()
-        return res
+    return res
 
 def expull(orig, repo, remote, *args, **kwargs):
     res = orig(repo, remote, *args, **kwargs)
@@ -56,11 +116,11 @@ def expull(orig, repo, remote, *args, **kwargs):
             if path:
                 repo.saveremotebranches(path, remote.branchmap())
         except Exception, e:
-            ui.debug('remote branches for path %s not saved: %s\n'
-                     % (path, e))
+            repo.ui.debug('remote branches for path %s not saved: %s\n'
+                          % (remote, e))
     finally:
         lock.release()
-        return res
+    return res
 
 if hasexchange:
     extensions.wrapfunction(exchange, 'push', expush)
@@ -97,7 +157,11 @@ def reposetup(ui, repo):
         @util.propertycache
         def _remotebranches(self):
             remotebranches = {}
-            bfile = self.join('remotebranches')
+            try:
+                bfile = self.vfs.join('remotebranches')
+            except AttributeError:
+                # old hg
+                bfile = self.join('remotebranches')
             if os.path.exists(bfile):
                 f = open(bfile)
                 for line in f:
@@ -125,11 +189,14 @@ def reposetup(ui, repo):
 
         def _activepath(self, remote):
             conf = config.config()
-            rc = self.join('hgrc')
+            try:
+                rc = self.vfs.join('hgrc')
+            except AttributeError:
+                # old hg
+                rc = self.join('hgrc')
             if os.path.exists(rc):
-                fp = open(rc)
-                conf.parse('.hgrc', fp.read())
-                fp.close()
+                with open(rc) as fp:
+                    conf.parse('.hgrc', fp.read(), include=conf.read)
             realpath = ''
             if 'paths' in conf:
                 for path, uri in conf['paths'].items():
@@ -160,7 +227,7 @@ def reposetup(ui, repo):
                             rpath = getattr(getattr(remote, '_repo', None),
                                             'root', None)
                     else:
-                        rpath = remote._url
+                        rpath = getattr(remote, 'url', lambda : remote._url)()
                         if uri.startswith('http'):
                             try:
                                 uri = url.url(uri).authinfo()[0]
@@ -180,7 +247,11 @@ def reposetup(ui, repo):
 
         def saveremotebranches(self, remote, bm):
             real = {}
-            bfile = self.join('remotebranches')
+            try:
+                bfile = self.vfs.join('remotebranches')
+            except AttributeError:
+                # old path
+                bfile = self.join('remotebranches')
             olddata = []
             existed = os.path.exists(bfile)
             if existed:
@@ -212,6 +283,13 @@ def upstream_revs(filt, repo, subset, x):
              repo._remotebranches.iteritems() if filt(name)]
     if not upstream_tips: []
 
+    if smartset is not None:
+        # 4.2 codepath
+        return repo.revs('::%ln', map(node.bin, upstream_tips))
+    if getattr(revset, 'baseset', False):
+        # 3.5 codepath
+        return revset.baseset(
+            repo.revs('::%ln', map(node.bin, upstream_tips)))
     ls = getattr(revset, 'lazyset', False)
     if ls:
         # If revset.lazyset exists (hg 3.0), use lazysets instead for
@@ -270,8 +348,13 @@ def remotebrancheskw(**args):
         remotenodes.setdefault(node, []).append(name)
     if ctx.node() in remotenodes:
         names = sorted(remotenodes[ctx.node()])
-        return templatekw.showlist('remotebranch', names,
-                                   plural='remotebranches', **args)
+        try:
+            return templatekw.showlist('remotebranch', names,
+                                       plural='remotebranches', **args)
+        except TypeError:
+            # changed in hg 4.2
+            return templatekw.showlist('remotebranch', names, args,
+                                       plural='remotebranches')
 
 if templatekw is not None:
     templatekw.keywords['remotebranches'] = remotebrancheskw
