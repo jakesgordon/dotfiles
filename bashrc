@@ -31,7 +31,7 @@ shopt -s histappend                            # append to history, don't overwr
 export HISTCONTROL=ignoredups:ignorespace      # don't duplicate lines in history
 export HISTSIZE=10000                          # history length
 export HISTFILESIZE=10000
-export HH_CONFIG=hicolor
+export HH_CONFIG=hicolor,prompt-bottom
 
 if [ -x "$(command -v hh)" ]; then
   alias h=hh
