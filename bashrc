@@ -252,7 +252,7 @@ alias api='cd ~/api'
 alias www='cd ~/www'
 alias demo='cd ~/demo'
 alias up='cd ~/up'
-alias etl='cd ~/etl'
+alias wf='cd ~/go/src/github.eagleview.com/engineering/image-processing-workflow-service'
 
 alias ci='ssh ci'
 alias lp='ssh lp'
