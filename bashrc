@@ -84,6 +84,8 @@ fi
 if [ -d "$HOME/go" ]; then
   export GOPATH=$HOME/go
   append_path "$GOPATH/bin"
+  mkdir -p /tmp/jake/dep
+  export DEPCACHEDIR=/tmp/jake/dep
 fi
 
 if [ -d "/usr/local/go" ]; then
