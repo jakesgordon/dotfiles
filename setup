@@ -25,3 +25,7 @@ fi
 git -C ~/.dotfiles remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C ~/.dotfiles config --local user.name "Jake Gordon"
 git -C ~/.dotfiles config --local user.email "jake@codeincomplete.com"
+
+if [ ! -d "$HOME/.bash-git-prompt" ]; then
+  git clone -q https://github.com/magicmonty/bash-git-prompt.git $HOME/.bash-git-prompt --depth=1
+fi

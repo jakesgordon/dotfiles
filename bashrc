@@ -302,3 +302,11 @@ if type brew > /dev/null 2>&1; then
     . $(brew --prefix)/etc/bash_completion
   fi
 fi
+
+if type git > /dev/null 2>&1; then
+  if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source ~/.bash-git-prompt/gitprompt.sh
+  fi
+fi
+
