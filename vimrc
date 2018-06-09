@@ -67,6 +67,7 @@ set wildignore+=*.o,*.a,*.d,*.gch   " (ditto)
 set wildignore+=bin,gen,depends  " (ditto)
 set wildignore+=tmp              " (ditto)
 set wildignore+=node_modules     " (ditto)
+set wildignore+=vendor           " (ditto)
 set wildignore+=deps             " (ditto)
 set wildignore+=_build           " (ditto)
 set ttyfast                      " faster terminal updates
