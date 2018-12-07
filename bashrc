@@ -127,7 +127,6 @@ fi
 
 alias bi='bundle install'
 alias be='bundle exec'
-alias rg='be rails generate'
 alias routes='be rake routes'
 alias rt='be rake test'
 alias rit='be ruby -Itest -Ilib -Iapp'
