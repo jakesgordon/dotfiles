@@ -4,7 +4,6 @@ filetype off
 packadd minpac
 call minpac#init()
 call minpac#add('altercation/vim-colors-solarized')
-call minpac#add('mileszs/ack.vim')
 call minpac#add('kien/ctrlp.vim')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('tomtom/tcomment_vim')
@@ -29,6 +28,7 @@ call minpac#add('elixir-lang/vim-elixir')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('plasticboy/vim-markdown')
 call minpac#add('stephpy/vim-yaml')
+call minpac#add('jremmen/vim-ripgrep')
 
 command! InstallPlugins :call minpac#update()
 
@@ -95,7 +95,7 @@ command EditBash :edit   ~/.bashrc
 " Leaders
 " =======
 
-nnoremap <Leader>a :Ack<Space>
+nnoremap <Leader>a :Rg<Space>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <Leader>g :TagbarToggle<CR>
@@ -190,6 +190,10 @@ inoremap jj      <ESC>
 " vnoremap <left> <nop>
 " vnoremap <right> <nop>
 
+" Customize vim-ripgrep
+" =====================
+let g:rg_highlight = 1
+
 " Customize CtrlP
 " ===============
 let g:ctrlp_max_height = 20
@@ -218,9 +222,6 @@ let g:rails_projections = {
  \   "test/api/*_test.rb": { "alternate": "lib/api/%s.rb" },
  \   "test/lib/*_test.rb": { "alternate": "lib/%s.rb" }
  \ }
-
-" sometimes, after ack-grep, my console charset gets corrupted and needs a kick (http://stackoverflow.com/questions/19236090/bash-shell-turns-to-symbols-when-using-vim-ack-plugin)
-command FIXIT :!echo -e '\ec\e(K\e[J'
 
 " disable auto-comment on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
