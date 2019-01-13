@@ -223,6 +223,9 @@ let g:rails_projections = {
  \   "test/lib/*_test.rb": { "alternate": "lib/%s.rb" }
  \ }
 
+" force .md files to be considered markdown (not modula-2)
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " disable auto-comment on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType * setlocal noautoindent nosmartindent
