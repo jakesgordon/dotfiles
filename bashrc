@@ -263,6 +263,7 @@ alias demo='cd ~/demo'
 alias up='cd ~/up'
 alias wf='cd ~/wf'
 alias ui='cd ~/ui'
+alias ev='cd ~/ev'
 
 alias ci='ssh ci'
 alias lp='ssh lp'
