@@ -264,6 +264,7 @@ alias up='cd ~/up'
 alias wf='cd ~/wf'
 alias ui='cd ~/ui'
 alias ev='cd ~/ev'
+alias pa='cd ~/pa'
 
 alias ci='ssh ci'
 alias lp='ssh lp'
@@ -289,12 +290,6 @@ ops() {
     cd "$HOME/ops"
   elif [ -d "$HOME/operations" ]; then
     cd "$HOME/operations"
-  fi
-}
-
-services() {
-  if [ -d "$GOPATH/src/github.com/chemistrygroup/services" ]; then
-    cd "$GOPATH/src/github.com/chemistrygroup/services"
   fi
 }
 
