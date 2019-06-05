@@ -256,6 +256,7 @@ alias less='less -r'
 
 alias ll='ls -Al'
 alias la='ls -A'
+alias ps='ps xawf'
 
 alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
