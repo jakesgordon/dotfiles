@@ -4,6 +4,7 @@ filetype off
 packadd minpac
 call minpac#init()
 call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('kien/ctrlp.vim')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('tomtom/tcomment_vim')
@@ -84,7 +85,7 @@ filetype plugin on               " enable per-filetype plugins
 " ================
 set t_Co=256
 set background=light
-colorscheme solarized
+colorscheme nord
 set guifont=Consolas:h9:cANSI
 
 " Easy edit/open commands
