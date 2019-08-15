@@ -238,6 +238,7 @@ alias pss='python -m SimpleHTTPServer'
 
 alias kc='kubectl'
 alias kcc='kubectl config'
+alias kck='kubectl kustomize'
 alias kcs='kubectl --namespace=kube-system'
 
 #==============================================================================
