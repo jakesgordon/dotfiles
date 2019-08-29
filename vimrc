@@ -103,8 +103,8 @@ nnoremap <Leader>g :TagbarToggle<CR>
 nnoremap <Leader>r :CtrlPMRU<CR>
 nnoremap <Leader>t :CtrlP<CR>
 
-nnoremap <Leader>d :set background=dark<CR>
-nnoremap <Leader>l :set background=light<CR>
+nnoremap <Leader>d :colorscheme nord<CR>:set background=dark<CR>
+nnoremap <Leader>l :colorscheme solarized<CR>:set background=light<CR>
 
 nnoremap <leader>m  :Make<CR>
 nnoremap <leader>ma :Make clean<CR>:Make all<CR>
