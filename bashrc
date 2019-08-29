@@ -241,6 +241,8 @@ alias kcc='kubectl config'
 alias kck='kubectl kustomize'
 alias kcs='kubectl --namespace=kube-system'
 
+alias kube-debug='kubectl run jake-debug-shell --rm -i --tty --image ubuntu:18.04 -- bash'
+
 #==============================================================================
 # OTHER ALIASES
 #==============================================================================
