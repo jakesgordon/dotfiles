@@ -268,8 +268,6 @@ alias vimbash="vim -c EditBash"
 alias get='http GET'
 alias post='http POST'
 
-alias tmux="TERM=xterm-256color tmux"
-
 alias api='cd ~/api'
 alias www='cd ~/www'
 alias demo='cd ~/demo'

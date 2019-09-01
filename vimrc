@@ -3,7 +3,7 @@ filetype off
 
 packadd minpac
 call minpac#init()
-call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('lifepillar/vim-solarized8')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('kien/ctrlp.vim')
 call minpac#add('scrooloose/nerdtree')
@@ -81,12 +81,13 @@ set nofoldenable                 " disable code folding (I find it annoying)
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
 
-" Colors and Fonts
-" ================
-set t_Co=256
-set background=light
+" Enable True Color
+" =================
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"       " see :h xterm-true-color for details
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+set background=dark
 colorscheme nord
-set guifont=Consolas:h9:cANSI
 
 " Easy edit/open commands
 " =======================
@@ -103,8 +104,8 @@ nnoremap <Leader>g :TagbarToggle<CR>
 nnoremap <Leader>r :CtrlPMRU<CR>
 nnoremap <Leader>t :CtrlP<CR>
 
-nnoremap <Leader>d :colorscheme nord<CR>:set background=dark<CR>
-nnoremap <Leader>l :colorscheme solarized<CR>:set background=light<CR>
+nnoremap <Leader>d :set background=dark<CR>:colorscheme nord<CR>
+nnoremap <Leader>l :set background=light<CR>:colorscheme solarized8<CR>
 
 nnoremap <leader>m  :Make<CR>
 nnoremap <leader>ma :Make clean<CR>:Make all<CR>

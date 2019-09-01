@@ -7,13 +7,5 @@
 	default = simple
 [clean]
   requireForce = false
-[url "git@bitbucket.org:jakesgordon"]
-  insteadOf = https://bitbucket.org/jakesgordon
-[url "git@github.com:jakesgordon"]
-  insteadOf = https://github.com/jakesgordon
-[url "git@github.eagleview.com:jake-gordon"]
-  insteadOf = https://github.eagleview.com/jake-gordon
-[url "git@github.eagleview.com:engineering"]
-  insteadOf = https://github.eagleview.com/engineering
 [include]
   path = .gitconfig.local
