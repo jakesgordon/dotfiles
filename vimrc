@@ -87,7 +87,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"       " see :h xterm-true-color for detai
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set background=dark
-colorscheme nord
+colorscheme solarized8
 
 " Easy edit/open commands
 " =======================
@@ -104,7 +104,8 @@ nnoremap <Leader>g :TagbarToggle<CR>
 nnoremap <Leader>r :CtrlPMRU<CR>
 nnoremap <Leader>t :CtrlP<CR>
 
-nnoremap <Leader>d :set background=dark<CR>:colorscheme nord<CR>
+" nnoremap <Leader>d :set background=dark<CR>:colorscheme nord<CR>
+nnoremap <Leader>d :set background=dark<CR>:colorscheme solarized8<CR>
 nnoremap <Leader>l :set background=light<CR>:colorscheme solarized8<CR>
 
 nnoremap <leader>m  :Make<CR>
