@@ -1,4 +1,5 @@
-DOTFILES=$(dirname $(realpath -s $0))
+REALPATH=$(perl -e 'use Cwd "abs_path"; print abs_path(@ARGV[0])' -- "$0")      # cross-platform replacement for $(realpath $0)
+DOTFILES=$(dirname $REALPATH)
 
 rm -rf $HOME/.ackrc
 rm -rf $HOME/.bashrc
