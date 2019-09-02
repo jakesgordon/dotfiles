@@ -1,5 +1,4 @@
-SCRIPTS=$(dirname $(realpath -s $0))
-DOTFILES=$(realpath ${SCRIPTS}/..)
+DOTFILES=$(dirname $(realpath -s $0))
 
 rm -rf $HOME/.ackrc
 rm -rf $HOME/.bashrc
