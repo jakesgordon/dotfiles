@@ -1,0 +1,34 @@
+SCRIPTS=$(dirname $(realpath -s $0))
+DOTFILES=$(realpath ${SCRIPTS}/..)
+
+rm -rf $HOME/.ackrc
+rm -rf $HOME/.bashrc
+rm -rf $HOME/.gitconfig
+rm -rf $HOME/.gitignore
+rm -rf $HOME/.hgconfig
+rm -rf $HOME/.hgrc
+rm -rf $HOME/.irbrc
+rm -rf $HOME/.ripgreprc
+rm -rf $HOME/.tmux.conf
+rm -rf $HOME/.vim
+rm -rf $HOME/.vimrc
+
+ln -s $DOTFILES/ackrc     $HOME/.ackrc
+ln -s $DOTFILES/bashrc    $HOME/.bashrc
+ln -s $DOTFILES/gitconfig $HOME/.gitconfig
+ln -s $DOTFILES/gitignore $HOME/.gitignore
+ln -s $DOTFILES/hgconfig  $HOME/.hgconfig
+ln -s $DOTFILES/hgrc      $HOME/.hgrc
+ln -s $DOTFILES/irbrc     $HOME/.irbrc
+ln -s $DOTFILES/ripgreprc $HOME/.ripgreprc
+ln -s $DOTFILES/tmux.conf $HOME/.tmux.conf
+ln -s $DOTFILES/vim       $HOME/.vim
+ln -s $DOTFILES/vimrc     $HOME/.vimrc
+
+git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
+git -C $DOTFILES config --local user.name "Jake Gordon"
+git -C $DOTFILES config --local user.email "jake@codeincomplete.com"
+
+if [ ! -d "$HOME/.bash-git-prompt" ]; then
+  git clone -q https://github.com/magicmonty/bash-git-prompt.git $HOME/.bash-git-prompt --depth=1
+fi
