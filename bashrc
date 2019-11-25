@@ -248,8 +248,10 @@ alias kc='kubectl'
 alias kcc='kubectl config'
 alias kck='kubectl kustomize'
 alias kcs='kubectl --namespace=kube-system'
+alias kx='kubectx'
+alias kn='kubens'
 
-alias kube-debug='kubectl run jake-debug-shell --generator=run-pod/v1 --rm -i --tty --image alpine'
+alias kube-debug='kubectl run jake-debug-shell --generator=run-pod/v1 --rm -i --tty --image alpine -- sh'
 
 #==============================================================================
 # OTHER ALIASES
