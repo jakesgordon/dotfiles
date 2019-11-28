@@ -88,6 +88,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set background=dark
 colorscheme solarized8
+let g:airline_theme="solarized"
 
 " Easy edit/open commands
 " =======================
