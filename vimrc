@@ -13,6 +13,7 @@ call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('majutsushi/tagbar')
 call minpac#add('vim-airline/vim-airline')
@@ -77,6 +78,8 @@ set timeoutlen=1000              " timeout on mappings after 1 second
 set ttimeoutlen=0                " timeout on key codes immediately (to avoid pause after ESC)
 set colorcolumn=100              " highlight the 100th column
 set nofoldenable                 " disable code folding (I find it annoying)
+set autoindent                   " let's try autoindent again for a while
+set smartindent                  " (ditto)
 
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
@@ -232,4 +235,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " disable auto-comment on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-autocmd FileType * setlocal noautoindent nosmartindent
+
+" remove comment leader when joining comment lines
+autocmd FileType * setlocal formatoptions+=j
