@@ -78,8 +78,8 @@ set timeoutlen=1000              " timeout on mappings after 1 second
 set ttimeoutlen=0                " timeout on key codes immediately (to avoid pause after ESC)
 set colorcolumn=100              " highlight the 100th column
 set nofoldenable                 " disable code folding (I find it annoying)
-set autoindent                   " let's try autoindent again for a while
-set smartindent                  " (ditto)
+set noautoindent                 " let's disable autoindent again for a while
+set nosmartindent                " (ditto)
 
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
