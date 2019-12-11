@@ -13,7 +13,7 @@ call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-rails')
-call minpac#add('tpope/vim-endwise')
+" call minpac#add('tpope/vim-endwise')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('majutsushi/tagbar')
 call minpac#add('vim-airline/vim-airline')
@@ -78,8 +78,9 @@ set timeoutlen=1000              " timeout on mappings after 1 second
 set ttimeoutlen=0                " timeout on key codes immediately (to avoid pause after ESC)
 set colorcolumn=100              " highlight the 100th column
 set nofoldenable                 " disable code folding (I find it annoying)
-set noautoindent                 " let's disable autoindent again for a while
+set noautoindent                 " let's disable autoindent again for a while, it's just too annoying
 set nosmartindent                " (ditto)
+set nocindent                    " (ditto)
 
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
