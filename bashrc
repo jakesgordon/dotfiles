@@ -153,6 +153,8 @@ if [ -e "$HOME/.grip-token" ]; then
   export GRIP_TOKEN=`cat $HOME/.grip-token`
 fi
 
+alias grip='grip --user=jakesgordon --pass=$GRIP_TOKEN'
+
 #==============================================================================
 # BUNDLER/RUBY HELPERS
 #==============================================================================
