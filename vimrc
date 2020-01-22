@@ -207,7 +207,7 @@ let g:ctrlp_working_path_mode = 0
 
 " Customize NERD tree
 " ===================
-let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules', '_build' ]
+let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules', '^_build' ]
 
 " Customize Airline
 " =================
