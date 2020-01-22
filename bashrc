@@ -149,7 +149,7 @@ fi
 # GRIP TOKEN
 #==============================================================================
 
-if [ -d "$HOME/.grip-token" ]; then
+if [ -e "$HOME/.grip-token" ]; then
   export GRIP_TOKEN=`cat $HOME/.grip-token`
 fi
 
