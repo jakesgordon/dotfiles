@@ -140,7 +140,7 @@ nnoremap <F5>    :wa<CR>:Make<CR>
 nnoremap <F6>    :wa<CR>:Make clean<CR>:Make<CR>
 nnoremap <F7>    :wa<CR>:Make test<CR>
 nnoremap <F8>    :wa<CR>:Make run<CR>
-nnoremap <F12>   :noh<CR>:cclose<CR>
+nnoremap <F12>   :noh<CR>:cclose<CR>:syntax sync fromstart<CR>
 
 " QuickFix Shortcuts
 " ==================
