@@ -209,7 +209,7 @@ alias mi='make install'
 alias mw='make watch'
 alias mb='make build'
 alias ml='make lint'
-alias mc='make clean'
+alias mc='make cover'
 
 #==============================================================================
 # NODE HELPERS
@@ -226,6 +226,7 @@ alias yt='yarn test'
 alias yr='yarn run'
 alias yb='yarn build'
 alias yw='yarn watch'
+alias yc='yarn cover'
 
 #==============================================================================
 # ELIXIR/MIX HELPERS
