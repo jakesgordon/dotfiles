@@ -9,8 +9,3 @@
   requireForce = false
 [include]
   path = .gitconfig.local
-
-# ensure "go get" uses SSH instead of HTTPS for private EV repos that need ssh key authentication - http://www.booneputney.com/development/go-get-bitbucket-ssh/
-[url "git@github.eagleview.com:engineering"]
-	insteadOf = https://github.eagleview.com/engineering
-
