@@ -207,6 +207,7 @@ let g:rg_highlight = 1
 let g:ctrlp_max_height = 20
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = [ '.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f' ]
 
 " Customize NERD tree
 " ===================
@@ -242,4 +243,8 @@ autocmd FileType * setlocal formatoptions+=j
 
 " disable autoindent for all file types - it's just far too annoying and never works cleanly
 autocmd FileType * setlocal noautoindent nosmartindent nocindent
+
+" enable per-project .vimrc files in a secure way - https://andrew.stwrt.ca/posts/project-specific-vimrc/
+set exrc
+set secure
 
