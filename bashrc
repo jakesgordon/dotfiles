@@ -15,6 +15,8 @@ shopt -s checkwinsize                          # dynamically update the values o
 stty stop undef     # stop <C-s> being swallowed by xterm
 stty start undef    # stop <C-q> being swallowed by xterm
 
+export BASH_SILENCE_DEPRECATION_WARNING=1  # stop macOS Catalina from trying to get me to upgrade to zshell
+
 #==============================================================================
 # LOAD SECRETS INTO ENVIRONMENT (if any)
 #==============================================================================
