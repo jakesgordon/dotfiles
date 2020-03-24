@@ -90,7 +90,7 @@ filetype plugin on               " enable per-filetype plugins
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"       " see :h xterm-true-color for details
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
-set background=dark
+set background=light
 colorscheme solarized8
 let g:airline_theme="solarized"
 
