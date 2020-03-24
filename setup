@@ -1,6 +1,5 @@
 REALPATH=$(perl -e 'use Cwd "abs_path"; print abs_path(@ARGV[0])' -- "$0")      # cross-platform replacement for $(realpath $0)
 DOTFILES=$(dirname $REALPATH)
-HOSTNAME=$(hostname)
 
 rm -rf $HOME/.ackrc
 rm -rf $HOME/.bashrc
@@ -14,7 +13,6 @@ rm -rf $HOME/.tmux.conf
 rm -rf $HOME/.vim
 rm -rf $HOME/.vimrc
 rm -rf $HOME/.htoprc
-rm -rf $HOME/.xmodmap
 
 ln -s $DOTFILES/ackrc     $HOME/.ackrc
 ln -s $DOTFILES/bashrc    $HOME/.bashrc
@@ -35,8 +33,4 @@ git -C $DOTFILES config --local user.email "jake@codeincomplete.com"
 
 if [ ! -d "$HOME/.bash-git-prompt" ]; then
   git clone -q https://github.com/magicmonty/bash-git-prompt.git $HOME/.bash-git-prompt --depth=1
-fi
-
-if [ -f $DOTFILES/xmodmap/$HOSTNAME ]; then
-  ln -s $DOTFILES/xmodmap/$HOSTNAME $HOME/.xmodmap
 fi
