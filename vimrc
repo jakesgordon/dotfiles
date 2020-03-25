@@ -24,6 +24,7 @@ call minpac#add('kana/vim-textobj-user')
 call minpac#add('kana/vim-textobj-entire')
 call minpac#add('jremmen/vim-ripgrep')
 call minpac#add('psliwka/vim-smoothie')
+call minpac#add('mhinz/vim-startify')
 
 call minpac#add('sheerun/vim-polyglot')
 " call minpac#add('vim-ruby/vim-ruby')
@@ -120,8 +121,9 @@ nnoremap <leader>mt :Make test<CR>
 nnoremap <leader>mc :Make clean<CR>
 nnoremap <leader>mr :Make run<CR>
 
+vmap <leader>Y "+y
+nmap <leader>P "+P
 nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 nmap <Leader><Enter> i<Enter><Esc>
 
