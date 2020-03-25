@@ -23,6 +23,7 @@ call minpac#add('thinca/vim-localrc')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('kana/vim-textobj-entire')
 call minpac#add('jremmen/vim-ripgrep')
+call minpac#add('psliwka/vim-smoothie')
 
 call minpac#add('sheerun/vim-polyglot')
 " call minpac#add('vim-ruby/vim-ruby')
