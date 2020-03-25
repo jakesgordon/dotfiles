@@ -9,13 +9,12 @@
 export EDITOR=vim                              # editor
 PS1="\u@\[\e[0;32m\]\h\[\e[m\]\w\$ "           # prompt
 shopt -s checkwinsize                          # dynamically update the values of LINES and COLUMNS
+export BASH_SILENCE_DEPRECATION_WARNING=1      # stop macOS Catalina from trying to get me to upgrade to zshell
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"  # make less more friendly for non-text input files, see lesspipe(1)
 
 stty stop undef     # stop <C-s> being swallowed by xterm
 stty start undef    # stop <C-q> being swallowed by xterm
-
-export BASH_SILENCE_DEPRECATION_WARNING=1  # stop macOS Catalina from trying to get me to upgrade to zshell
 
 #==============================================================================
 # LOAD SECRETS INTO ENVIRONMENT (if any)
@@ -47,6 +46,14 @@ fi
 
 
 #==============================================================================
+# BASHMARKS
+#==============================================================================
+
+if [ -f "$HOME/.dotfiles/bashmarks.sh" ]; then
+  source $HOME/.dotfiles/bashmarks.sh
+fi
+
+#==============================================================================
 # PATH MANIPULATION
 #==============================================================================
 
@@ -63,44 +70,11 @@ prepend_path() {
 }
 
 #==============================================================================
-# BASHMARKS
-#==============================================================================
-
-if [ -f "$HOME/.dotfiles/bashmarks.sh" ]; then
-  source $HOME/.dotfiles/bashmarks.sh
-fi
-
-#==============================================================================
-# LIBPQ
-#==============================================================================
-
-if [ -d /usr/local/opt/libpq/bin ]; then
-  append_path "/usr/local/opt/libpq/bin"
-fi
-
-#==============================================================================
 # RIPGREP
 #==============================================================================
 
 if [ -e "$HOME/.ripgreprc" ]; then
   export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-fi
-
-#==============================================================================
-# ANDROID
-#==============================================================================
-
-if [ -d "$HOME/android" ]; then
-  append_path "$HOME/android/tools"
-  append_path "$HOME/android/platform-tools"
-fi
-
-#==============================================================================
-# AIRFLOW (dev)
-#==============================================================================
-
-if [ -d "$HOME/airflow" ]; then
-  export AIRFLOW_HOME=$HOME/airflow
 fi
 
 #==============================================================================
@@ -110,8 +84,6 @@ fi
 if [ -d "$HOME/go" ]; then
   export GOPATH=$HOME/go
   append_path "$GOPATH/bin"
-  mkdir -p /tmp/jake/dep
-  export DEPCACHEDIR=/tmp/jake/dep
 fi
 
 if [ -d "/usr/local/go" ]; then
@@ -166,7 +138,7 @@ fi
 alias grip='grip --user=jakesgordon --pass=$GRIP_TOKEN'
 
 #==============================================================================
-# BUNDLER/RUBY HELPERS
+# BUNDLER/RUBY/RAILS HELPERS
 #==============================================================================
 
 alias bi='bundle install'
@@ -174,19 +146,10 @@ alias be='bundle exec'
 alias routes='be rake routes'
 alias rt='be rake test'
 alias rit='be ruby -Itest -Ilib -Iapp'
-
+alias rs='be rails server -b 0.0.0.0'
+alias rc='be rails console'
 alias fs='foreman start'
 alias fr='foreman run'
-
-function rs()
-{
-  be rails server -b 0.0.0.0
-}
-
-function rc()
-{
-  be rails console
-}
 
 #==============================================================================
 # GIT & MERCURIAL HELPERS
@@ -222,7 +185,7 @@ alias ml='make lint'
 alias mc='make cover'
 
 #==============================================================================
-# NODE HELPERS
+# NODE and YARN HELPERS
 #==============================================================================
 
 alias ni='npm install'
@@ -277,7 +240,7 @@ alias kcs='kubectl --namespace=kube-system'
 alias kx='kubectx'
 alias kn='kubens'
 
-alias kube-debug='kubectl run jake-debug-shell --generator=run-pod/v1 --rm -i --tty --image alpine -- sh'
+alias kube-debug='kubectl run jake-debug-shell --generator=run-pod/v1 --rm -i --tty --image busy-box -- sh'
 
 #==============================================================================
 # OTHER ALIASES
@@ -301,20 +264,7 @@ alias ps='ps xawf'
 alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
-alias get='http GET'
-alias post='http POST'
-
-alias api='cd ~/api'
-alias www='cd ~/www'
-alias demo='cd ~/demo'
-alias up='cd ~/up'
-alias wf='cd ~/wf'
-alias ui='cd ~/ui'
-alias ev='cd ~/ev'
-alias pa='cd ~/pa'
-
-alias ci='ssh ci'
-alias lp='ssh lp'
+alias ci='cd ~/codeincomplete'
 
 app() {
   if [ -d "$HOME/app" ]; then

@@ -1,0 +1,5 @@
+export DIR_ci="$HOME/codeincomplete"
+export DIR_home="$HOME"
+export DIR_dotfiles="$HOME/.dotfiles"
+export DIR_provision="$HOME/.provision"
+export DIR_codeincomplete="$HOME/codeincomplete"
