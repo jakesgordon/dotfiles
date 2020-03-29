@@ -16,6 +16,17 @@ export BASH_SILENCE_DEPRECATION_WARNING=1      # stop macOS Catalina from trying
 stty stop undef     # stop <C-s> being swallowed by xterm
 stty start undef    # stop <C-q> being swallowed by xterm
 
+#===================================================================
+# KEEP RUN-TIME TRACK OF CWD SO NEW TERMINALS CAN OPEN IN SAME PLACE
+#===================================================================
+
+if [ ! -z "$XDG_RUNTIME_DIR" ]; then
+  PROMPT_COMMAND='pwd > "${XDG_RUNTIME_DIR}/most-recent-directory"'
+  if [ -f "$XDG_RUNTIME_DIR/most-recent-directory" ]; then
+    cd `cat $XDG_RUNTIME_DIR/most-recent-directory`
+  fi
+fi
+
 #==============================================================================
 # LOAD SECRETS INTO ENVIRONMENT (if any)
 #==============================================================================
@@ -265,6 +276,9 @@ alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
 alias ci='cd ~/codeincomplete'
+alias dotfiles='cd ~/.dotfiles'
+alias provision='cd ~/.provision'
+alias projects='cd ~/projects'
 
 app() {
   if [ -d "$HOME/app" ]; then
