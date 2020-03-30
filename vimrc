@@ -110,6 +110,7 @@ nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <Leader>g :TagbarToggle<CR>
 nnoremap <Leader>r :CtrlPMRU<CR>
 nnoremap <Leader>t :CtrlP<CR>
+nnoremap <Leader>s :Startify<CR>
 
 " nnoremap <Leader>d :set background=dark<CR>:colorscheme nord<CR>
 nnoremap <Leader>d :set background=dark<CR>:colorscheme solarized8<CR>
@@ -200,6 +201,18 @@ inoremap jj      <ESC>
 " vnoremap <down> <nop>
 " vnoremap <left> <nop>
 " vnoremap <right> <nop>
+
+" Customize startify
+" ==================
+let g:startify_lists = [
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ ]
+let g:startify_change_to_dir = 0
+let g:startify_padding_left = 10
 
 " Customize vim-ripgrep
 " =====================
