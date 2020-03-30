@@ -266,10 +266,12 @@ alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
 alias ci='cd ~/codeincomplete'
+alias pulse='cd ~/pulse'
+alias p='cd ~/pulse'
+alias pw='cd ~/pulse/web'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias projects='cd ~/projects'
-alias up='cd ~/up'
 alias tmp='cd ~/tmp'
 
 #==============================================================================
