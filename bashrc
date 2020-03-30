@@ -55,15 +55,6 @@ else
   alias h=history
 fi
 
-
-#==============================================================================
-# BASHMARKS
-#==============================================================================
-
-if [ -f "$HOME/.dotfiles/bashmarks.sh" ]; then
-  source $HOME/.dotfiles/bashmarks.sh
-fi
-
 #==============================================================================
 # PATH MANIPULATION
 #==============================================================================
@@ -267,7 +258,6 @@ fi
 
 alias c='clear'
 alias less='less -r'
-
 alias ll='ls -Al'
 alias la='ls -A'
 alias ps='ps xawf'
@@ -276,33 +266,11 @@ alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
 alias ci='cd ~/codeincomplete'
-alias dotfiles='cd ~/.dotfiles'
+alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias projects='cd ~/projects'
-
-app() {
-  if [ -d "$HOME/app" ]; then
-    cd "$HOME/app"
-  elif [ -d "$HOME/application" ]; then
-    cd "$HOME/application"
-  fi
-}
-
-dev() {
-  if [ -d "$HOME/dev" ]; then
-    cd "$HOME/dev"
-  elif [ -d "$HOME/development" ]; then
-    cd "$HOME/development"
-  fi
-}
-
-ops() {
-  if [ -d "$HOME/ops" ]; then
-    cd "$HOME/ops"
-  elif [ -d "$HOME/operations" ]; then
-    cd "$HOME/operations"
-  fi
-}
+alias up='cd ~/up'
+alias tmp='cd ~/tmp'
 
 #==============================================================================
 # BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)

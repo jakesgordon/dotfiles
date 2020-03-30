@@ -13,7 +13,6 @@ rm -rf $HOME/.tmux.conf
 rm -rf $HOME/.vim
 rm -rf $HOME/.vimrc
 rm -rf $HOME/.htoprc
-rm -rf $HOME/.sdirs
 
 ln -s $DOTFILES/ackrc     $HOME/.ackrc
 ln -s $DOTFILES/bashrc    $HOME/.bashrc
@@ -27,7 +26,6 @@ ln -s $DOTFILES/tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES/vim       $HOME/.vim
 ln -s $DOTFILES/vimrc     $HOME/.vimrc
 ln -s $DOTFILES/htoprc    $HOME/.htoprc
-ln -s $DOTFILES/sdirs     $HOME/.sdirs
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C $DOTFILES config --local user.name "Jake Gordon"
