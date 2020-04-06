@@ -19,7 +19,6 @@ call minpac#add('majutsushi/tagbar')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('maxbrunsfeld/vim-yankstack')
-call minpac#add('thinca/vim-localrc')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('kana/vim-textobj-entire')
 call minpac#add('jremmen/vim-ripgrep')
@@ -227,7 +226,7 @@ let g:ctrlp_user_command = [ '.git', 'cd %s && git ls-files . -co --exclude-stan
 
 " Customize NERD tree
 " ===================
-let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules', '^_build' ]
+let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules', '^_build', '^deps' ]
 
 " Customize Airline
 " =================
