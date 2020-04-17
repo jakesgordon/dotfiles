@@ -275,6 +275,8 @@ alias provision='cd ~/.provision'
 alias projects='cd ~/projects'
 alias tmp='cd ~/tmp'
 
+alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
+
 #==============================================================================
 # BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)
 #==============================================================================
