@@ -277,6 +277,8 @@ alias tmp='cd ~/tmp'
 
 alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
 
+alias no-color='sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"'
+
 #==============================================================================
 # BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)
 #==============================================================================
