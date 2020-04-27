@@ -1,8 +1,0 @@
---------------------------------------------------------------------------------
-[1;31m{rev}[1;32m:{node|short} [1;34m{author|person}[0m{branches}{tags}{bookmarks}[0;31m{ifeq(phase,'public','',' [{phase}]')}[0m [1;30m({date|age})[0m 
-
-{desc|strip}
-
-files:
-{file_mods}{file_adds}{file_dels}{file_copies_switch}
-

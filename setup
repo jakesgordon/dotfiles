@@ -5,8 +5,6 @@ rm -rf $HOME/.ackrc
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.gitignore
-rm -rf $HOME/.hgconfig
-rm -rf $HOME/.hgrc
 rm -rf $HOME/.irbrc
 rm -rf $HOME/.ripgreprc
 rm -rf $HOME/.tmux.conf
@@ -18,8 +16,6 @@ ln -s $DOTFILES/ackrc     $HOME/.ackrc
 ln -s $DOTFILES/bashrc    $HOME/.bashrc
 ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 ln -s $DOTFILES/gitignore $HOME/.gitignore
-ln -s $DOTFILES/hgconfig  $HOME/.hgconfig
-ln -s $DOTFILES/hgrc      $HOME/.hgrc
 ln -s $DOTFILES/irbrc     $HOME/.irbrc
 ln -s $DOTFILES/ripgreprc $HOME/.ripgreprc
 ln -s $DOTFILES/tmux.conf $HOME/.tmux.conf
