@@ -268,12 +268,13 @@ alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
 alias ci='cd ~/codeincomplete'
-alias up='cd ~/up'
-alias u='cd ~/up'
+alias up='cd ~/up3'
+alias u='cd ~/up3'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias projects='cd ~/projects'
 alias tmp='cd ~/tmp'
+alias fd=fdfind
 
 alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
 
