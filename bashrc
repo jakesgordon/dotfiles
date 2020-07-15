@@ -232,6 +232,7 @@ alias ports='sudo lsof -i -P -n'
 #==============================================================================
 
 alias pss='python -m SimpleHTTPServer'
+alias pss3='python3 -m http.server'
 
 #==============================================================================
 # KUBERNETES HELPERS
@@ -270,6 +271,8 @@ alias vimbash="vim -c EditBash"
 alias ci='cd ~/codeincomplete'
 alias up='cd ~/up3'
 alias u='cd ~/up3'
+alias app='cd ~/up3'
+alias ops='cd ~/up-ops'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias projects='cd ~/projects'
