@@ -292,7 +292,7 @@ alias no-color='sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"'
 
 dotenv() {
   set -o allexport
-  source .env
+  source ${1:-.env}
   set +o allexport
 }
 
