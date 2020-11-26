@@ -197,11 +197,22 @@ alias nb='npm run build'
 alias nr='npm run'
 
 alias yi='yarn install'
-alias yt='yarn test'
 alias yr='yarn run'
+alias ys='yarn start'
+alias yt='yarn test'
+alias yl='yarn lint'
 alias yb='yarn build'
 alias yw='yarn watch'
 alias yc='yarn cover'
+
+alias yss='yarn server:start'
+alias yst='yarn server:test'
+alias ysl='yarn server:lint'
+alias ysc='yarn server:cover'
+alias ycs='yarn client:start'
+alias yct='yarn client:test'
+alias ycl='yarn client:lint'
+alias ycc='yarn client:cover'
 
 #==============================================================================
 # ELIXIR/MIX HELPERS
