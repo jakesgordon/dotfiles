@@ -214,6 +214,10 @@ alias yct='yarn client:test'
 alias ycl='yarn client:lint'
 alias ycc='yarn client:cover'
 
+alias yscd='yarn server:cover:detail'
+alias ystw='yarn server:test:watch'
+alias yctw='yarn client:test:watch'
+
 #==============================================================================
 # ELIXIR/MIX HELPERS
 #==============================================================================
