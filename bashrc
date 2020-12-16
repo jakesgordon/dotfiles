@@ -301,6 +301,7 @@ alias projects='cd ~/projects'
 alias tmp='cd ~/tmp'
 alias fd=fdfind
 alias k='cd ~/kevala'
+alias kp='cd ~/kevala-platform'
 
 alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
 
