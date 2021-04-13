@@ -314,6 +314,18 @@ dotenv() {
 }
 
 #==============================================================================
+# LOAD ASDF (if present)
+#==============================================================================
+
+if [ -f $HOME/.asdf/asdf.sh ]; then
+  . $HOME/.asdf/asdf.sh
+fi
+
+if [ -f $HOME/.asdf/completions/asdf.bash ]; then
+  . $HOME/.asdf/completions/asdf.bash
+fi
+
+#==============================================================================
 # BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)
 #==============================================================================
 export DEBFULLNAME="Jake Gordon"
