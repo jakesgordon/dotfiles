@@ -32,6 +32,8 @@ call minpac#add('elixir-lang/vim-elixir')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('plasticboy/vim-markdown')
 call minpac#add('stephpy/vim-yaml')
+call minpac#add('leafgarland/typescript-vim')
+call minpac#add('tasn/vim-tsx')
 
 command! InstallPlugins :call minpac#update()
 
