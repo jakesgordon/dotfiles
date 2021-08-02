@@ -205,6 +205,7 @@ alias yb='yarn build'
 alias yw='yarn watch'
 alias yc='yarn cover'
 
+alias ysi='yarn server:install'
 alias yss='yarn server:start'
 alias yst='yarn server:test'
 alias ysl='yarn server:lint'
@@ -313,6 +314,8 @@ dotenv() {
   source ${1:-.env}
   set +o allexport
 }
+
+alias pgr='pg_restore --verbose --clean --no-acl --no-owner -h localhost'
 
 #==============================================================================
 # LOAD ASDF (if present)
