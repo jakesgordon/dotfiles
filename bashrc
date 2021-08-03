@@ -303,6 +303,7 @@ alias tmp='cd ~/tmp'
 alias fd=fdfind
 alias k='cd ~/kevala'
 alias kp='cd ~/kevala-platform'
+alias ib='cd ~/invoicebox'
 alias fancytop=bpytop
 
 alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
