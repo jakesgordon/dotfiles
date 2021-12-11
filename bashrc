@@ -282,6 +282,10 @@ if [ -x /usr/bin/dircolors ]; then  # enable color support of ls and grep
   alias egrep='egrep --color=auto'
 fi
 
+if hash lsd 2>/dev/null; then
+  alias ls='lsd'
+fi
+
 alias c='clear'
 alias less='less -r'
 alias ll='ls -Al'
