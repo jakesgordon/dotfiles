@@ -34,6 +34,7 @@ call minpac#add('plasticboy/vim-markdown')
 call minpac#add('stephpy/vim-yaml')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('tasn/vim-tsx')
+call minpac#add('junegunn/fzf')
 
 command! InstallPlugins :call minpac#update()
 
@@ -107,7 +108,7 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
 nnoremap <Leader>g :TagbarToggle<CR>
 nnoremap <Leader>r :CtrlPMRU<CR>
-nnoremap <Leader>t :CtrlP<CR>
+nnoremap <Leader>t :FZF<CR>
 nnoremap <Leader>s :Startify<CR>
 
 " nnoremap <Leader>d :set background=dark<CR>:colorscheme nord<CR>
@@ -222,6 +223,11 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = [ '.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f' ]
+
+" Customize FZF
+" ===================
+" - Popup window (anchored to the bottom of the current window)
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.5, 'relative': v:true, 'yoffset': 1.0 } }
 
 " Customize NERD tree
 " ===================
