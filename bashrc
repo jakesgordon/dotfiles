@@ -80,6 +80,19 @@ if [ -x "$(command -v batcat)" ]; then
 fi
 
 #==============================================================================
+# FD and FZF
+#==============================================================================
+
+if [ -x "$(command -v fdfind)" ]; then
+  alias fd=fdfind
+fi
+
+if [ -x "$(command -v fzf)" ]; then
+  export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
+  export FZF_DEFAULT_OPTS="-e"
+fi
+
+#==============================================================================
 # RIPGREP
 #==============================================================================
 
@@ -312,7 +325,6 @@ alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias projects='cd ~/projects'
 alias tmp='cd ~/tmp'
-alias fd=fdfind
 alias k='cd ~/kevala'
 alias kp='cd ~/kevala-platform'
 alias ib='cd ~/invoicebox'
