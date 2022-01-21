@@ -329,6 +329,8 @@ alias k='cd ~/kevala'
 alias kp='cd ~/kevala-platform'
 alias ib='cd ~/invoicebox'
 alias fancytop=bpytop
+alias lgit="lazygit"
+alias ldocker="lazydocker"
 
 alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
 
