@@ -328,6 +328,7 @@ alias tmp='cd ~/tmp'
 alias k='cd ~/kevala'
 alias kp='cd ~/kevala-platform'
 alias ib='cd ~/invoicebox'
+alias icc='cd ~/icc'
 alias fancytop=bpytop
 alias lgit="lazygit"
 alias ldocker="lazydocker"
