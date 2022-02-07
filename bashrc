@@ -89,7 +89,7 @@ fi
 
 if [ -x "$(command -v fzf)" ]; then
   export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
-  export FZF_DEFAULT_OPTS="-e"
+  export FZF_DEFAULT_OPTS=""
 fi
 
 #==============================================================================
