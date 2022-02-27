@@ -198,14 +198,16 @@ alias hp='hg pull && hg update'
 # MAKE HELPERS
 #==============================================================================
 
-alias mt='make test'
-alias mr='make run'
-alias md='make deps'
-alias mi='make install'
-alias mw='make watch'
-alias mb='make build'
-alias ml='make lint'
-alias mc='make cover'
+# replaced with MIX helpers (below)
+
+# alias mt='make test'
+# alias mr='make run'
+# alias md='make deps'
+# alias mi='make install'
+# alias mw='make watch'
+# alias mb='make build'
+# alias ml='make lint'
+# alias mc='make cover'
 
 #==============================================================================
 # NODE and YARN HELPERS
@@ -246,10 +248,20 @@ alias yclw='yarn client:lint:watch'
 #==============================================================================
 
 alias imix='iex -S mix'
-alias mixi='mix deps.get'
-alias mixc='mix compile'
-alias mixt='mix test'
-alias mixl='mix lint'
+
+alias ms='mix server'
+alias mr='mix run --no-halt'
+alias md='mix deps.get'
+alias mi='mix deps.get'
+alias mt='mix test'
+alias mw='mix test.watch'
+alias mb='mix build'
+alias mc='mix compile'
+alias ml='mix lint'
+alias mcov='mix cover'
+alias mcovd='mix cover.detail'
+alias mrdb='mix resetdb'
+alias mtdb='mix testdb'
 
 dmix() {
   iex --name `hostname`@127.0.0.1 --cookie debug --erl "-kernel inet_dist_listen_min 9001 inet_dist_listen_max 9001" -S mix $1
