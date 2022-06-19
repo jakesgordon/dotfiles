@@ -391,6 +391,8 @@ fi
 if type git > /dev/null 2>&1; then
   if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
+    # GIT_PROMPT_THEME=Solarized
+    GIT_PROMPT_THEME=Single_line_Dark
     source ~/.bash-git-prompt/gitprompt.sh
   fi
 fi
