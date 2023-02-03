@@ -251,6 +251,8 @@ alias ystw='yarn server:test:watch'
 alias yctw='yarn client:test:watch'
 alias yclw='yarn client:lint:watch'
 
+export NODE_OPTIONS=--max-old-space-size=2048
+
 #==============================================================================
 # ELIXIR/MIX HELPERS
 #==============================================================================
