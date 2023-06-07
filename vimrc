@@ -21,11 +21,11 @@ call minpac#add('maxbrunsfeld/vim-yankstack')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('kana/vim-textobj-entire')
 call minpac#add('jremmen/vim-ripgrep')
-" call minpac#add('psliwka/vim-smoothie')
 call minpac#add('mhinz/vim-startify')
-" call minpac#add('sheerun/vim-polyglot')
+call minpac#add('dense-analysis/ale')
 call minpac#add('vim-ruby/vim-ruby')
 call minpac#add('fatih/vim-go')
+call minpac#add('rust-lang/rust.vim')
 call minpac#add('posva/vim-vue')
 call minpac#add('hail2u/vim-css3-syntax')
 call minpac#add('elixir-lang/vim-elixir')
@@ -82,6 +82,7 @@ set timeoutlen=1000              " timeout on mappings after 1 second
 set ttimeoutlen=0                " timeout on key codes immediately (to avoid pause after ESC)
 set colorcolumn=100              " highlight the 100th column
 set nofoldenable                 " disable code folding (I find it annoying)
+set completeopt=menu,menuone,preview,noselect,noinsert
 
 syntax on                        " enable syntax highlighting
 filetype plugin on               " enable per-filetype plugins
@@ -250,6 +251,13 @@ let g:rails_projections = {
  \   "test/app/*_test.rb": { "alternate": "lib/app/%s.rb" },
  \   "test/api/*_test.rb": { "alternate": "lib/api/%s.rb" },
  \   "test/lib/*_test.rb": { "alternate": "lib/%s.rb" }
+ \ }
+
+" Customize ALE
+" =============
+let g:ale_completion_enabled = 1
+let g:ale_linters = {
+ \ "rust": ["analyzer"],
  \ }
 
 " force .md files to be considered markdown (not modula-2)
