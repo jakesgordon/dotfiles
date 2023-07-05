@@ -298,8 +298,8 @@ alias ports='sudo lsof -i -P -n'
 # PYTHON HELPERS
 #==============================================================================
 
-alias pss='python -m SimpleHTTPServer'
-alias pss3='python3 -m http.server'
+alias pss='python3 -m http.server'
+alias py='python3'
 
 #==============================================================================
 # DOCKER HELPERS
