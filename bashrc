@@ -300,6 +300,11 @@ alias ports='sudo lsof -i -P -n'
 
 alias pss='python3 -m http.server'
 alias py='python3'
+alias pye='source ./env/bin/activate'
+
+if [ -d "$HOME/.local/bin" ]; then
+  append_path "$HOME/.local/bin"
+fi
 
 #==============================================================================
 # DOCKER HELPERS
