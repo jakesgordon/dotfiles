@@ -355,22 +355,13 @@ alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
 alias ci='cd ~/codeincomplete'
-alias up='cd ~/up3'
-alias u='cd ~/up3'
-alias app='cd ~/up3'
-alias ops='cd ~/up-ops'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
-alias projects='cd ~/projects'
 alias tmp='cd ~/tmp'
-alias k='cd ~/kevala'
-alias kp='cd ~/kevala-platform'
-alias ib='cd ~/invoicebox'
 alias icc='cd ~/icc'
 alias fw='cd ~/firewatch'
+alias oz='cd ~/ozeki'
 alias fancytop=bpytop
-alias lgit="lazygit"
-alias ldocker="lazydocker"
 
 alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
 
