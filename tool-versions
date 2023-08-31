@@ -1,5 +1,4 @@
-nodejs 20.2.0
+nodejs 20.5.1
 erlang 26.0.2
-elixir 1.15.4-otp-26
-yarn 1.22.19
-rust 1.70.0
+elixir 1.15.5-otp-26
+rust 1.72.0
