@@ -18,6 +18,7 @@ rm -rf $HOME/.vimrc
 rm -rf $HOME/.htoprc
 rm -rf $HOME/.tool-versions
 rm -rf $HOME/.config/pgcli/config
+rm -rf $HOME/.config/nvim
 
 ln -s $DOTFILES/ackrc         $HOME/.ackrc
 ln -s $DOTFILES/bashrc        $HOME/.bashrc
@@ -31,6 +32,7 @@ ln -s $DOTFILES/vimrc         $HOME/.vimrc
 ln -s $DOTFILES/htoprc        $HOME/.htoprc
 ln -s $DOTFILES/tool-versions $HOME/.tool-versions
 ln -s $DOTFILES/pgcli         $HOME/.config/pgcli/config
+ln -s $DOTFILES/nvim          $HOME/.config/nvim
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C $DOTFILES config --local user.name "Jake Gordon"
