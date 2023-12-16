@@ -174,6 +174,11 @@ nnoremap ]Q :clast<CR>
 " vnoremap <left> <nop>
 " vnoremap <right> <nop>
 
+" CUSTOM COMMANDS
+" ===============
+command EditVim  :edit   ~/.config/nvim/init.vim
+command EditBash :edit   ~/.bashrc
+
 " Customize NERD tree
 " ===================
 let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules', '^_build', '^deps' ]
