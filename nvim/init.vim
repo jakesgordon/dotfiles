@@ -46,6 +46,7 @@ filetype plugin on      " enable per-filetype plugins
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set backup                          " keep a backup file
 set backupcopy=yes                  " use overwrite strategy for backups (to avoid issues with node file watchers)
+set backupdir=~/.backup             " custom backup directory
 set ch=3                            " set command line 3 lines high
 set colorcolumn=120                 " highlight the 120th column
 set completeopt=menu,menuone,preview,noselect,noinsert
