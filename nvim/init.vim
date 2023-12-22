@@ -234,9 +234,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " remove comment leader when joining comment lines
 autocmd FileType * setlocal formatoptions+=j
 
-" disable autoindent for all file types - it's just far too annoying and never works cleanly
-autocmd FileType * setlocal noautoindent nosmartindent nocindent
-
 " ensure elixir filetypes are detected correctly
 au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
 au BufRead,BufNewFile *.eex,*.heex,*.leex set filetype=eelixir
