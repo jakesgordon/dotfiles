@@ -58,7 +58,6 @@ set hlsearch                        " highlight search terms
 set ignorecase                      " case insensitive search by default
 set incsearch                       " do incremental searching
 set laststatus=2                    " always put a status line in.
-set mouse=a                         " enable the mouse
 set nofoldenable                    " disable code folding (I find it annoying)
 set nowrap                          " no line wrapping
 set number                          " enable line numbers
