@@ -34,6 +34,7 @@ call minpac#add('plasticboy/vim-markdown')
 call minpac#add('stephpy/vim-yaml')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('tasn/vim-tsx')
+call minpac#add('github/copilot.vim')
 command! InstallPlugins :call minpac#update()
 
 "=================
@@ -48,7 +49,7 @@ set backup                          " keep a backup file
 set backupcopy=yes                  " use overwrite strategy for backups (to avoid issues with node file watchers)
 set backupdir=~/.backup             " custom backup directory
 set ch=3                            " set command line 3 lines high
-set colorcolumn=120                 " highlight the 120th column
+set colorcolumn=100                 " highlight the 120th column
 set completeopt=menu,menuone,preview,noselect,noinsert
 set expandtab                       " expand tabs to spaces
 set exrc                            " enable per-project .vimrc files in a secure way - https://andrew.stwrt.ca/posts/project-specific-vimrc/
