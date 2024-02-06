@@ -33,7 +33,7 @@ call minpac#add('pangloss/vim-javascript')
 call minpac#add('plasticboy/vim-markdown')
 call minpac#add('stephpy/vim-yaml')
 call minpac#add('leafgarland/typescript-vim')
-call minpac#add('tasn/vim-tsx')
+call minpac#add('peitalin/vim-jsx-typescript')
 call minpac#add('github/copilot.vim')
 command! InstallPlugins :call minpac#update()
 
