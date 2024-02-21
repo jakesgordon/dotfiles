@@ -245,7 +245,16 @@ alias ct='cargo test'
 #==============================================================================
 
 alias dt='deno task'
+alias dtc='dt console'
+alias dts='dt start'
+alias dtt='dt test'
+alias dtf='dt fmt'
+alias dtl='dt lint'
+alias dtdb='dt db'
 alias dr='deno run'
+
+alias v='cd ~/void'
+alias vc='cd ~/void/cloud'
 
 #==============================================================================
 # NODE and YARN HELPERS
