@@ -1,4 +1,5 @@
 deno 1.40.3
+bun 1.0.10
 nodejs 20.8.1
 erlang 26.1.2
 elixir 1.15.7-otp-26
