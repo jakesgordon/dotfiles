@@ -244,7 +244,7 @@ alias ct='cargo test'
 # DENO HELPERS
 #==============================================================================
 
-alias dt='deno task'
+alias dt='deno task --quiet'
 alias dtc='dt console'
 alias dts='dt start'
 alias dtt='dt test'
