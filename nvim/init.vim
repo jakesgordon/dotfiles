@@ -223,10 +223,43 @@ let g:startify_padding_left = 10
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
- \ "typescript": ["cspell", "deno", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
- \ "typescriptreact": ["cspell", "deno", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+ \ "javascript": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+ \ "typescript": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+ \ "typescriptreact": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
  \ "rust": ["analyzer"],
  \ }
+
+" DENO STUFF
+" ==========
+
+function! FindDenoJsonc(path)
+    " Check if we're at the root (/ or C:\)
+    if a:path == '/' || a:path =~ '^[A-Z]:\\$'
+        return 0
+    endif
+
+    " Check for deno.jsonc in the current path
+    if filereadable(a:path . '/deno.jsonc')
+        return 1
+    endif
+
+    " Recurse up the directory tree
+    let parent = fnamemodify(a:path, ':h')
+    return FindDenoJsonc(parent)
+endfunction
+
+" Auto command to set makeprg if deno.jsonc is found in any parent directory
+autocmd BufRead,BufNewFile *.ts,*.js if FindDenoJsonc(expand('%:p:h'))
+    \ | let b:isdeno = 1
+    \ | let b:ale_linters = {
+    \     "typescript": ["deno", "cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+    \     }
+    \ | else
+    \ | let b:isdeno = 0
+    \ | let b:ale_linters = {
+    \     "typescript": [        "cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+    \     }
+    \ | endif
 
 " MISCELLANEOUS
 " =============
