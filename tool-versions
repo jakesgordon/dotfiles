@@ -1,7 +1,7 @@
 deno 1.40.3
-bun 1.0.10
+bun 1.0.30
 nodejs 20.8.1
 erlang 26.1.2
 elixir 1.15.7-otp-26
-rust 1.73.0
+rust 1.76.0
 golang 1.21.3
