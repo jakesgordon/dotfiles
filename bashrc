@@ -255,6 +255,11 @@ alias dr='deno run'
 
 alias v='cd ~/void'
 alias vc='cd ~/void/cloud'
+alias cloud='cd ~/void/cloud'
+alias sdk='cd ~/void/sdk'
+alias app='cd ~/void/app'
+alias snakes='cd ~/void/snakes'
+alias tiny='cd ~/void/tiny-platformer'
 
 #==============================================================================
 # NODE and YARN HELPERS
