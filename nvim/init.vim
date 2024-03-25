@@ -249,15 +249,17 @@ function! FindDenoJsonc(path)
 endfunction
 
 " Auto command to set makeprg if deno.jsonc is found in any parent directory
-autocmd BufRead,BufNewFile *.ts,*.js if FindDenoJsonc(expand('%:p:h'))
+autocmd BufRead,BufNewFile *.ts,*.tsx,*.js*.jsx if FindDenoJsonc(expand('%:p:h'))
     \ | let b:isdeno = 1
     \ | let b:ale_linters = {
     \     "typescript": ["deno", "cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+    \     "typescriptreact": ["deno", "cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
     \     }
     \ | else
     \ | let b:isdeno = 0
     \ | let b:ale_linters = {
     \     "typescript": ["cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+    \     "typescriptreact": ["cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
     \     }
     \ | endif
 
