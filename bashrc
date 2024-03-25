@@ -203,7 +203,6 @@ alias fr='foreman run'
 #==============================================================================
 
 alias gs='git status'
-alias gr='git pull --rebase'
 alias gb='git branch -a'
 alias gl='git log --graph --all --decorate'
 alias gd='git diff HEAD --color'
@@ -253,8 +252,12 @@ alias dtl='dt lint'
 alias dtdb='dt db'
 alias dr='deno run'
 
-alias v='cd ~/void'
-alias vc='cd ~/void/cloud'
+alias void='cd ~/void'
+alias cloud='cd ~/void/cloud'
+alias app='cd ~/void/app'
+alias sdk='cd ~/void/sdk'
+alias snakes='cd ~/void/snakes'
+alias tiny='cd ~/void/tiny-platformer'
 
 #==============================================================================
 # NODE and YARN HELPERS
