@@ -175,6 +175,14 @@ if [ -d "$HOME/.digitalocean" ]; then
 fi
 
 #==============================================================================
+# FLY HOSTING
+#==============================================================================
+
+if [ -d "$HOME/.fly" ]; then
+  append_path "$HOME/.fly/bin"
+fi
+
+#==============================================================================
 # GRIP TOKEN
 #==============================================================================
 
@@ -252,6 +260,7 @@ alias dtl='dt lint'
 alias dtdb='dt db'
 alias dr='deno run'
 
+alias os='cd ~/os'
 alias void='cd ~/void'
 alias cloud='cd ~/void/cloud'
 alias app='cd ~/void/app'
@@ -445,4 +454,3 @@ if type git > /dev/null 2>&1; then
     source ~/.bash-git-prompt/gitprompt.sh
   fi
 fi
-
