@@ -258,6 +258,7 @@ alias cloud='cd ~/void/cloud'
 alias app='cd ~/void/app'
 alias sdk='cd ~/void/sdk'
 alias snakes='cd ~/void/snakes'
+alias tetris='cd ~/void/tetris'
 alias tiny='cd ~/void/tiny-platformer'
 
 #==============================================================================
