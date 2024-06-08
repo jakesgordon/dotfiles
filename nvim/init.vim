@@ -252,8 +252,8 @@ endfunction
 autocmd BufRead,BufNewFile *.ts,*.tsx,*.js*.jsx if FindDenoJsonc(expand('%:p:h'))
     \ | let b:isdeno = 1
     \ | let b:ale_linters = {
-    \     "typescript": ["deno", "cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
-    \     "typescriptreact": ["deno", "cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
+    \     "typescript": ["deno", "cspell", "eslint", "tslint", "standard", "typecheck", "xo"],
+    \     "typescriptreact": ["deno", "cspell", "eslint", "tslint", "standard", "typecheck", "xo"],
     \     }
     \ | else
     \ | let b:isdeno = 0
