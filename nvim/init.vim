@@ -35,6 +35,7 @@ call minpac#add('stephpy/vim-yaml')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('peitalin/vim-jsx-typescript')
 call minpac#add('github/copilot.vim')
+call minpac#add('OmniSharp/omnisharp-vim')
 command! InstallPlugins :call minpac#update()
 
 "=================
@@ -181,7 +182,7 @@ command EditBash :edit   ~/.bashrc
 
 " Customize NERD tree
 " ===================
-let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^obj$', 'node_modules', '^_build', '^deps' ]
+let NERDTreeIgnore=['\~$', '\.swp$', '^gen$', '^bin$', '^obj$', 'node_modules', '^_build', '^deps' ]
 
 " Customize vim-ripgrep
 " =====================
@@ -228,6 +229,7 @@ let g:ale_linters = {
  \ "typescript": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
  \ "typescriptreact": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
  \ "rust": ["analyzer"],
+ \ "cs": ["OmniSharp"],
  \ }
 
 " DENO STUFF
@@ -263,6 +265,12 @@ autocmd BufRead,BufNewFile *.ts,*.tsx,*.js*.jsx if FindDenoJsonc(expand('%:p:h')
     \     "typescriptreact": ["cspell", "eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
     \     }
     \ | endif
+
+" ======================
+" DOTNET OMNISHARP STUFF
+" ======================
+let g:OmniSharp_server_use_net6 = 1
+let g:OmniSharp_server_use_mono = 0
 
 " MISCELLANEOUS
 " =============
