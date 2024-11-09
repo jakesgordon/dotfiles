@@ -230,10 +230,6 @@ let g:ale_linters = {
  \ "rust": ["analyzer"],
  \ "cs": ["OmniSharp"],
  \ }
-let g:ale_fixers = {
- \ "cs": ['dotnet-format'],
- \ }
-let g:ale_cs_dotnet_format_options = "whitespace"
 
 " DENO STUFF
 " ==========
