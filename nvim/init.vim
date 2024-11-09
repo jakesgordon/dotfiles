@@ -34,7 +34,6 @@ call minpac#add('plasticboy/vim-markdown')
 call minpac#add('stephpy/vim-yaml')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('peitalin/vim-jsx-typescript')
-call minpac#add('github/copilot.vim')
 call minpac#add('OmniSharp/omnisharp-vim')
 command! InstallPlugins :call minpac#update()
 
@@ -231,6 +230,10 @@ let g:ale_linters = {
  \ "rust": ["analyzer"],
  \ "cs": ["OmniSharp"],
  \ }
+let g:ale_fixers = {
+ \ "cs": ['dotnet-format'],
+ \ }
+let g:ale_cs_dotnet_format_options = "whitespace"
 
 " DENO STUFF
 " ==========
