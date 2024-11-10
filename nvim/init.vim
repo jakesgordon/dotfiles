@@ -19,6 +19,8 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('maxbrunsfeld/vim-yankstack')
+call minpac#add('prabirshrestha/asyncomplete.vim')
+call minpac#add('andreypopp/asyncomplete-ale.vim')
 " ============================
 " PROGRAMMING LANGUAGE PLUGINS
 " ============================
@@ -270,6 +272,42 @@ autocmd BufRead,BufNewFile *.ts,*.tsx,*.js*.jsx if FindDenoJsonc(expand('%:p:h')
 " ======================
 let g:OmniSharp_server_use_net6 = 1
 let g:OmniSharp_server_use_mono = 0
+let g:OmniSharp_selector_ui = 'fzf'
+let g:OmniSharp_selector_findusages = 'fzf'
+
+augroup omnisharp_commands
+  autocmd!
+
+  autocmd CursorHold *.cs OmniSharpTypeLookup
+
+  " The following commands are contextual, based on the cursor position.
+  autocmd FileType cs nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
+  autocmd FileType cs nmap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+  autocmd FileType cs imap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>os= <Plug>(omnisharp_code_format)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfu <Plug>(omnisharp_find_usages)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfi <Plug>(omnisharp_find_implementations)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ospd <Plug>(omnisharp_preview_definition)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ospi <Plug>(omnisharp_preview_implementations)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ost <Plug>(omnisharp_type_lookup)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osd <Plug>(omnisharp_documentation)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfs <Plug>(omnisharp_find_symbol)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfx <Plug>(omnisharp_fix_usings)
+augroup END
+
+"=====================
+" ASYNC COMPLETE STUFF
+"=====================
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+au User asyncomplete_setup call asyncomplete#ale#register_source({
+ \ 'name': 'reason',
+ \ 'linter': 'flow',
+ \ })
 
 " MISCELLANEOUS
 " =============
