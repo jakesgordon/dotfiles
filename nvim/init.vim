@@ -103,6 +103,7 @@ let g:airline_theme="solarized"
 " ===========
 
 nnoremap <Leader>f :NERDTreeToggle<CR>
+nnoremap <Leader>F :OmniSharpCodeFormat<CR>
 nnoremap <Leader>a :Rg<Space>
 nnoremap <Leader>t :FZF<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
@@ -232,6 +233,15 @@ let g:ale_linters = {
  \ "rust": ["analyzer"],
  \ "cs": ["OmniSharp"],
  \ }
+let g:ale_fixers = {
+ \ "cs": ["omnisharp-fixer"],
+ \ }
+
+function! OmniSharpFixer(buffer) abort
+  OmniSharpCodeFormat
+endfunction
+
+call ale#fix#registry#Add('omnisharp-fixer', 'OmniSharpFixer', ['cs'], 'Use OmniSharpCodeFormat as your ALE fixer')
 
 " DENO STUFF
 " ==========
