@@ -5,3 +5,4 @@ erlang 26.1.2
 elixir 1.15.7-otp-26
 rust 1.76.0
 golang 1.21.3
+ruby 3.3.5
