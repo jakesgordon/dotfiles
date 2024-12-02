@@ -232,6 +232,10 @@ alias cb='cargo build'
 alias cr='cargo run'
 alias ct='cargo test'
 
+if [ -d "$HOME/.cargo/bin" ]; then
+  append_path "$HOME/.cargo/bin"
+fi
+
 #==============================================================================
 # MAKE HELPERS
 #==============================================================================
