@@ -225,7 +225,7 @@ let g:startify_padding_left = 10
 " Customize ALE
 " =============
 let g:ale_completion_enabled = 1
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 let g:ale_linters = {
  \ "javascript": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
  \ "typescript": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
