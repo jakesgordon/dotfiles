@@ -96,7 +96,7 @@ if [ -x "$(command -v fdfind)" ]; then
 fi
 
 if [ -x "$(command -v fzf)" ]; then
-  export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
+  export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git --ignore-file .gitignore"
   export FZF_DEFAULT_OPTS=""
 fi
 
@@ -418,6 +418,8 @@ alias oz='cd ~/ozeki'
 alias fancytop=bpytop
 
 alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
+
+alias lj='JAM_ENV=local jam'
 
 alias no-color='sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"'
 
