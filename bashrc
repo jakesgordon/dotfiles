@@ -347,6 +347,7 @@ dobserve() {
 
 alias ports='sudo lsof -i -P -n'
 alias ubuntu='lsb_release -a'
+alias kernel='uname -r'
 
 #==============================================================================
 # PYTHON HELPERS
