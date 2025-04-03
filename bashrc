@@ -240,6 +240,8 @@ fi
 # MAKE HELPERS
 #==============================================================================
 
+alias j='just'
+
 # replaced with MIX helpers (below)
 
 # alias mt='make test'

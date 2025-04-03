@@ -37,6 +37,7 @@ call minpac#add('stephpy/vim-yaml')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('peitalin/vim-jsx-typescript')
 call minpac#add('OmniSharp/omnisharp-vim')
+call minpac#add('NoahTheDuke/vim-just')
 command! InstallPlugins :call minpac#update()
 
 "=================
