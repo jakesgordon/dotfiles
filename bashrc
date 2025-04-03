@@ -436,12 +436,9 @@ alias pgr='pg_restore --verbose --clean --no-acl --no-owner -h localhost'
 # LOAD ASDF (if present)
 #==============================================================================
 
-if [ -f $HOME/.asdf/asdf.sh ]; then
-  . $HOME/.asdf/asdf.sh
-fi
-
-if [ -f $HOME/.asdf/completions/asdf.bash ]; then
-  . $HOME/.asdf/completions/asdf.bash
+if [ -d "$HOME/.asdf/shims" ]; then
+  prepend_path "$HOME/.asdf/shims"
+  . <(asdf completion bash)
 fi
 
 #==============================================================================
