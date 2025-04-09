@@ -1,5 +1,6 @@
 just 1.40.0
 bun 1.2.8
+nodejs 22.10.0
 erlang 26.1.2
 elixir 1.15.7-otp-26
 golang 1.23.3

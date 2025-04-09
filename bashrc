@@ -294,7 +294,7 @@ alias sdk='cd ~/void/sdk'
 alias snakes='cd ~/void/snakes'
 alias tetris='cd ~/void/tetris'
 alias tiny='cd ~/void/tiny-platformer'
-alias vc='cd ~/void/cloud.net'
+alias vc='cd ~/void/cloud-platform'
 
 #==============================================================================
 # NODE and YARN HELPERS
