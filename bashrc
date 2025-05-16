@@ -270,6 +270,10 @@ fi
 # alias ml='make lint'
 # alias mc='make cover'
 
+alias jr='just run'
+alias jb='just build'
+alias jt='just test'
+
 #==============================================================================
 # DENO HELPERS
 #==============================================================================
@@ -295,6 +299,9 @@ alias snakes='cd ~/void/snakes'
 alias tetris='cd ~/void/tetris'
 alias tiny='cd ~/void/tiny-platformer'
 alias vc='cd ~/void/cloud-platform'
+alias vcc='cd ~/void/cloud-cli'
+
+alias live='aws logs start-live-tail --log-group-identifiers $LIVE_TAIL_ARN'
 
 #==============================================================================
 # NODE and YARN HELPERS

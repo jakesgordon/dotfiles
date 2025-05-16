@@ -20,6 +20,7 @@ call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-projectionist')
 call minpac#add('maxbrunsfeld/vim-yankstack')
 call minpac#add('prabirshrestha/asyncomplete.vim')
+call minpac#add('prabirshrestha/asyncomplete-omni.vim')
 call minpac#add('andreypopp/asyncomplete-ale.vim')
 " ============================
 " PROGRAMMING LANGUAGE PLUGINS
@@ -319,6 +320,22 @@ au User asyncomplete_setup call asyncomplete#ale#register_source({
  \ 'name': 'reason',
  \ 'linter': 'flow',
  \ })
+
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 1
+
+augroup asyncomplete_omnifunc_go
+  autocmd!
+  autocmd FileType go call asyncomplete#register_source({
+    \ 'name': 'omni',
+    \ 'allowlist': ['go'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#omni#completor'),
+    \ 'trigger_patterns': {
+    \   'go': ['\.\w*']
+    \ },
+    \ })
+augroup END
 
 " MISCELLANEOUS
 " =============
