@@ -273,6 +273,7 @@ fi
 alias jr='just run'
 alias jb='just build'
 alias jt='just test'
+alias jc='just cover'
 
 #==============================================================================
 # DENO HELPERS
