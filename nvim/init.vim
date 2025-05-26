@@ -227,16 +227,17 @@ let g:startify_padding_left = 10
 " Customize ALE
 " =============
 let g:ale_completion_enabled = 1
-" let g:ale_fix_on_save = 1
 let g:ale_linters = {
  \ "javascript": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
  \ "typescript": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
  \ "typescriptreact": ["eslint", "tslint", "standard", "tsserver", "typecheck", "xo"],
  \ "rust": ["analyzer"],
  \ "cs": ["OmniSharp"],
+ \ "go": ["gofmt", "govet", "staticcheck"],
  \ }
 let g:ale_fixers = {
  \ "cs": ["omnisharp-fixer"],
+ \ "go": ["gofmt"],
  \ }
 
 function! OmniSharpFixer(buffer) abort
@@ -245,11 +246,17 @@ endfunction
 
 call ale#fix#registry#Add('omnisharp-fixer', 'OmniSharpFixer', ['cs'], 'Use OmniSharpCodeFormat as your ALE fixer')
 
+let g:ale_fix_on_save = 0
+augroup ale_go_fix
+  autocmd!
+  autocmd FileType go let b:ale_fix_on_save = 1
+augroup END
+
 " DENO STUFF
 " ==========
 
 function! FindDenoJsonc(path)
-    " Check if we're at the root (/ or C:\)
+    " Check if we're at the root (/ or C:\):
     if a:path == '/' || a:path =~ '^[A-Z]:\\$'
         return 0
     endif
@@ -336,6 +343,8 @@ augroup asyncomplete_omnifunc_go
     \ },
     \ })
 augroup END
+
+let g:go_fmt_autosave = 0
 
 " MISCELLANEOUS
 " =============
