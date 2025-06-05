@@ -81,6 +81,14 @@ if [ -d "$HOME/.asdf/shims" ]; then
 fi
 
 #==============================================================================
+# LOCAL BIN
+#==============================================================================
+
+if [ -d "$HOME/.local/bin" ]; then
+  append_path "$HOME/.local/bin"
+fi
+
+#==============================================================================
 # JUST
 #==============================================================================
 
@@ -149,27 +157,11 @@ if [ -d "/usr/local/go" ]; then
 fi
 
 #==============================================================================
-# FLUTTER
-#==============================================================================
-
-if [ -d "/usr/local/bin/flutter/bin" ]; then
-  append_path "/usr/local/bin/flutter/bin"
-fi
-
-#==============================================================================
 # DOTNET
 #==============================================================================
 
 if [ -d "$HOME/.dotnet/tools" ]; then
   append_path "$HOME/.dotnet/tools"
-fi
-
-#==============================================================================
-# YARN
-#==============================================================================
-
-if [ -d "$HOME/.yarn/bin" ]; then
-  append_path "$HOME/.yarn/bin"
 fi
 
 #==============================================================================
@@ -182,22 +174,6 @@ if [ -d "$HOME/.aws" ]; then
   fi
   if [ -e "$HOME/.aws/aws_secret_key" ]; then
     export AWS_SECRET_KEY=`cat $HOME/.aws/aws_secret_key`
-  fi
-fi
-
-#==============================================================================
-# DIGITAL OCEAN ENVIRONMENT
-#==============================================================================
-
-if [ -d "$HOME/.digitalocean" ]; then
-  if [ -e "$HOME/.digitalocean/do_access_token" ]; then
-    export DO_ACCESS_TOKEN=`cat $HOME/.digitalocean/do_access_token`
-  fi
-  if [ -e "$HOME/.digitalocean/do_client_id" ]; then
-    export DO_CLIENT_ID=`cat $HOME/.digitalocean/do_client_id`
-  fi
-  if [ -e "$HOME/.digitalocean/do_api_key" ]; then
-    export DO_API_KEY=`cat $HOME/.digitalocean/do_api_key`
   fi
 fi
 
@@ -270,39 +246,14 @@ fi
 # alias ml='make lint'
 # alias mc='make cover'
 
+#==============================================================================
+# JUST HELPERS
+#==============================================================================
+
 alias jr='just run'
 alias jb='just build'
 alias jt='just test'
 alias jc='just cover'
-
-#==============================================================================
-# DENO HELPERS
-#==============================================================================
-
-alias dt='deno task --quiet'
-alias dtc='dt console'
-alias dts='dt start'
-alias dtt='dt test'
-alias dttl='dt test loudly'
-alias dtf='dt fmt'
-alias dtl='dt lint'
-alias dtdb='dt db'
-alias dr='deno run'
-
-alias os='cd ~/os'
-alias void='cd ~/void'
-alias cloud='cd ~/void/cloud'
-alias actions='cd ~/void/actions'
-alias app='cd ~/void/editor'
-alias editor='cd ~/void/editor'
-alias sdk='cd ~/void/sdk'
-alias snakes='cd ~/void/snakes'
-alias tetris='cd ~/void/tetris'
-alias tiny='cd ~/void/tiny-platformer'
-alias vc='cd ~/void/cloud-platform'
-alias vcc='cd ~/void/cloud-cli'
-
-alias live='aws logs start-live-tail --log-group-identifiers $LIVE_TAIL_ARN'
 
 #==============================================================================
 # NODE and YARN HELPERS
@@ -322,21 +273,6 @@ alias yl='yarn lint'
 alias yb='yarn build'
 alias yw='yarn watch'
 alias yc='yarn cover'
-
-alias ysi='yarn server:install'
-alias yss='yarn server:start'
-alias yst='yarn server:test'
-alias ysl='yarn server:lint'
-alias ysc='yarn server:cover'
-alias ycs='yarn client:start'
-alias yct='yarn client:test'
-alias ycl='yarn client:lint'
-alias ycc='yarn client:cover'
-
-alias yscd='yarn server:cover:detail'
-alias ystw='yarn server:test:watch'
-alias yctw='yarn client:test:watch'
-alias yclw='yarn client:lint:watch'
 
 export NODE_OPTIONS=--max-old-space-size=4096
 
@@ -372,21 +308,12 @@ dobserve() {
   erl -name `hostname`@127.0.0.1 -setcookie debug -run observer
 }
 
-alias ports='sudo lsof -i -P -n'
-alias ubuntu='lsb_release -a'
-alias kernel='uname -r'
-
 #==============================================================================
 # PYTHON HELPERS
 #==============================================================================
 
 alias pss='python3 -m http.server'
 alias py='python3'
-alias pye='source ./env/bin/activate'
-
-if [ -d "$HOME/.local/bin" ]; then
-  append_path "$HOME/.local/bin"
-fi
 
 #==============================================================================
 # DOCKER HELPERS
@@ -423,10 +350,6 @@ if hash lsd 2>/dev/null; then
   alias ls='lsd'
 fi
 
-if hash dog 2>/dev/null; then
-  alias dig='dog'
-fi
-
 alias c='clear'
 alias less='less -r'
 alias ll='ls -Al'
@@ -436,18 +359,15 @@ alias ps='ps xawf'
 alias vimvim="vim -c EditVim"
 alias vimbash="vim -c EditBash"
 
+alias ports='sudo lsof -i -P -n'
+alias ubuntu='lsb_release -a'
+alias kernel='uname -r'
+
 alias ci='cd ~/codeincomplete'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias tmp='cd ~/tmp'
-alias icc='cd ~/icc'
-alias fw='cd ~/firewatch'
-alias oz='cd ~/ozeki'
 alias fancytop=bpytop
-
-alias netflix='/opt/google/chrome/chrome --app=https://netflix.com'
-
-alias lj='JAM_ENV=local jam'
 
 alias no-color='sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"'
 
