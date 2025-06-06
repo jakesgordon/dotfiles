@@ -5,6 +5,7 @@ DOTFILES=$(dirname $REALPATH)
 
 mkdir -p $HOME/.config
 mkdir -p $HOME/.config/pgcli
+mkdir -p $HOME/.config/zed
 mkdir -p $HOME/.omnisharp
 
 rm -rf $HOME/.ackrc
