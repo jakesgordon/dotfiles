@@ -20,6 +20,7 @@ rm -rf $HOME/.htoprc
 rm -rf $HOME/.tool-versions
 rm -rf $HOME/.config/pgcli/config
 rm -rf $HOME/.config/nvim
+rm -rf $HOME/.config/zed/settings.json
 rm -rf $HOME/.omnisharp/omnisharp.json
 
 ln -s $DOTFILES/ackrc          $HOME/.ackrc
@@ -35,6 +36,7 @@ ln -s $DOTFILES/htoprc         $HOME/.htoprc
 ln -s $DOTFILES/tool-versions  $HOME/.tool-versions
 ln -s $DOTFILES/pgcli          $HOME/.config/pgcli/config
 ln -s $DOTFILES/nvim           $HOME/.config/nvim
+ln -s $DOTFILES/zed.json       $HOME/.config/zed/settings.json
 ln -s $DOTFILES/omnisharp.json $HOME/.omnisharp/omnisharp.json
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
