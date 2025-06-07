@@ -17,19 +17,37 @@
   },
   "vim_mode": true,
   "tab_size": 2,
+  "indent_guides": {
+    "enabled": false
+  },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "buffer_font_weight": 500,
+  "gutter": {
+    "folds": false,
+    "runnables": false,
+    "breakpoints": false,
+    "code_actions": false
+  },
   "buffer_font_family": "Ubuntu Mono",
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark"
   },
-  "preview_tabs": {
-    "enable_preview_from_file_finder": false
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
   },
-  "auto_split": true,
+  "tab_bar": {
+    "show": true,
+    "show_tab_bar_buttons": false,
+    "show_nav_history_buttons": false
+  },
+  "restore_on_startup": "last_workspace",
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.7
+  },
   "languages": {
     "Markdown": {
       "soft_wrap": "none"
