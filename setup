@@ -4,43 +4,31 @@ REALPATH=$(perl -e 'use Cwd "abs_path"; print abs_path(@ARGV[0])' -- "$0")      
 DOTFILES=$(dirname $REALPATH)
 
 mkdir -p $HOME/.config
-mkdir -p $HOME/.config/pgcli
+mkdir -p $HOME/.config/nvim
 mkdir -p $HOME/.config/zed
-mkdir -p $HOME/.omnisharp
+mkdir -p $HOME/.config/lsd
 
-rm -rf $HOME/.ackrc
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.gitignore
 rm -rf $HOME/.irbrc
 rm -rf $HOME/.ripgreprc
-rm -rf $HOME/.tmux.conf
-rm -rf $HOME/.vim
-rm -rf $HOME/.vimrc
 rm -rf $HOME/.htoprc
 rm -rf $HOME/.tool-versions
-rm -rf $HOME/.config/pgcli/config
 rm -rf $HOME/.config/nvim
-rm -rf $HOME/.config/zed/settings.json
-rm -rf $HOME/.config/zed/keymap.json
-rm -rf $HOME/.omnisharp/omnisharp.json
+rm -rf $HOME/.config/zed
+rm -rf $HOME/.config/lsd
 
-ln -s $DOTFILES/ackrc             $HOME/.ackrc
 ln -s $DOTFILES/bashrc            $HOME/.bashrc
 ln -s $DOTFILES/gitconfig         $HOME/.gitconfig
 ln -s $DOTFILES/gitignore         $HOME/.gitignore
 ln -s $DOTFILES/irbrc             $HOME/.irbrc
 ln -s $DOTFILES/ripgreprc         $HOME/.ripgreprc
-ln -s $DOTFILES/tmux.conf         $HOME/.tmux.conf
-ln -s $DOTFILES/vim               $HOME/.vim
-ln -s $DOTFILES/vimrc             $HOME/.vimrc
 ln -s $DOTFILES/htoprc            $HOME/.htoprc
 ln -s $DOTFILES/tool-versions     $HOME/.tool-versions
-ln -s $DOTFILES/pgcli             $HOME/.config/pgcli/config
 ln -s $DOTFILES/nvim              $HOME/.config/nvim
-ln -s $DOTFILES/zed/settings.json $HOME/.config/zed/settings.json
-ln -s $DOTFILES/zed/keymap.json   $HOME/.config/zed/keymap.json
-ln -s $DOTFILES/omnisharp.json    $HOME/.omnisharp/omnisharp.json
+ln -s $DOTFILES/zed               $HOME/.config/zed
+ln -s $DOTFILES/lsd               $HOME/.config/lsd
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C $DOTFILES config --local user.name "Jake Gordon"
