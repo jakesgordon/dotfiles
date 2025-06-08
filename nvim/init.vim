@@ -4,7 +4,7 @@
 
 packadd minpac
 call minpac#init()
-call minpac#add('lifepillar/vim-solarized8')
+call minpac#add('maxmx03/solarized.nvim')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('jremmen/vim-ripgrep')
@@ -98,8 +98,7 @@ set wildmode=longest,list           " and show bash like auto complete list
 
 set termguicolors
 set background=light
-colorscheme solarized8
-let g:airline_theme="solarized"
+colorscheme solarized
 
 " LEADER KEYS
 " ===========
