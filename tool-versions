@@ -1,6 +1,7 @@
-just 1.40.0
+nodejs 24.1.0
 bun 1.2.15
 erlang 28.0
 elixir 1.18.4
 ruby 3.4.4
 golang 1.24.3
+just 1.40.0
