@@ -26,6 +26,13 @@ return {
   "tpope/vim-surround",
   "tpope/vim-projectionist",
   {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+    }
+  },
+  {
     "mason-org/mason.nvim",
   },
   -- {

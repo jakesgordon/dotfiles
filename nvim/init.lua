@@ -1,7 +1,5 @@
 -- TODO
 -- ====
--- * figure out autocomplete
--- * nvim-cmp - https://github.com/hrsh7th/nvim-cmp
 -- * telescope.nvim - https://github.com/nvim-telescope/telescope.nvim
 -- * oil.nvim - https://github.com/stevearc/oil.nvim
 -- * decide on LSP strategy (mason or no mason - maybe copy neovim/nvim-lspconfig files into lua/lsp dir ?
@@ -185,6 +183,32 @@ vim.api.nvim_create_autocmd("FileType", {
 require("config.lazy")
 vim.cmd("colorscheme solarized")
 
+-- AUTO COMPLETE
+-- =============
+local cmp = require("cmp")
+cmp.setup({
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
+  },
+  mapping = {
+    ['<Down>'] = cmp.mapping.select_next_item(),
+    ['<Up>'] = cmp.mapping.select_prev_item(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true
+    }),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  },
+})
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 -- LSPs - NOPE
 -- ====
 
@@ -261,7 +285,8 @@ vim.lsp.config["lua-language-server"] = {
         globals = { "vim" }
       }
     }
-  }
+  },
+  capabilities = capabilities
 }
 
 vim.lsp.config["typescript-language-server"] = {
@@ -275,12 +300,14 @@ vim.lsp.config["typescript-language-server"] = {
     "package.json",
     ".git"
   },
+  capabilities = capabilities
 }
 
 vim.lsp.config["superhtml"] = {
   cmd = { 'superhtml', 'lsp' },
   filetypes = { 'superhtml', 'html' },
   root_markers = { '.git' },
+  capabilities = capabilities
 }
 
 vim.lsp.config["css-lsp"] = {
@@ -293,6 +320,7 @@ vim.lsp.config["css-lsp"] = {
     scss = { validate = true },
     less = { validate = true },
   },
+  capabilities = capabilities
 }
 
 vim.lsp.config["json-lsp"] = {
@@ -302,6 +330,7 @@ vim.lsp.config["json-lsp"] = {
     provideFormatter = true,
   },
   root_markers = { '.git' },
+  capabilities = capabilities
 }
 
 vim.lsp.config["yaml-language-server"] = {
@@ -312,6 +341,7 @@ vim.lsp.config["yaml-language-server"] = {
     -- https://github.com/redhat-developer/vscode-redhat-telemetry#how-to-disable-telemetry-reporting
     redhat = { telemetry = { enabled = false } },
   },
+  capabilities = capabilities
 }
 
 vim.lsp.config["sqlls"] = {
@@ -327,6 +357,7 @@ vim.lsp.config["sqlls"] = {
       }
     }
   },
+  capabilities = capabilities
 }
 
 vim.lsp.enable("lua-language-server")
@@ -336,3 +367,4 @@ vim.lsp.enable("css-lsp")
 vim.lsp.enable("json-lsp")
 vim.lsp.enable("yaml-language-server")
 vim.lsp.enable("sqlls")
+
