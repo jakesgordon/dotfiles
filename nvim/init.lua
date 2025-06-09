@@ -1,12 +1,20 @@
 -- TODO
 -- ====
--- * read up on trouble.nvim
--- * decide on LSP strategy (mason or no mason - maybe copy neovim/nvim-lspconfig files into lua/lsp dir ?
 -- * figure out autocomplete
--- * golang LSP support
--- * ruby LSP support
--- * elixir LSP support
+-- * nvim-cmp - https://github.com/hrsh7th/nvim-cmp
+-- * telescope.nvim - https://github.com/nvim-telescope/telescope.nvim
+-- * oil.nvim - https://github.com/stevearc/oil.nvim
+-- * decide on LSP strategy (mason or no mason - maybe copy neovim/nvim-lspconfig files into lua/lsp dir ?
+
+-- * go - cloud-cli
+-- * c# - cloud-platform
+-- * ruby - ???
+-- * elixir - ???
+-- * python - ???
+-- * java - ???
+-- * c/c++ - ???
 -- * do I still need any of those legacy language plugins???
+-- * (maybe) replace vim-airline with lualine.nvim
 
 -- =================
 -- GENERAL SETTINGS
@@ -68,7 +76,6 @@ vim.g.mapleader = "\\"
 vim.keymap.set("n", "<Leader>f", ":NERDTreeToggle<CR>")
 vim.keymap.set("n", "<Leader>a", ":Rg<Space>")
 vim.keymap.set("n", "<Leader>t", ":FZF<CR>")
-vim.keymap.set("n", "<Leader>e", ":Trouble diagnostics toggle<CR>")
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
 vim.keymap.set("n", "<Leader>d", ":set background=dark<CR>")
 vim.keymap.set("n", "<Leader>l", ":set background=light<CR>")
@@ -101,13 +108,43 @@ vim.keymap.set("n", "<C-w>>", "8<C-w>>")
 vim.keymap.set("n", "<C-w>,", "8<C-w><")
 vim.keymap.set("n", "<C-w>.", "8<C-w>>")
 
+-- DIAGNOSTICS
+-- ===========
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  float = {
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  }
+});
+
+vim.keymap.set("n", "<Leader>xx", function()
+  require("trouble").toggle({
+    mode = "diagnostics",
+    focus = true
+  })
+end)
+
+vim.keymap.set("n", "<C-e>", function()
+  local diagnostics = vim.diagnostic.get(0, {lnum = vim.fn.line(".") - 1})
+  if #diagnostics == 0 then
+    vim.diagnostic.goto_next()
+  end
+  vim.diagnostic.open_float(nil, { focusable = false })
+end)
+
 -- CUSTOM COMMANDS
 -- ===============
 vim.api.nvim_create_user_command("EditVim", "edit ~/.config/nvim/init.lua", {})
 vim.api.nvim_create_user_command("EditBash", "edit ~/.bashrc", {})
 
 -- CUSTOM NERDTree
--- ===================
+-- ===============
 vim.g.NERDTreeIgnore = { '^gen$', '^bin$', '^obj$', 'node_modules', '^deps' }
 
 -- CUSTOM Rg
@@ -197,6 +234,11 @@ local registry = require("mason-registry")
 local servers = {
   "lua-language-server",
   "typescript-language-server",
+  "superhtml",
+  "css-lsp",
+  "json-lsp",
+  "yaml-language-server",
+  "sqlls",
 }
 
 for _, server in ipairs(servers) do
@@ -205,7 +247,7 @@ for _, server in ipairs(servers) do
   end
 end
 
-vim.lsp.config["lua-lsp"] = {
+vim.lsp.config["lua-language-server"] = {
   cmd = { "lua-language-server" },
   filetypes = { 'lua' },
   root_markers = {
@@ -221,9 +263,8 @@ vim.lsp.config["lua-lsp"] = {
     }
   }
 }
-vim.lsp.enable("lua-lsp")
 
-vim.lsp.config["typescript-lsp"] = {
+vim.lsp.config["typescript-language-server"] = {
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
     "javascript",
@@ -235,5 +276,63 @@ vim.lsp.config["typescript-lsp"] = {
     ".git"
   },
 }
-vim.lsp.enable("typescript-lsp")
 
+vim.lsp.config["superhtml"] = {
+  cmd = { 'superhtml', 'lsp' },
+  filetypes = { 'superhtml', 'html' },
+  root_markers = { '.git' },
+}
+
+vim.lsp.config["css-lsp"] = {
+  cmd = { 'vscode-css-language-server', '--stdio' },
+  filetypes = { 'css', 'scss', 'less' },
+  init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
+  root_markers = { 'package.json', '.git' },
+  settings = {
+    css = { validate = true },
+    scss = { validate = true },
+    less = { validate = true },
+  },
+}
+
+vim.lsp.config["json-lsp"] = {
+  cmd = { 'vscode-json-language-server', '--stdio' },
+  filetypes = { 'json', 'jsonc' },
+  init_options = {
+    provideFormatter = true,
+  },
+  root_markers = { '.git' },
+}
+
+vim.lsp.config["yaml-language-server"] = {
+  cmd = { 'yaml-language-server', '--stdio' },
+  filetypes = { 'yaml' },
+  root_markers = { '.git' },
+  settings = {
+    -- https://github.com/redhat-developer/vscode-redhat-telemetry#how-to-disable-telemetry-reporting
+    redhat = { telemetry = { enabled = false } },
+  },
+}
+
+vim.lsp.config["sqlls"] = {
+  cmd = { 'sql-language-server', 'up', '--method', 'stdio' },
+  filetypes = { 'sql', 'mysql' },
+  root_markers = { '.sqllsrc.json' },
+  settings = {
+    sqlLanguageServer = {
+      lint = {
+        rules = {
+          ["linebreak-after-clause-keyword"] = "off"
+        }
+      }
+    }
+  },
+}
+
+vim.lsp.enable("lua-language-server")
+vim.lsp.enable("typescript-language-server")
+vim.lsp.enable("superhtml")
+vim.lsp.enable("css-lsp")
+vim.lsp.enable("json-lsp")
+vim.lsp.enable("yaml-language-server")
+vim.lsp.enable("sqlls")
