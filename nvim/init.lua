@@ -1,3 +1,13 @@
+-- TODO
+-- ====
+-- * read up on trouble.nvim
+-- * decide on LSP strategy (mason or no mason - maybe copy neovim/nvim-lspconfig files into lua/lsp dir ?
+-- * figure out autocomplete
+-- * golang LSP support
+-- * ruby LSP support
+-- * elixir LSP support
+-- * do I still need any of those legacy language plugins???
+
 -- =================
 -- GENERAL SETTINGS
 -- =================
