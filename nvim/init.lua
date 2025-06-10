@@ -72,14 +72,17 @@ vim.g.loaded_perl_provider = 0                 -- (ditto)
 
 vim.g.mapleader = "\\"
 
-vim.keymap.set("n", "<Leader>f", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<Leader>a", ":Rg<Space>")
+vim.keymap.set("n", "<Leader>F", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<Leader>f", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<Leader>t", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<Leader>b", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<Leader>g", ":Telescope live_grep<CR>")
 vim.keymap.set("n", "<Leader>h", ":Telescope help_tags<CR>")
 vim.keymap.set("n", "<Leader>d", ":set background=dark<CR>")
 vim.keymap.set("n", "<Leader>l", ":set background=light<CR>")
+vim.keymap.set("n", "<Leader>e", ":Telescope diagnostics<CR>")
+vim.keymap.set("n", "<Leader>E", ":Trouble diagnostics toggle<CR>")
 vim.keymap.set("v", "<Leader>Y", '"+y')
 vim.keymap.set("n", "<Leader>P", '"+P')
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
@@ -140,13 +143,6 @@ vim.diagnostic.config({
   }
 });
 
-vim.keymap.set("n", "<Leader>xx", function()
-  require("trouble").toggle({
-    mode = "diagnostics",
-    focus = true
-  })
-end)
-
 vim.keymap.set("n", "<C-e>", function()
   local diagnostics = vim.diagnostic.get(0, {lnum = vim.fn.line(".") - 1})
   if #diagnostics == 0 then
@@ -204,12 +200,25 @@ require("nvim-tree").setup({
   },
 })
 
+-- Trouble
+-- =======
+
+require("trouble").setup({
+  opts = {},
+  cmd = "Trouble",
+})
+
 -- TELESCOPE
 -- =========
 
 require("telescope").setup({
   defaults = {
     file_ignore_patterns = {
+    },
+    mappings = {
+      i = {
+        ["<Esc>"] = require("telescope.actions").close
+      }
     }
   }
 })
