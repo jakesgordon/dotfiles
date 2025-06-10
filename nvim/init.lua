@@ -1,7 +1,6 @@
 -- TODO
 -- ====
 -- * telescope.nvim - https://github.com/nvim-telescope/telescope.nvim
--- * oil.nvim - https://github.com/stevearc/oil.nvim
 -- * decide on LSP strategy (mason or no mason - maybe copy neovim/nvim-lspconfig files into lua/lsp dir ?
 
 -- * go - cloud-cli
@@ -71,7 +70,7 @@ vim.opt.background = "light"                   -- default to light background
 
 vim.g.mapleader = "\\"
 
-vim.keymap.set("n", "<Leader>f", ":NERDTreeToggle<CR>")
+vim.keymap.set("n", "<Leader>f", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<Leader>a", ":Rg<Space>")
 vim.keymap.set("n", "<Leader>t", ":FZF<CR>")
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
@@ -140,10 +139,6 @@ end)
 -- ===============
 vim.api.nvim_create_user_command("EditVim", "edit ~/.config/nvim/init.lua", {})
 vim.api.nvim_create_user_command("EditBash", "edit ~/.bashrc", {})
-
--- CUSTOM NERDTree
--- ===============
-vim.g.NERDTreeIgnore = { '^gen$', '^bin$', '^obj$', 'node_modules', '^deps' }
 
 -- CUSTOM Rg
 -- =========
@@ -367,4 +362,26 @@ vim.lsp.enable("css-lsp")
 vim.lsp.enable("json-lsp")
 vim.lsp.enable("yaml-language-server")
 vim.lsp.enable("sqlls")
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+require("nvim-tree").setup({
+  update_focused_file = {
+    enable = true,
+    update_root = false,
+  },
+  view = {
+    width = 20,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = false,
+    git_ignored = true,
+    custom = {
+      "^.git$",
+    }
+  },
+})
 

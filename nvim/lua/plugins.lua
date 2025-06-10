@@ -19,7 +19,7 @@ return {
   "mhinz/vim-startify",
   "vim-airline/vim-airline",
   "vim-airline/vim-airline-themes",
-  "preservim/nerdtree",
+  "nvim-tree/nvim-tree.lua",
   "jremmen/vim-ripgrep",
   "junegunn/fzf",
   "tpope/vim-vinegar",
