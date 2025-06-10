@@ -97,7 +97,7 @@ vim.keymap.set("i", "<C-q>", "<Esc>:qa<CR>")
 
 vim.keymap.set("n", "_",      "<C-W>s<C-W><Down>")
 vim.keymap.set("n", "<Bar>",  "<C-W>v<C-W><Right>")
-vim.keymap.set("n", "<C-x>",  "<C-w>c")
+vim.keymap.set("n", "<C-c>",  "<C-w>c")
 vim.keymap.set("n", "<C-w>-", "4<C-w>-")
 vim.keymap.set("n", "<C-w>_", "4<C-w>-")
 vim.keymap.set("n", "<C-w>+", "4<C-w>+")
@@ -177,7 +177,7 @@ require("nvim-tree").setup({
     update_root = false,
   },
   view = {
-    width = 20,
+    width = 30,
   },
   renderer = {
     group_empty = true,
@@ -256,6 +256,7 @@ local servers = {
   "sqruff",
   "superhtml",
   "typescript-language-server",
+  "vue-language-server",
   "yaml-language-server",
 }
 for _, server in ipairs(servers) do
