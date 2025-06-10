@@ -1,6 +1,5 @@
 -- TODO
 -- ====
--- * go - cloud-cli
 -- * c# - cloud-platform
 -- * ruby - ???
 -- * elixir - ???
@@ -236,24 +235,26 @@ require("mason").setup()
 
 local registry = require("mason-registry")
 local servers = {
-  "lua-language-server",
-  "typescript-language-server",
-  "superhtml",
   "css-lsp",
+  "gopls",
   "json-lsp",
-  "yaml-language-server",
+  "lua-language-server",
   "sqruff",
+  "superhtml",
+  "typescript-language-server",
+  "yaml-language-server",
 }
 for _, server in ipairs(servers) do
   if not registry.is_installed(server) then
     vim.cmd("MasonInstall " .. server)
   end
+  vim.lsp.enable(server)
 end
 
-vim.lsp.enable("lua-language-server")
-vim.lsp.enable("typescript-language-server")
-vim.lsp.enable("superhtml")
-vim.lsp.enable("css-lsp")
-vim.lsp.enable("json-lsp")
-vim.lsp.enable("yaml-language-server")
-vim.lsp.enable("sqruff")
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = args.buf })
+  end,
+})
+
+
