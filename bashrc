@@ -366,6 +366,7 @@ alias kernel='uname -r'
 alias ci='cd ~/codeincomplete'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
+alias next='cd ~/next'
 alias tmp='cd ~/tmp'
 alias fancytop=bpytop
 

@@ -78,6 +78,8 @@ vim.keymap.set("v", "<Leader>Y", '"+y')
 vim.keymap.set("n", "<Leader>P", '"+P')
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
+vim.keymap.set("n", "ff", vim.lsp.buf.format)
+
 -- QUICK SAVE
 -- ==========
 
@@ -187,6 +189,7 @@ require("nvim-tree").setup({
     git_ignored = true,
     custom = {
       "^.git$",
+      "*.lock",
     }
   },
 })
@@ -205,6 +208,7 @@ require("trouble").setup({
 require("telescope").setup({
   defaults = {
     file_ignore_patterns = {
+      "%.lock$"
     },
     mappings = {
       i = {
