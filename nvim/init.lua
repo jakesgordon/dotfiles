@@ -204,6 +204,16 @@ require("nvim-tree").setup({
   },
 })
 
+-- TELESCOPE
+-- =========
+
+require("telescope").setup({
+  defaults = {
+    file_ignore_patterns = {
+    }
+  }
+})
+
 -- AUTO COMPLETE
 -- =============
 
@@ -237,6 +247,7 @@ require("mason").setup()
 
 local registry = require("mason-registry")
 local servers = {
+  "biome",
   "css-lsp",
   "gopls",
   "json-lsp",
