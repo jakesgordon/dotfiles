@@ -1,5 +1,7 @@
 -- TODO
 -- ====
+-- * format on demand/save
+-- * tooltip on key/hover
 -- * c# - cloud-platform
 -- * ruby - ???
 -- * elixir - ???
@@ -238,6 +240,7 @@ local servers = {
   "css-lsp",
   "gopls",
   "json-lsp",
+  "just-lsp",
   "lua-language-server",
   "sqruff",
   "superhtml",
@@ -256,5 +259,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = args.buf })
   end,
 })
-
-
