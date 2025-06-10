@@ -32,7 +32,7 @@ ln -s $DOTFILES/lsd               $HOME/.config/lsd
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C $DOTFILES config --local user.name "Jake Gordon"
-git -C $DOTFILES config --local user.email "jake@codeincomplete.com"
+git -C $DOTFILES config --local user.email "jakesgordon@gmail.com"
 
 if [ ! -d "$HOME/.bash-git-prompt" ]; then
   git clone -q https://github.com/magicmonty/bash-git-prompt.git $HOME/.bash-git-prompt --depth=1

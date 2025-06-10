@@ -1,7 +1,0 @@
---smart-case
---ignore-file=match:/.*\.orig/
---ignore-file=match:/.*\.d/
---ignore-file=match:/.*\.log/
---ignore-dir=.vagrant
---ignore-dir=tmp
-
