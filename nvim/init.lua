@@ -1,15 +1,6 @@
 -- TODO
 -- ====
--- * format on demand/save
--- * tooltip on key/hover
--- * c# - cloud-platform
--- * ruby - ???
--- * elixir - ???
--- * python - ???
--- * java - ???
--- * c/c++ - ???
--- * do I still need any of those legacy language plugins???
--- * (maybe) replace vim-airline with lualine.nvim
+-- * auto-format (on demand/save)
 
 -- =================
 -- GENERAL SETTINGS
@@ -200,7 +191,7 @@ require("nvim-tree").setup({
   },
 })
 
--- Trouble
+-- TROUBLE
 -- =======
 
 require("trouble").setup({
@@ -277,5 +268,11 @@ end
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = args.buf })
+    vim.keymap.set("n", "K", function()
+      vim.lsp.buf.hover { border = "rounded", max_height = 25, max_width = 120 }
+    end)
+    vim.keymap.set("n", "<C-k>", function()
+      vim.lsp.buf.signature_help { border = "rounded", title = false, max_height = 25, max_width = 120 }
+    end)
   end,
 })
