@@ -95,6 +95,13 @@ fi
 if [ -x "$(command -v just)" ]; then
   . <(just --completions bash)
   alias j='just'
+  alias ji='just install'
+  alias js='just start'
+  alias jb='just build'
+  alias jt='just test'
+  alias jl='just lint'
+  alias jf='just format'
+  alias jc='just cover'
   complete -F _just -o bashdefault -o default j
 fi
 
@@ -202,27 +209,22 @@ if [ -d "$HOME/.cargo/bin" ]; then
 fi
 
 #==============================================================================
-# JUST HELPERS
-#==============================================================================
-
-alias jr='just run'
-alias jb='just build'
-alias jt='just test'
-alias jc='just cover'
-
-#==============================================================================
 # NODE and BUN HELPERS
 #==============================================================================
 
 alias ni='npm install'
-alias nt='npm run test'
-alias nb='npm run build'
 alias nr='npm run'
+alias ns='npm run start'
+alias nb='npm run build'
+alias nt='npm run test'
+alias nl='npm run lint'
+alias nf='npm run format'
 
 alias bi='bun install'
-alias bt='bun run test'
-alias bd='bun run dev'
+alias br='bun run'
+alias bs='bun run start'
 alias bb='bun run build'
+alias bt='bun run test'
 alias bl='bun run lint'
 alias bf='bun run format'
 
