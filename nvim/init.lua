@@ -1,17 +1,13 @@
--- TODO
--- ====
--- * auto-format (on demand/save)
-
 -- =================
 -- GENERAL SETTINGS
 -- =================
 
-vim.cmd("syntax on")                 -- enable syntax highlighting
-vim.cmd("filetype plugin indent on") -- enable per-filetype plugins
+vim.cmd("syntax on")                           -- enable syntax highlighting
+vim.cmd("filetype plugin indent on")           -- enable per-filetype plugins
 
 vim.opt.backspace = "indent,eol,start"         -- allow backspacing over everything in insert mode
 vim.opt.backup = true                          -- keep a backup file
-vim.opt.backupcopy = "yes"                     -- use overwrite strategy for backups (to avoid issues with node file watchers)
+vim.opt.backupcopy = "yes"                     -- use overwrite strategy for backups
 vim.opt.backupdir = vim.fn.expand("~/.backup") -- custom backup directory
 vim.opt.cmdheight = 3                          -- set command line 3 lines high
 vim.opt.colorcolumn = "100"                    -- highlight the 120th column
@@ -83,9 +79,9 @@ vim.keymap.set("n", "ff", vim.lsp.buf.format)
 -- QUICK SAVE
 -- ==========
 
-vim.keymap.set("",  "<C-s>", ":wa<CR>")
+vim.keymap.set("", "<C-s>", ":wa<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc>:wa<CR>")
-vim.keymap.set("",  "<C-q>", ":qa<CR>")
+vim.keymap.set("", "<C-q>", ":qa<CR>")
 vim.keymap.set("i", "<C-q>", "<Esc>:qa<CR>")
 
 -- QUICK ENTRY INTO INSERT MODE
@@ -97,9 +93,9 @@ vim.keymap.set("i", "<C-q>", "<Esc>:qa<CR>")
 -- WINDOW MANAGEMENT
 -- =================
 
-vim.keymap.set("n", "_",      "<C-W>s<C-W><Down>")
-vim.keymap.set("n", "<Bar>",  "<C-W>v<C-W><Right>")
-vim.keymap.set("n", "<C-c>",  "<C-w>c")
+vim.keymap.set("n", "_", "<C-W>s<C-W><Down>")
+vim.keymap.set("n", "<Bar>", "<C-W>v<C-W><Right>")
+vim.keymap.set("n", "<C-c>", "<C-w>c")
 vim.keymap.set("n", "<C-w>-", "4<C-w>-")
 vim.keymap.set("n", "<C-w>_", "4<C-w>-")
 vim.keymap.set("n", "<C-w>+", "4<C-w>+")
@@ -137,7 +133,7 @@ vim.diagnostic.config({
 });
 
 vim.keymap.set("n", "<C-e>", function()
-  local diagnostics = vim.diagnostic.get(0, {lnum = vim.fn.line(".") - 1})
+  local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
   if #diagnostics == 0 then
     vim.diagnostic.goto_next()
   end
@@ -279,5 +275,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<C-k>", function()
       vim.lsp.buf.signature_help { border = "rounded", title = false, max_height = 25, max_width = 120 }
     end)
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+    for _, client in ipairs(clients) do
+      if client.server_capabilities.documentFormattingProvider then
+        vim.lsp.buf.format({ async = false })
+        break
+      end
+    end
   end,
 })
