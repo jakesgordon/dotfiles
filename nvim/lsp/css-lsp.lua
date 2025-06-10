@@ -1,4 +1,3 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 return {
   cmd = { 'vscode-css-language-server', '--stdio' },
   filetypes = { 'css', 'scss', 'less' },
@@ -9,5 +8,4 @@ return {
     scss = { validate = true },
     less = { validate = true },
   },
-  capabilities = capabilities
 }

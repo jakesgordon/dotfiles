@@ -1,4 +1,3 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 return {
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
@@ -11,5 +10,4 @@ return {
     "package.json",
     ".git"
   },
-  capabilities = capabilities
 }
