@@ -1,8 +1,5 @@
 -- TODO
 -- ====
--- * telescope.nvim - https://github.com/nvim-telescope/telescope.nvim
--- * decide on LSP strategy (mason or no mason - maybe copy neovim/nvim-lspconfig files into lua/lsp dir ?
-
 -- * go - cloud-cli
 -- * c# - cloud-platform
 -- * ruby - ???
@@ -64,6 +61,10 @@ vim.opt.wildmenu = true                        -- enable enhanced command line c
 vim.opt.wildmode = "longest,list"              -- and show bash like auto complete list
 vim.opt.termguicolors = true                   -- enable 24 bit RGB color
 vim.opt.background = "light"                   -- default to light background
+vim.g.loaded_python3_provider = 0              -- disable unused plugin provider, we only use lua or vim plugins
+vim.g.loaded_ruby_provider = 0                 -- (ditto)
+vim.g.loaded_node_provider = 0                 -- (ditto)
+vim.g.loaded_perl_provider = 0                 -- (ditto)
 
 -- LEADER KEYS
 -- ===========
@@ -72,15 +73,19 @@ vim.g.mapleader = "\\"
 
 vim.keymap.set("n", "<Leader>f", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<Leader>a", ":Rg<Space>")
-vim.keymap.set("n", "<Leader>t", ":FZF<CR>")
-vim.keymap.set("n", "<Esc>", ":noh<CR>")
+vim.keymap.set("n", "<Leader>t", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>b", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<Leader>g", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>h", ":Telescope help_tags<CR>")
 vim.keymap.set("n", "<Leader>d", ":set background=dark<CR>")
 vim.keymap.set("n", "<Leader>l", ":set background=light<CR>")
 vim.keymap.set("v", "<Leader>Y", '"+y')
 vim.keymap.set("n", "<Leader>P", '"+P')
+vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
 -- QUICK SAVE
 -- ==========
+
 vim.keymap.set("",  "<C-s>", ":wa<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc>:wa<CR>")
 vim.keymap.set("",  "<C-q>", ":qa<CR>")
@@ -88,11 +93,13 @@ vim.keymap.set("i", "<C-q>", "<Esc>:qa<CR>")
 
 -- QUICK ENTRY INTO INSERT MODE
 -- ============================
-vim.keymap.set("n", "<Space>", "i<Space>")
-vim.keymap.set("n", "<Del",    "i<Del>")
+
+-- vim.keymap.set("n", "<Space>", "i<Space>")
+-- vim.keymap.set("n", "<Del",    "i<Del>")
 
 -- WINDOW MANAGEMENT
 -- =================
+
 vim.keymap.set("n", "_",      "<C-W>s<C-W><Down>")
 vim.keymap.set("n", "<Bar>",  "<C-W>v<C-W><Right>")
 vim.keymap.set("n", "<C-x>",  "<C-w>c")
@@ -104,6 +111,18 @@ vim.keymap.set("n", "<C-w><", "8<C-w><")
 vim.keymap.set("n", "<C-w>>", "8<C-w>>")
 vim.keymap.set("n", "<C-w>,", "8<C-w><")
 vim.keymap.set("n", "<C-w>.", "8<C-w>>")
+
+-- EDIT COMMANDS
+-- =============
+
+vim.api.nvim_create_user_command("EditVim", "edit ~/.config/nvim/init.lua", {})
+vim.api.nvim_create_user_command("EditBash", "edit ~/.bashrc", {})
+
+-- RIPGREP
+-- =======
+
+vim.g.rg_highlight = 1
+vim.g.rg_command = "rg --vimgrep --color=never"
 
 -- DIAGNOSTICS
 -- ===========
@@ -135,33 +154,12 @@ vim.keymap.set("n", "<C-e>", function()
   vim.diagnostic.open_float(nil, { focusable = false })
 end)
 
--- CUSTOM COMMANDS
--- ===============
-vim.api.nvim_create_user_command("EditVim", "edit ~/.config/nvim/init.lua", {})
-vim.api.nvim_create_user_command("EditBash", "edit ~/.bashrc", {})
-
--- CUSTOM Rg
--- =========
-vim.g.rg_highlight = 1
-vim.g.rg_command = "rg --vimgrep --color=never"
-
--- CUSTOM FZF
--- ==========
-vim.g.fzf_layout = { -- Popup window (anchored to the bottom of the current window)
-  window = {
-    width = 1.0,
-    height = 0.4,
-    relative = true,
-    yoffset = 1.0
-  }
-}
-
--- CUSTOM Airline
--- ==============
+-- AIRLINE
+-- =======
 vim.g.airline_powerline_fonts = 1
 
--- CUSTOM AUTO COMMENT
--- ===================
+-- AUTO COMMENT
+-- ============
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
@@ -173,13 +171,41 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- PLUGINS
--- =======
+-- LAZY PLUGINS
+-- ============
+
 require("config.lazy")
 vim.cmd("colorscheme solarized")
 
+-- TREE VIEW
+-- =========
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup({
+  update_focused_file = {
+    enable = true,
+    update_root = false,
+  },
+  view = {
+    width = 20,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = false,
+    git_ignored = true,
+    custom = {
+      "^.git$",
+    }
+  },
+})
+
 -- AUTO COMPLETE
 -- =============
+
 local cmp = require("cmp")
 cmp.setup({
   sources = {
@@ -202,49 +228,8 @@ cmp.setup({
     end, { 'i', 's' }),
   },
 })
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- LSPs - NOPE
--- ====
-
--- require("mason").setup()
--- require("mason-lspconfig").setup({
---   automatic_enable = false,
---   ensure_installed = {
---     "lua_ls",
---     "ts_ls",
---     "biome",
---     "html",
---   }
--- })
---
--- require("lspconfig").lua_ls.setup({
---   settings = {
---     Lua = {
---       diagnostics = { globals = { "vim" } }
---     }
---   }
--- })
---
--- require("lspconfig").ts_ls.setup({
--- })
---
--- require("lspconfig").biome.setup({
--- })
---
--- require("lspconfig").html.setup({
---   settings = {
---     html = {
---       validate = true,
---       suggest = {
---         html5 = true,
---       },
---     },
---   },
--- })
-
-
--- LSPs - MAYBE
+-- LSPs
 -- ====
 
 require("mason").setup()
@@ -257,103 +242,13 @@ local servers = {
   "css-lsp",
   "json-lsp",
   "yaml-language-server",
-  "sqlls",
+  "sqruff",
 }
-
 for _, server in ipairs(servers) do
   if not registry.is_installed(server) then
     vim.cmd("MasonInstall " .. server)
   end
 end
-
-vim.lsp.config["lua-language-server"] = {
-  cmd = { "lua-language-server" },
-  filetypes = { 'lua' },
-  root_markers = {
-    '.git',
-    '.luarc.json',
-    '.luarc.jsonc',
-  },
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" }
-      }
-    }
-  },
-  capabilities = capabilities
-}
-
-vim.lsp.config["typescript-language-server"] = {
-  cmd = { "typescript-language-server", "--stdio" },
-  filetypes = {
-    "javascript",
-    "typescript",
-  },
-  root_markers = {
-    "tsconfig.json",
-    "package.json",
-    ".git"
-  },
-  capabilities = capabilities
-}
-
-vim.lsp.config["superhtml"] = {
-  cmd = { 'superhtml', 'lsp' },
-  filetypes = { 'superhtml', 'html' },
-  root_markers = { '.git' },
-  capabilities = capabilities
-}
-
-vim.lsp.config["css-lsp"] = {
-  cmd = { 'vscode-css-language-server', '--stdio' },
-  filetypes = { 'css', 'scss', 'less' },
-  init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
-  root_markers = { 'package.json', '.git' },
-  settings = {
-    css = { validate = true },
-    scss = { validate = true },
-    less = { validate = true },
-  },
-  capabilities = capabilities
-}
-
-vim.lsp.config["json-lsp"] = {
-  cmd = { 'vscode-json-language-server', '--stdio' },
-  filetypes = { 'json', 'jsonc' },
-  init_options = {
-    provideFormatter = true,
-  },
-  root_markers = { '.git' },
-  capabilities = capabilities
-}
-
-vim.lsp.config["yaml-language-server"] = {
-  cmd = { 'yaml-language-server', '--stdio' },
-  filetypes = { 'yaml' },
-  root_markers = { '.git' },
-  settings = {
-    -- https://github.com/redhat-developer/vscode-redhat-telemetry#how-to-disable-telemetry-reporting
-    redhat = { telemetry = { enabled = false } },
-  },
-  capabilities = capabilities
-}
-
-vim.lsp.config["sqlls"] = {
-  cmd = { 'sql-language-server', 'up', '--method', 'stdio' },
-  filetypes = { 'sql', 'mysql' },
-  root_markers = { '.sqllsrc.json' },
-  settings = {
-    sqlLanguageServer = {
-      lint = {
-        rules = {
-          ["linebreak-after-clause-keyword"] = "off"
-        }
-      }
-    }
-  },
-  capabilities = capabilities
-}
 
 vim.lsp.enable("lua-language-server")
 vim.lsp.enable("typescript-language-server")
@@ -361,27 +256,4 @@ vim.lsp.enable("superhtml")
 vim.lsp.enable("css-lsp")
 vim.lsp.enable("json-lsp")
 vim.lsp.enable("yaml-language-server")
-vim.lsp.enable("sqlls")
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-require("nvim-tree").setup({
-  update_focused_file = {
-    enable = true,
-    update_root = false,
-  },
-  view = {
-    width = 20,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = false,
-    git_ignored = true,
-    custom = {
-      "^.git$",
-    }
-  },
-})
-
+vim.lsp.enable("sqruff")
