@@ -99,22 +99,6 @@ if [ -x "$(command -v just)" ]; then
 fi
 
 #==============================================================================
-# BAT
-#==============================================================================
-
-if [ -x "$(command -v batcat)" ]; then
-  alias cat=batcat
-fi
-
-#==============================================================================
-# NCDU
-#==============================================================================
-
-if [ -x "$(command -v ncdu)" ]; then
-  alias du="ncdu --hide-hidden"
-fi
-
-#==============================================================================
 # FD and FZF
 #==============================================================================
 
@@ -188,20 +172,6 @@ fi
 alias grip='grip --user=jakesgordon --pass=$GRIP_TOKEN'
 
 #==============================================================================
-# BUNDLER/RUBY/RAILS HELPERS
-#==============================================================================
-
-alias bi='bundle install'
-alias be='bundle exec'
-alias routes='be rake routes'
-alias rt='be rake test'
-alias rit='be ruby -Itest -Ilib -Iapp'
-alias rs='be rails server -b 0.0.0.0'
-alias rc='be rails console'
-alias fs='foreman start'
-alias fr='foreman run'
-
-#==============================================================================
 # GIT & MERCURIAL HELPERS
 #==============================================================================
 
@@ -232,21 +202,6 @@ if [ -d "$HOME/.cargo/bin" ]; then
 fi
 
 #==============================================================================
-# MAKE HELPERS
-#==============================================================================
-
-# replaced with MIX helpers (below)
-
-# alias mt='make test'
-# alias mr='make run'
-# alias md='make deps'
-# alias mi='make install'
-# alias mw='make watch'
-# alias mb='make build'
-# alias ml='make lint'
-# alias mc='make cover'
-
-#==============================================================================
 # JUST HELPERS
 #==============================================================================
 
@@ -256,25 +211,20 @@ alias jt='just test'
 alias jc='just cover'
 
 #==============================================================================
-# NODE and YARN HELPERS
+# NODE and BUN HELPERS
 #==============================================================================
 
 alias ni='npm install'
 alias nt='npm run test'
-alias ns='npm run start'
 alias nb='npm run build'
 alias nr='npm run'
 
-alias yi='yarn install'
-alias yr='yarn run'
-alias ys='yarn start'
-alias yt='yarn test'
-alias yl='yarn lint'
-alias yb='yarn build'
-alias yw='yarn watch'
-alias yc='yarn cover'
-
-export NODE_OPTIONS=--max-old-space-size=4096
+alias bi='bun install'
+alias bt='bun run test'
+alias bd='bun run dev'
+alias bb='bun run build'
+alias bl='bun run lint'
+alias bf='bun run format'
 
 #==============================================================================
 # ELIXIR/MIX HELPERS
@@ -367,8 +317,8 @@ alias ci='cd ~/codeincomplete'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias next='cd ~/next'
-alias tmp='cd ~/tmp'
 alias fancytop=bpytop
+alias ftop=bpytop
 
 alias no-color='sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"'
 
@@ -384,7 +334,7 @@ alias pgr='pg_restore --verbose --clean --no-acl --no-owner -h localhost'
 # BUILDING DEBIAN PACKAGES (http://packaging.ubuntu.com/html/getting-set-up.html#configure-your-shell)
 #==============================================================================
 export DEBFULLNAME="Jake Gordon"
-export DEBEMAIL="jake@codeincomplete.com"
+export DEBEMAIL="jakesgordon@gmail.com"
 
 #==============================================================================
 
