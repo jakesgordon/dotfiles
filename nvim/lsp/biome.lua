@@ -1,27 +1,18 @@
 return {
   cmd = { 'biome', 'lsp-proxy' },
   filetypes = {
-    'astro',
     'css',
-    'graphql',
     'javascript',
-    'javascriptreact',
     'json',
     'jsonc',
-    'svelte',
     'typescript',
-    'typescript.tsx',
-    'typescriptreact',
     'vue',
   },
   workspace_required = true,
   root_markers = {
     "tsconfig.json",
-    "tsconfig.jsonc",
     "package.json",
-    "package.jsonc",
     "biome.json",
-    "biome.jsonc",
     ".git",
   },
   on_attach = function(client, _)
