@@ -211,6 +211,15 @@ require("telescope").setup({
         ["<Esc>"] = require("telescope.actions").close
       }
     }
+  },
+  pickers = {
+    buffers = {
+      mappings = {
+        i = {
+          ["<C-d>"] = require("telescope.actions").delete_buffer,
+        },
+      }
+    }
   }
 })
 
