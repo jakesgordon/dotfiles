@@ -3,10 +3,11 @@ return {
   filetypes = {
     'css',
     'javascript',
+    'javascriptreact',
     'json',
     'jsonc',
     'typescript',
-    'vue',
+    'typescriptreact'
   },
   workspace_required = true,
   root_markers = {

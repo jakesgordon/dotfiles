@@ -269,7 +269,6 @@ local servers = {
   "sqruff",
   "superhtml",
   "typescript-language-server",
-  "vue-language-server",
   "yaml-language-server",
 }
 for _, server in ipairs(servers) do
