@@ -75,6 +75,7 @@ vim.keymap.set("n", "<Leader>P", '"+P')
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
 vim.keymap.set("n", "ff", vim.lsp.buf.format)
+vim.keymap.set("i", "jk", "<Esc>")
 
 -- QUICK SAVE
 -- ==========
@@ -212,7 +213,8 @@ require("telescope").setup({
     },
     mappings = {
       i = {
-        ["<Esc>"] = require("telescope.actions").close
+        ["<Esc>"] = require("telescope.actions").close,
+        ["jk"] = require("telescope.actions").close
       }
     }
   },
