@@ -241,10 +241,6 @@ cmp.setup({
   mapping = {
     ['<Down>'] = cmp.mapping.select_next_item(),
     ['<Up>'] = cmp.mapping.select_prev_item(),
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true
-    }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
