@@ -102,6 +102,7 @@ if [ -x "$(command -v just)" ]; then
   alias jl='just lint'
   alias jf='just format'
   alias jc='just cover'
+  alias jdb='just db'
   complete -F _just -o bashdefault -o default j
 fi
 
@@ -319,6 +320,7 @@ alias ci='cd ~/codeincomplete'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
 alias next='cd ~/next'
+alias id='cd ~/id'
 alias fancytop=bpytop
 alias ftop=bpytop
 
