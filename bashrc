@@ -102,6 +102,7 @@ if [ -x "$(command -v just)" ]; then
   alias jl='just lint'
   alias jf='just format'
   alias jc='just cover'
+  alias jj='just jake'
   alias jdb='just db'
   complete -F _just -o bashdefault -o default j
 fi
