@@ -288,15 +288,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function()
-    local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-    for _, client in ipairs(clients) do
-      if client.server_capabilities.documentFormattingProvider then
-        vim.lsp.buf.format({ async = false })
-        break
-      end
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*",
+--   callback = function()
+--     local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+--     for _, client in ipairs(clients) do
+--       if client.server_capabilities.documentFormattingProvider then
+--         vim.lsp.buf.format({ async = false })
+--         break
+--       end
+--     end
+--   end,
+-- })

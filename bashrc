@@ -230,6 +230,10 @@ alias bt='bun run test'
 alias bl='bun run lint'
 alias bf='bun run format'
 
+if [ -d "$HOME/.bun/bin" ]; then
+  append_path "$HOME/.bun/bin"
+fi
+
 #==============================================================================
 # ELIXIR/MIX HELPERS
 #==============================================================================

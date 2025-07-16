@@ -17,6 +17,6 @@ return {
     ".git",
   },
   on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = true
+    client.server_capabilities.documentFormattingProvider = false -- no! I fucking hate auto formatting
   end,
 }
