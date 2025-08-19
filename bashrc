@@ -345,6 +345,11 @@ alias pgr='pg_restore --verbose --clean --no-acl --no-owner -h localhost'
 export DEBFULLNAME="Jake Gordon"
 export DEBEMAIL="jakesgordon@gmail.com"
 
+export FLYCTL_INSTALL="$HOME/.fly"
+if [ -d "$FLYCTL_INSTALL" ]; then
+  append_path "$FLYCTL_INSTALL/bin"
+fi
+
 #==============================================================================
 
 if type brew > /dev/null 2>&1; then

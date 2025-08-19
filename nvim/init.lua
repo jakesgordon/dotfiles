@@ -268,6 +268,7 @@ local servers = {
   "superhtml",
   "typescript-language-server",
   "yaml-language-server",
+  "vue-language-server",
 }
 for _, server in ipairs(servers) do
   if not registry.is_installed(server) then
