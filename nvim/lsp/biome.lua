@@ -11,10 +11,7 @@ return {
   },
   workspace_required = true,
   root_markers = {
-    "tsconfig.json",
-    "package.json",
     "biome.json",
-    ".git",
   },
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false -- no! I fucking hate auto formatting
