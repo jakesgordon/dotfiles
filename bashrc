@@ -234,6 +234,10 @@ if [ -d "$HOME/.bun/bin" ]; then
   append_path "$HOME/.bun/bin"
 fi
 
+if [ -d "$HOME/.npm-global/bin" ]; then
+  append_path "$HOME/.npm-global/bin"
+fi
+
 #==============================================================================
 # ELIXIR/MIX HELPERS
 #==============================================================================
