@@ -104,6 +104,7 @@ if [ -x "$(command -v just)" ]; then
   alias jc='just cover'
   alias jj='just jake'
   alias jdb='just db'
+  alias jrd='just run-detective'
   complete -F _just -o bashdefault -o default j
 fi
 
@@ -191,6 +192,7 @@ alias gd='git diff HEAD --color'
 alias gp='git pull'
 alias gf='git fetch'
 alias gc='git reset --hard'
+alias gap='git add -p'
 
 alias hs='hg status'
 alias hb='hg branches -a'
@@ -276,6 +278,9 @@ dobserve() {
 
 alias pss='python3 -m http.server'
 alias py='python3'
+alias pr='poetry run'
+alias prp='poetry run python'
+alias prt='poetry run pytest'
 
 #==============================================================================
 # DOCKER HELPERS
@@ -312,6 +317,7 @@ if hash lsd 2>/dev/null; then
   alias ls='lsd'
 fi
 
+alias v='vim'
 alias c='clear'
 alias less='less -r'
 alias ll='ls -Al'
@@ -325,10 +331,12 @@ alias ports='sudo lsof -i -P -n'
 alias ubuntu='lsb_release -a'
 alias kernel='uname -r'
 
+alias ae='cd ~/andthen/ensemble'
+alias aed='cd ~/andthen/ensemble/experiences/detective'
+alias aec='cd ~/andthen/ensemble/experiences/change-my-mind'
 alias ci='cd ~/codeincomplete'
 alias dot='cd ~/.dotfiles'
 alias provision='cd ~/.provision'
-alias next='cd ~/next'
 alias id='cd ~/id'
 alias fancytop=bpytop
 alias ftop=bpytop
