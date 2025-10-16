@@ -182,24 +182,21 @@ fi
 alias grip='grip --user=jakesgordon --pass=$GRIP_TOKEN'
 
 #==============================================================================
-# GIT & MERCURIAL HELPERS
+# GIT HELPERS
 #==============================================================================
 
 alias gs='git status'
+alias gc='git commit'
 alias gb='git branch -a'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
 alias gl='git log --graph --all --decorate'
 alias gd='git diff HEAD --color'
-alias gp='git pull'
+alias gp='git pull -p'
 alias gf='git fetch'
-alias gc='git reset --hard'
 alias gap='git add -p'
-
-alias hs='hg status'
-alias hb='hg branches -a'
-alias hl='hg log'
-alias hr='hg recent'
-alias hd='hg diff'
-alias hp='hg pull && hg update'
+alias gpush='git push'
+alias gcancel='git reset --hard'
 
 #==============================================================================
 # RUST HELPERS

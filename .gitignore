@@ -1,3 +1,4 @@
+.claude
 *.swp
 vim/pack/minpac/start/*
 nvim/pack/minpac/start/*
