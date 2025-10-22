@@ -105,6 +105,7 @@ if [ -x "$(command -v just)" ]; then
   alias jj='just jake'
   alias jdb='just db'
   alias jrd='just run-detective'
+  alias jrp='just run-pitchable'
   complete -F _just -o bashdefault -o default j
 fi
 
@@ -330,6 +331,7 @@ alias kernel='uname -r'
 
 alias ae='cd ~/andthen/ensemble'
 alias aed='cd ~/andthen/ensemble/experiences/detective'
+alias aep='cd ~/andthen/ensemble/experiences/pitchable'
 alias aec='cd ~/andthen/ensemble/experiences/change-my-mind'
 alias ci='cd ~/codeincomplete'
 alias dot='cd ~/.dotfiles'
