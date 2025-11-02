@@ -48,8 +48,9 @@ if status is-interactive
   abbr less 'less -r'
   abbr ps   'ps xawf'
 
-  abbr vimvim   'nvim -c EditVim'
-  abbr vimbash  'nvim -c EditBash'
+  abbr vimvim   'nvim ~/.config/nvim/init.lua'
+  abbr vimfish  'nvim ~/.config/fish/config.fish'
+  abbr vimbash  'nvim ~/.bashrc'
   abbr ports    'sudo lsof -i -P -n'
   abbr ubuntu   'lsb_release -a'
   abbr kernel   'uname -r'
@@ -211,25 +212,26 @@ if status is-interactive
       end
   end
 
-# #==============================================================================
-# # FD and FZF
-# #==============================================================================
-#
-# if [ -x "$(command -v fdfind)" ]; then
-#   alias fd=fdfind
-# fi
-#
-# if [ -x "$(command -v fzf)" ]; then
-#   export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git --ignore-file .gitignore"
-#   export FZF_DEFAULT_OPTS=""
-# fi
-#
-# #==============================================================================
-# # RIPGREP
-# #==============================================================================
-#
-# if [ -e "$HOME/.ripgreprc" ]; then
-#   export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-# fi
+
+  #==============================================================================
+  # FD and FZF
+  #==============================================================================
+
+  if type -q fdfind
+      abbr fd 'fdfind'
+  end
+
+  if type -q fzf
+      set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git"
+      set -gx FZF_DEFAULT_OPTS ""
+  end
+
+  #==============================================================================
+  # RIPGREP
+  #==============================================================================
+
+  if test -e "$HOME/.ripgreprc"
+      set -gx RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
+  end
 
 end

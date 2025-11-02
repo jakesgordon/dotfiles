@@ -106,12 +106,6 @@ vim.keymap.set("n", "<C-w>>", "8<C-w>>")
 vim.keymap.set("n", "<C-w>,", "8<C-w><")
 vim.keymap.set("n", "<C-w>.", "8<C-w>>")
 
--- EDIT COMMANDS
--- =============
-
-vim.api.nvim_create_user_command("EditVim", "edit ~/.config/nvim/init.lua", {})
-vim.api.nvim_create_user_command("EditBash", "edit ~/.bashrc", {})
-
 -- RIPGREP
 -- =======
 

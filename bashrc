@@ -322,8 +322,9 @@ alias ll='ls -Al'
 alias la='ls -A'
 alias ps='ps xawf'
 
-alias vimvim="vim -c EditVim"
-alias vimbash="vim -c EditBash"
+alias vimvim="vim ~/.config/nvim/init.lua"
+alias vimfish="vim ~/.config/fish/config.fish"
+alias vimbash="vim ~/.bashrc"
 
 alias ports='sudo lsof -i -P -n'
 alias ubuntu='lsb_release -a'
