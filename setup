@@ -1,14 +1,12 @@
 #!/bin/sh
 
-REALPATH=$(perl -e 'use Cwd "abs_path"; print abs_path(@ARGV[0])' -- "$0")      # cross-platform replacement for $(realpath $0)
+REALPATH=$(realpath $0)
 DOTFILES=$(dirname $REALPATH)
 
 mkdir -p $HOME/.config
-mkdir -p $HOME/.config/nvim
-mkdir -p $HOME/.config/zed
-mkdir -p $HOME/.config/lsd
 
 rm -rf $HOME/.bashrc
+rm -rf $HOME/.zprofile
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.gitignore
 rm -rf $HOME/.irbrc
@@ -16,10 +14,13 @@ rm -rf $HOME/.ripgreprc
 rm -rf $HOME/.htoprc
 rm -rf $HOME/.tool-versions
 rm -rf $HOME/.config/nvim
+rm -rf $HOME/.config/fish
+rm -rf $HOME/.config/ghostty
 rm -rf $HOME/.config/zed
 rm -rf $HOME/.config/lsd
 
 ln -s $DOTFILES/bashrc            $HOME/.bashrc
+ln -s $DOTFILES/zprofile          $HOME/.zprofile
 ln -s $DOTFILES/gitconfig         $HOME/.gitconfig
 ln -s $DOTFILES/gitignore         $HOME/.gitignore
 ln -s $DOTFILES/irbrc             $HOME/.irbrc
@@ -27,6 +28,8 @@ ln -s $DOTFILES/ripgreprc         $HOME/.ripgreprc
 ln -s $DOTFILES/htoprc            $HOME/.htoprc
 ln -s $DOTFILES/tool-versions     $HOME/.tool-versions
 ln -s $DOTFILES/nvim              $HOME/.config/nvim
+ln -s $DOTFILES/fish              $HOME/.config/fish
+ln -s $DOTFILES/ghostty           $HOME/.config/ghostty
 ln -s $DOTFILES/zed               $HOME/.config/zed
 ln -s $DOTFILES/lsd               $HOME/.config/lsd
 
