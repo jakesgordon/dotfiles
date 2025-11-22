@@ -4,4 +4,4 @@ vim/pack/minpac/start/*
 nvim/pack/minpac/start/*
 *.pyc
 .DS_Store
-fish/fish_variables
+fish/fish_variables*

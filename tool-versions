@@ -9,3 +9,4 @@ python 3.13.8
 pipx 1.8.0
 poetry 2.2.1
 uv 0.8.24
+pnpm 10.18.3

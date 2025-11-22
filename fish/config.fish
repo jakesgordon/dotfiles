@@ -110,7 +110,7 @@ if status is-interactive
     abbr jc  'just cover'
     abbr jj  'just jake'
     abbr jdb 'just db'
-    abbr jrd 'just run-detective'
+    abbr jrm 'just run-mystery'
     abbr jrp 'just run-pitchable'
   end
 
