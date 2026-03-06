@@ -49,6 +49,7 @@ return {
           "python",
           "ruby",
           "sql",
+          "tsx",
           "typescript",
           "vim",
           "vimdoc",
