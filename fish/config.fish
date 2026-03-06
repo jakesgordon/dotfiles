@@ -235,4 +235,16 @@ if status is-interactive
       set -gx RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
   end
 
+  #==============================================================================
+  # CWD MANAGEMENT
+  #==============================================================================
+
+  function __update_cwd --on-variable PWD
+    echo $PWD > /tmp/fish_cwd_$USER
+  end
+
+  if test -f /tmp/fish_cwd_$USER
+    cd (cat /tmp/fish_cwd_$USER)
+  end
+
 end
