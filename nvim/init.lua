@@ -54,6 +54,16 @@ vim.g.loaded_ruby_provider = 0                 -- (ditto)
 vim.g.loaded_node_provider = 0                 -- (ditto)
 vim.g.loaded_perl_provider = 0                 -- (ditto)
 
+vim.filetype.add({
+  filename = {
+    ['tsconfig.json'] = 'jsonc',
+  },
+  pattern = {
+    ['.*tsconfig.*.json'] = 'jsonc',
+    ['.*tsconfig/.*.json'] = 'jsonc',
+  },
+})
+
 -- LEADER KEYS
 -- ===========
 
@@ -195,6 +205,13 @@ require("nvim-tree").setup({
 require("trouble").setup({
   opts = {},
   cmd = "Trouble",
+})
+
+-- COVERAGE
+-- ========
+
+require("coverage").setup({
+  auto_reload = true,
 })
 
 -- TELESCOPE
