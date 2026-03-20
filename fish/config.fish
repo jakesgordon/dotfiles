@@ -102,16 +102,17 @@ if status is-interactive
   if type -q just
     abbr j   'just'
     abbr ji  'just install'
+    abbr jd  'just dev'
     abbr js  'just start'
     abbr jb  'just build'
     abbr jt  'just test'
     abbr jl  'just lint'
     abbr jf  'just format'
     abbr jc  'just cover'
+    abbr jp  'just prod'
+    abbr jo  'just outdated'
     abbr jj  'just jake'
     abbr jdb 'just db'
-    abbr jrm 'just run-mystery'
-    abbr jrp 'just run-pitchable'
   end
 
   #==============================================================================
