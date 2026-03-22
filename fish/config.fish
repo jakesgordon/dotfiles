@@ -66,6 +66,7 @@ if status is-interactive
   abbr aed       'cd ~/andthen/ensemble/experiences/detective'
   abbr aep       'cd ~/andthen/ensemble/experiences/pitchable'
   abbr aec       'cd ~/andthen/ensemble/experiences/change-my-mind'
+  abbr iv        'cd ~/invoicery'
 
   #==============================================================================
   # LSD
