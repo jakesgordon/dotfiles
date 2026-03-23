@@ -38,6 +38,10 @@ if status is-interactive
     fish_add_path "/usr/local/go/bin"
   end
 
+  if test -d "$HOME/google-cloud-sdk"
+    fish_add_path "$HOME/google-cloud-sdk/bin"
+  end
+
   #==============================================================================
   # COMMON ALIASES
   #==============================================================================
