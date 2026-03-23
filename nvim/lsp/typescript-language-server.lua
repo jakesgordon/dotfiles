@@ -4,8 +4,7 @@ return {
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
-    "vue"
+    "typescriptreact"
   },
   workspace_required = true,
   root_markers = {

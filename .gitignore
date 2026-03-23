@@ -5,3 +5,4 @@ nvim/pack/minpac/start/*
 *.pyc
 .DS_Store
 fish/fish_variables*
+fish/conf.d/env.fish

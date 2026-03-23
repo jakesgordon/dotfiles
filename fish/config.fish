@@ -70,6 +70,7 @@ if status is-interactive
   abbr aed       'cd ~/andthen/ensemble/experiences/detective'
   abbr aep       'cd ~/andthen/ensemble/experiences/pitchable'
   abbr aec       'cd ~/andthen/ensemble/experiences/change-my-mind'
+  abbr iv        'cd ~/invoicery'
 
   #==============================================================================
   # LSD
@@ -106,16 +107,17 @@ if status is-interactive
   if type -q just
     abbr j   'just'
     abbr ji  'just install'
+    abbr jd  'just dev'
     abbr js  'just start'
     abbr jb  'just build'
     abbr jt  'just test'
     abbr jl  'just lint'
     abbr jf  'just format'
     abbr jc  'just cover'
+    abbr jp  'just prod'
+    abbr jo  'just outdated'
     abbr jj  'just jake'
     abbr jdb 'just db'
-    abbr jrm 'just run-mystery'
-    abbr jrp 'just run-pitchable'
   end
 
   #==============================================================================
@@ -237,6 +239,18 @@ if status is-interactive
 
   if test -e "$HOME/.ripgreprc"
       set -gx RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
+  end
+
+  #==============================================================================
+  # CWD MANAGEMENT
+  #==============================================================================
+
+  function __update_cwd --on-variable PWD
+    echo $PWD > /tmp/fish_cwd_$USER
+  end
+
+  if test -f /tmp/fish_cwd_$USER
+    cd (cat /tmp/fish_cwd_$USER)
   end
 
 end

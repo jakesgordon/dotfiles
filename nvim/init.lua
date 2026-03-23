@@ -54,6 +54,16 @@ vim.g.loaded_ruby_provider = 0                 -- (ditto)
 vim.g.loaded_node_provider = 0                 -- (ditto)
 vim.g.loaded_perl_provider = 0                 -- (ditto)
 
+vim.filetype.add({
+  filename = {
+    ['tsconfig.json'] = 'jsonc',
+  },
+  pattern = {
+    ['.*tsconfig.*.json'] = 'jsonc',
+    ['.*tsconfig/.*.json'] = 'jsonc',
+  },
+})
+
 -- LEADER KEYS
 -- ===========
 
@@ -197,6 +207,13 @@ require("trouble").setup({
   cmd = "Trouble",
 })
 
+-- COVERAGE
+-- ========
+
+require("coverage").setup({
+  auto_reload = true,
+})
+
 -- TELESCOPE
 -- =========
 
@@ -261,8 +278,7 @@ local servers = {
   "sqruff",
   "superhtml",
   "typescript-language-server",
-  "yaml-language-server",
-  "vue-language-server",
+  "yaml-language-server"
 }
 for _, server in ipairs(servers) do
   if not registry.is_installed(server) then

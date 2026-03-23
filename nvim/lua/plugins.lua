@@ -25,6 +25,13 @@ return {
     "mason-org/mason.nvim",
   },
   {
+    "andythigpen/nvim-coverage",
+    version = "*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
@@ -49,6 +56,7 @@ return {
           "python",
           "ruby",
           "sql",
+          "tsx",
           "typescript",
           "vim",
           "vimdoc",
