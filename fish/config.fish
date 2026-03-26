@@ -139,9 +139,10 @@ if status is-interactive
     abbr br 'bun run'
     abbr bs 'bun run start'
     abbr bb 'bun run build'
-    abbr bt 'bun run test'
     abbr bl 'bun run lint'
+    abbr bc 'bun run cover'
     abbr bf 'bun run format'
+    abbr bt 'bun test'
   end
 
   #==============================================================================
