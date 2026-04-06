@@ -2,6 +2,7 @@
 *.swp
 vim/pack/minpac/start/*
 nvim/pack/minpac/start/*
+nvim/lazy-lock.json
 *.pyc
 .DS_Store
 fish/fish_variables*
