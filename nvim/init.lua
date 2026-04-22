@@ -277,6 +277,7 @@ local servers = {
   "lua-language-server",
   "sqruff",
   "superhtml",
+  "terraform-ls",
   "typescript-language-server",
   "yaml-language-server"
 }
