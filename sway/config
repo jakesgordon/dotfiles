@@ -6,7 +6,7 @@ set $down  j
 set $up    k
 set $right l
 set $term  x-terminal-emulator
-set $menu  wmenu-run
+set $menu  fuzzel
 set $browser gtk-launch $(xdg-settings get default-web-browser)
 
 default_border none

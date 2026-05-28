@@ -16,6 +16,7 @@ rm -rf $HOME/.tool-versions
 rm -rf $HOME/.config/nvim
 rm -rf $HOME/.config/fish
 rm -rf $HOME/.config/sway
+rm -rf $HOME/.config/fuzzel
 rm -rf $HOME/.config/ghostty
 rm -rf $HOME/.config/zed
 rm -rf $HOME/.config/lsd
@@ -31,6 +32,7 @@ ln -s $DOTFILES/tool-versions     $HOME/.tool-versions
 ln -s $DOTFILES/nvim              $HOME/.config/nvim
 ln -s $DOTFILES/fish              $HOME/.config/fish
 ln -s $DOTFILES/sway              $HOME/.config/sway
+ln -s $DOTFILES/fuzzel            $HOME/.config/fuzzel
 ln -s $DOTFILES/ghostty           $HOME/.config/ghostty
 ln -s $DOTFILES/zed               $HOME/.config/zed
 ln -s $DOTFILES/lsd               $HOME/.config/lsd
