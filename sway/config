@@ -7,6 +7,7 @@ set $up    k
 set $right l
 set $term  x-terminal-emulator
 set $menu  wmenu-run
+set $browser gtk-launch $(xdg-settings get default-web-browser)
 
 default_border none
 
@@ -20,6 +21,20 @@ default_border none
 
     # Start your launcher
     bindsym $mod+space exec $menu
+
+### Launchers
+
+    # Terminal in horizontal split
+    bindsym --to-code --no-warn $mod+backslash split horizontal; exec $term
+
+    # Terminal in vertical split
+    bindsym --to-code --no-warn $mod+minus split vertical; exec $term
+
+    # Browser in horizontal split
+    bindsym --to-code --no-warn $mod+Shift+backslash split horizontal; exec $browser
+
+    # Browser in vertical split
+    bindsym --to-code --no-warn $mod+Shift+minus split vertical; exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     floating_modifier $mod normal
