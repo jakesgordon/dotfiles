@@ -5,7 +5,7 @@ set $left  h
 set $down  j
 set $up    k
 set $right l
-set $term  ghostty
+set $term  x-terminal-emulator
 set $menu  wmenu-run
 
 default_border none

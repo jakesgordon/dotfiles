@@ -22,34 +22,13 @@
 # a full restart to take effect.
 
 command=fish
-cursor-color = cell-foreground
-cursor-text = cell-background
-shell-integration-features = no-cursor
-gtk-titlebar=false
+font-family=UbuntuSansMono Nerd Font
+font-size=16
 
-# Config syntax crash course
-# ==========================
-# # The config file consists of simple key-value pairs,
-# # separated by equals signs.
-# font-family = Iosevka
-# window-padding-x = 2
-#
-# # Spacing around the equals sign does not matter.
-# # All of these are identical:
-# key=value
-# key= value
-# key =value
-# key = value
-#
-# # Any line beginning with a # is a comment. It's not possible to put
-# # a comment after a config option, since it would be interpreted as a
-# # part of the value. For example, this will have a value of "#123abc":
-# background = #123abc
-#
-# # Empty values are used to reset config keys to default.
-# key =
-#
-# # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
-# # Just for example:
-# resize-overlay-duration = 4s 200ms
+# cursor-color = cell-foreground
+# cursor-text = cell-background
+# shell-integration-features = no-cursor
+# gtk-titlebar=false
+
+# Disable ctrl+enter fullscreen toggle (fires accidentally during fast ctrl+l + enter)
+keybind = ctrl+enter=unbind
