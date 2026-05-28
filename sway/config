@@ -133,6 +133,10 @@ mode "resize" {
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
+### Wallpaper
+
+output * bg /usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png fill
+
 #
 # Status Bar:
 #
