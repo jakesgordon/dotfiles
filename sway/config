@@ -8,6 +8,8 @@ set $right l
 set $term  ghostty
 set $menu  wmenu-run
 
+default_border none
+
 ### Key bindings
 
     # Start a terminal
@@ -17,7 +19,7 @@ set $menu  wmenu-run
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     floating_modifier $mod normal
@@ -84,9 +86,6 @@ set $menu  wmenu-run
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
 
 #
 # Resizing containers:
