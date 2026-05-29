@@ -9,8 +9,8 @@
     "spacing": 4,
 
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "battery", "tray"],
+    "modules-center": [],
+    "modules-right": ["clock", "network", "battery", "tray"],
 
     "sway/workspaces": {
         "format": "{name}",
