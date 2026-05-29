@@ -143,15 +143,11 @@ output * bg /usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png fill
 #
 # Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
+# waybar (configured in ~/.config/waybar/). Running it as swaybar_command lets
+# sway own waybar's lifecycle, so a config reload restarts it cleanly with no
+# leftover process. Modules/position/colors all come from the waybar config.
 bar {
-    position bottom
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 #

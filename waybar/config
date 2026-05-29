@@ -1,0 +1,59 @@
+// waybar — status bar for sway (replaces the old i3status-rust bar)
+// Launched by sway via `bar { swaybar_command waybar }`, so sway owns its
+// lifecycle and a config reload ($mod+Shift+c) restarts it cleanly.
+// Styling lives in style.css. See `man 5 waybar`.
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 38,
+    "spacing": 4,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "battery", "tray"],
+
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+
+    "sway/mode": {
+        "format": "{}"
+    },
+
+    "clock": {
+        // 24h, matches the old i3status-rust `%b %d %R` (e.g. "May 28 17:09").
+        "format": "{:%b %d %R}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "network": {
+        "format-wifi": "{essid}  {icon}",
+        "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-ethernet": "  {ipaddr}",
+        "format-disconnected": "󰤪  offline",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
+        "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
+        "tooltip-format-disconnected": "disconnected"
+    },
+
+    "battery": {
+        // No `show_battery` templating: waybar self-hides this module on hosts
+        // with no battery (e.g. everest), so the same dotfile works everywhere.
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-plugged": "{capacity}% {icon}",
+        // Graduated Material Design glyphs; the "charging" set adds the bolt.
+        "format-icons": {
+            "charging": ["󰂄", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        },
+        "tooltip-format": "{timeTo} ({capacity}%)"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}
