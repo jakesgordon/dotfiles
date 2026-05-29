@@ -38,8 +38,8 @@
     },
 
     "battery": {
-        // No `show_battery` templating: waybar self-hides this module on hosts
-        // with no battery (e.g. everest), so the same dotfile works everywhere.
+        // Poll every 5s so the charging/discharging icon catches up promptly.
+        "interval": 5,
         "states": { "warning": 30, "critical": 15 },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% {icon}",
