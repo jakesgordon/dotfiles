@@ -134,8 +134,9 @@ mode "resize" {
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # Screenshots (grim + slurp + satty). See screenshot.sh.
+    bindsym Print      exec ~/.config/sway/screenshot.sh full
+    bindsym $mod+Print exec ~/.config/sway/screenshot.sh region
     # Lock the screen on demand (themed via ~/.config/swaylock/config)
     bindsym $mod+Escape exec swaylock -f
 
@@ -178,6 +179,9 @@ default_border pixel 2
 client.focused          #DC2626 #DC2626 #ffffff #DC2626 #DC2626
 client.focused_inactive #333333 #333333 #888888 #333333 #333333
 client.unfocused        #333333 #333333 #888888 #333333 #333333
+
+# Float the satty screenshot editor instead of tiling it into the layout.
+for_window [app_id="com.gabm.satty"] floating enable
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
