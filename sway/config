@@ -9,8 +9,6 @@ set $term  x-terminal-emulator
 set $menu  fuzzel
 set $browser gtk-launch $(xdg-settings get default-web-browser)
 
-default_border none
-
 ### Key bindings
 
     # Start a terminal
@@ -163,6 +161,18 @@ input type:touchpad {
     natural_scroll enabled
     middle_emulation disabled
 }
+
+### Look & feel
+
+# Red border on the focused window (the "which window is selected" cue).
+# smart_borders: borders only show when a workspace has 2+ tiled windows, so a
+# lone window stays borderless. With pixel borders (no titlebar) the last color
+# field — child_border — is the one that paints, so the red goes there.
+smart_borders on
+default_border pixel 2
+client.focused          #DC2626 #DC2626 #ffffff #DC2626 #DC2626
+client.focused_inactive #333333 #333333 #888888 #333333 #333333
+client.unfocused        #333333 #333333 #888888 #333333 #333333
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
