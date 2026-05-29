@@ -20,6 +20,7 @@ rm -rf $HOME/.config/swaylock
 rm -rf $HOME/.config/swaynag
 rm -rf $HOME/.config/fuzzel
 rm -rf $HOME/.config/waybar
+rm -rf $HOME/.config/mako
 rm -rf $HOME/.config/ghostty
 rm -rf $HOME/.config/lsd
 rm -rf $HOME/.config/xdg-desktop-portal
@@ -39,6 +40,7 @@ ln -s $DOTFILES/swaylock           $HOME/.config/swaylock
 ln -s $DOTFILES/swaynag            $HOME/.config/swaynag
 ln -s $DOTFILES/fuzzel             $HOME/.config/fuzzel
 ln -s $DOTFILES/waybar             $HOME/.config/waybar
+ln -s $DOTFILES/mako               $HOME/.config/mako
 ln -s $DOTFILES/ghostty            $HOME/.config/ghostty
 ln -s $DOTFILES/lsd                $HOME/.config/lsd
 ln -s $DOTFILES/xdg-desktop-portal $HOME/.config/xdg-desktop-portal
