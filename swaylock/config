@@ -1,0 +1,47 @@
+# Solarized Dark themed swaylock
+# Colors are RRGGBB[AA] (no leading #). Palette: ethanschoonover.com/solarized
+
+ignore-empty-password
+show-failed-attempts
+
+# Indicator ring
+indicator-radius=100
+indicator-thickness=10
+font=Ubuntu Sans
+
+# Background (base03)
+color=002b36
+
+# Ring: idle base02, typing green, verifying blue, wrong red, caps-lock yellow
+ring-color=073642
+ring-clear-color=b58900
+ring-caps-lock-color=b58900
+ring-ver-color=268bd2
+ring-wrong-color=dc322f
+
+# Inside of the ring (base03, matches background)
+inside-color=002b36
+inside-clear-color=002b36
+inside-caps-lock-color=002b36
+inside-ver-color=002b36
+inside-wrong-color=002b36
+
+# Separator line (matches background — effectively hidden)
+line-color=002b36
+line-clear-color=002b36
+line-caps-lock-color=002b36
+line-ver-color=002b36
+line-wrong-color=002b36
+
+# Key-press / backspace highlight: green / orange
+key-hl-color=859900
+bs-hl-color=cb4b16
+caps-lock-key-hl-color=859900
+caps-lock-bs-hl-color=cb4b16
+
+# Indicator text (base1)
+text-color=93a1a1
+text-clear-color=93a1a1
+text-caps-lock-color=93a1a1
+text-ver-color=93a1a1
+text-wrong-color=93a1a1

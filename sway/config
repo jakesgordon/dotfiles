@@ -132,6 +132,8 @@ mode "resize" {
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
     bindsym Print exec grim
+    # Lock the screen on demand (themed via ~/.config/swaylock/config)
+    bindsym $mod+Escape exec swaylock -f
 
 ### Wallpaper
 
@@ -165,9 +167,10 @@ input type:touchpad {
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+# swaylock is themed via ~/.config/swaylock/config.
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f'
 
 include /etc/sway/config.d/*
