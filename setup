@@ -22,24 +22,26 @@ rm -rf $HOME/.config/fuzzel
 rm -rf $HOME/.config/waybar
 rm -rf $HOME/.config/ghostty
 rm -rf $HOME/.config/lsd
+rm -rf $HOME/.config/xdg-desktop-portal
 
-ln -s $DOTFILES/bashrc            $HOME/.bashrc
-ln -s $DOTFILES/zprofile          $HOME/.zprofile
-ln -s $DOTFILES/gitconfig         $HOME/.gitconfig
-ln -s $DOTFILES/gitignore         $HOME/.gitignore
-ln -s $DOTFILES/irbrc             $HOME/.irbrc
-ln -s $DOTFILES/ripgreprc         $HOME/.ripgreprc
-ln -s $DOTFILES/htoprc            $HOME/.htoprc
-ln -s $DOTFILES/tool-versions     $HOME/.tool-versions
-ln -s $DOTFILES/nvim              $HOME/.config/nvim
-ln -s $DOTFILES/fish              $HOME/.config/fish
-ln -s $DOTFILES/sway              $HOME/.config/sway
-ln -s $DOTFILES/swaylock          $HOME/.config/swaylock
-ln -s $DOTFILES/swaynag           $HOME/.config/swaynag
-ln -s $DOTFILES/fuzzel            $HOME/.config/fuzzel
-ln -s $DOTFILES/waybar            $HOME/.config/waybar
-ln -s $DOTFILES/ghostty           $HOME/.config/ghostty
-ln -s $DOTFILES/lsd               $HOME/.config/lsd
+ln -s $DOTFILES/bashrc             $HOME/.bashrc
+ln -s $DOTFILES/zprofile           $HOME/.zprofile
+ln -s $DOTFILES/gitconfig          $HOME/.gitconfig
+ln -s $DOTFILES/gitignore          $HOME/.gitignore
+ln -s $DOTFILES/irbrc              $HOME/.irbrc
+ln -s $DOTFILES/ripgreprc          $HOME/.ripgreprc
+ln -s $DOTFILES/htoprc             $HOME/.htoprc
+ln -s $DOTFILES/tool-versions      $HOME/.tool-versions
+ln -s $DOTFILES/nvim               $HOME/.config/nvim
+ln -s $DOTFILES/fish               $HOME/.config/fish
+ln -s $DOTFILES/sway               $HOME/.config/sway
+ln -s $DOTFILES/swaylock           $HOME/.config/swaylock
+ln -s $DOTFILES/swaynag            $HOME/.config/swaynag
+ln -s $DOTFILES/fuzzel             $HOME/.config/fuzzel
+ln -s $DOTFILES/waybar             $HOME/.config/waybar
+ln -s $DOTFILES/ghostty            $HOME/.config/ghostty
+ln -s $DOTFILES/lsd                $HOME/.config/lsd
+ln -s $DOTFILES/xdg-desktop-portal $HOME/.config/xdg-desktop-portal
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C $DOTFILES config --local user.name "Jake Gordon"
