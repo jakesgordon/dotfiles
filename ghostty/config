@@ -16,10 +16,5 @@ font-size=16
 theme=iTerm2 Solarized Dark
 background-opacity=0.9
 
-# cursor-color = cell-foreground
-# cursor-text = cell-background
-# shell-integration-features = no-cursor
-# gtk-titlebar=false
-
 # Disable ctrl+enter fullscreen toggle (fires accidentally during fast ctrl+l + enter)
 keybind = ctrl+enter=unbind

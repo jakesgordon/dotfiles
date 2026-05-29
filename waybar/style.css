@@ -34,9 +34,13 @@ window#waybar {
     background-color: #dc322f;   /* red */
 }
 
+/* Binding-mode indicator (e.g. "resize") — solid red so it really pops,
+ * the way the old regolith/i3status-rust mode indicator did. */
 #mode {
-    padding: 0 10px;
-    color: #b58900;              /* yellow — e.g. "resize" mode */
+    padding: 0 12px;
+    color: #fdf6e3;              /* base3 — bright text */
+    background-color: #dc322f;   /* red */
+    font-weight: bold;
 }
 
 /* Right-side modules ----------------------------------------------------- */
