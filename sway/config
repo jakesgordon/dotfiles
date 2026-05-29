@@ -14,6 +14,9 @@ set $browser gtk-launch $(xdg-settings get default-web-browser)
     # Start a terminal
     bindsym $mod+Return exec $term
 
+    # Start a browser
+    bindsym $mod+Shift+Return exec $browser
+
     # Kill focused window
     bindsym $mod+Shift+q kill
 
