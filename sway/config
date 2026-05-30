@@ -197,4 +197,8 @@ exec swayidle -w \
 # Notification daemon - renders desktop notifications (notify-send, etc).
 exec mako
 
+# Polkit authentication agent - pops the password prompt when a GUI app (e.g.
+# nm-applet, mounting a drive) requests a privileged action via polkit.
+exec /usr/libexec/polkit-mate-authentication-agent-1
+
 include /etc/sway/config.d/*
