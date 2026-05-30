@@ -28,9 +28,9 @@
     },
 
     "network": {
-        "format-wifi": "{icon}  {essid}",
+        "format-wifi": "{essid}",
         "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
-        "format-ethernet": "  {ipaddr}",
+        "format-ethernet": "{ipaddr}",
         "format-disconnected": "󰤪  offline",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
         "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
