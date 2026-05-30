@@ -201,4 +201,8 @@ exec mako
 # nm-applet, mounting a drive) requests a privileged action via polkit.
 exec /usr/libexec/polkit-mate-authentication-agent-1
 
+# Network applet - tray icon for picking wifi/VPN networks (waybar's `tray`
+# module renders it). --indicator uses StatusNotifierItem, which Wayland needs.
+exec nm-applet --indicator
+
 include /etc/sway/config.d/*
