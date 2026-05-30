@@ -11,7 +11,7 @@
 
 window#waybar {
     background-color: #002b36;   /* base03 */
-    color: #839496;              /* base0  */
+    color: #586e75;              /* base01 — dimmed default text */
 }
 
 /* Workspaces ------------------------------------------------------------- */
@@ -46,10 +46,26 @@ window#waybar {
 /* Right-side modules ----------------------------------------------------- */
 #clock,
 #network,
+#backlight,
+#wireplumber,
 #battery,
 #tray {
     padding: 0 10px;
-    color: #93a1a1;              /* base1 */
+    color: #839496;              /* base0 — dimmed one step from base1 */
+}
+
+#wireplumber.muted {
+    color: #586e75;              /* base01 — dim when muted */
+}
+
+/* Vertical separators between the right-side modules. A left border on every
+ * module except the first (clock) draws a divider between each pair. */
+#network,
+#backlight,
+#wireplumber,
+#battery,
+#tray {
+    border-left: 1px solid #30525c;   /* midway base02→base01 — divider */
 }
 
 #clock {
