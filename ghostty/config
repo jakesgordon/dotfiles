@@ -12,9 +12,13 @@
 
 command=fish
 font-family=UbuntuSansMono Nerd Font
-font-size=16
+font-size=14
 theme=iTerm2 Solarized Dark
 background-opacity=0.9
+window-decoration=true
+window-padding-x=0
+window-padding-y=0
+window-padding-balance=true
 
 # Disable ctrl+enter fullscreen toggle (fires accidentally during fast ctrl+l + enter)
 keybind = ctrl+enter=unbind
