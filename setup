@@ -25,6 +25,7 @@ rm -rf $HOME/.config/mako
 rm -rf $HOME/.config/ghostty
 rm -rf $HOME/.config/lsd
 rm -rf $HOME/.config/xdg-desktop-portal
+rm -rf $HOME/.config/environment.d
 
 ln -s $DOTFILES/bashrc             $HOME/.bashrc
 ln -s $DOTFILES/zprofile           $HOME/.zprofile
@@ -46,6 +47,7 @@ ln -s $DOTFILES/mako               $HOME/.config/mako
 ln -s $DOTFILES/ghostty            $HOME/.config/ghostty
 ln -s $DOTFILES/lsd                $HOME/.config/lsd
 ln -s $DOTFILES/xdg-desktop-portal $HOME/.config/xdg-desktop-portal
+ln -s $DOTFILES/environment.d      $HOME/.config/environment.d
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C $DOTFILES config --local user.name "Jake Gordon"

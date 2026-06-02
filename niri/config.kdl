@@ -7,6 +7,10 @@
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
 input {
+    // Use Alt as the "Mod" key (instead of the default Super/Windows key).
+    mod-key        "Alt"
+    mod-key-nested "Super"
+
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
