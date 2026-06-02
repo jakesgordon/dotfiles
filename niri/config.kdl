@@ -163,7 +163,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 8
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -171,7 +171,8 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        // active-color "#7fc8ff"
+        active-color "00000050"
 
         // Color of the ring on inactive monitors.
         //
