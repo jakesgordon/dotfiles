@@ -3,6 +3,7 @@
 REALPATH=$(realpath $0)
 DOTFILES=$(dirname $REALPATH)
 
+mkdir -p $HOME/.backup
 mkdir -p $HOME/.config
 
 rm -rf $HOME/.bashrc
@@ -26,6 +27,8 @@ rm -rf $HOME/.config/ghostty
 rm -rf $HOME/.config/lsd
 rm -rf $HOME/.config/xdg-desktop-portal
 rm -rf $HOME/.config/environment.d
+rm -rf $HOME/.config/user-dirs.dirs
+rm -rf $HOME/.config/user-dirs.conf
 
 ln -s $DOTFILES/bashrc             $HOME/.bashrc
 ln -s $DOTFILES/zprofile           $HOME/.zprofile
@@ -48,6 +51,8 @@ ln -s $DOTFILES/ghostty            $HOME/.config/ghostty
 ln -s $DOTFILES/lsd                $HOME/.config/lsd
 ln -s $DOTFILES/xdg-desktop-portal $HOME/.config/xdg-desktop-portal
 ln -s $DOTFILES/environment.d      $HOME/.config/environment.d
+ln -s $DOTFILES/xdg/user-dirs.dirs $HOME/.config/user-dirs.dirs
+ln -s $DOTFILES/xdg/user-dirs.conf $HOME/.config/user-dirs.conf
 
 git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
 git -C $DOTFILES config --local user.name "Jake Gordon"
