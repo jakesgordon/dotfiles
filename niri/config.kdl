@@ -266,6 +266,15 @@ layout {
     }
 }
 
+// Draw the focus ring *around* Ghostty rather than as a solid rectangle behind it.
+// By default niri draws the ring behind windows, so with background-opacity < 1 the
+// ring color bleeds through: focused/windowed shows the light-blue active-color and
+// looks lighter, while unfocused and fullscreen show black and look darker/jarring.
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    draw-border-with-background false
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -273,6 +282,11 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
+
+// Wallpaper. swaybg paints the background layer, which shows through the 90%
+// opacity Ghostty in windowed/full-width mode. (DankMaterialShell will manage
+// the wallpaper itself once installed, so remove this line then.)
+spawn-at-startup "swaybg" "-i" "/usr/share/backgrounds/gnome/drool-l.svg" "-m" "fill"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
