@@ -284,10 +284,10 @@ window-rule {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
 
-// Wallpaper. swaybg paints the background layer, which shows through the 90%
-// opacity Ghostty in windowed/full-width mode. (DankMaterialShell will manage
-// the wallpaper itself once installed, so remove this line then.)
-spawn-at-startup "swaybg" "-i" "/usr/share/backgrounds/gnome/drool-l.svg" "-m" "fill"
+// Wallpaper is managed by DankMaterialShell (its wallpaper daemon paints the
+// background layer, which shows through the 90% opacity Ghostty in
+// windowed/full-width mode). The wallpaper path lives in
+// ~/.local/state/DankMaterialShell/session.json, set via the DMS settings UI.
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -391,7 +391,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Ctrl+Return hotkey-overlay-title="Open a Terminal in a Split: ghostty" { spawn "/home/jake/.dotfiles/niri/scripts/term-split.sh"; }
     Mod+Shift+Return hotkey-overlay-title="Open a Browser: google-chrome-stable" { spawn "google-chrome-stable"; }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+Space hotkey-overlay-title="Run an Application: dms" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
