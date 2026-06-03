@@ -403,7 +403,7 @@
       "id": "default",
       "name": "Main Bar",
       "enabled": true,
-      "position": 0,
+      "position": 1,
       "screenPreferences": [
         "all"
       ],
@@ -427,12 +427,12 @@
         "battery",
         "controlCenterButton"
       ],
-      "spacing": 4,
-      "innerPadding": 4,
+      "spacing": 0,
+      "innerPadding": 1,
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
-      "squareCorners": false,
+      "squareCorners": true,
       "noBackground": false,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
