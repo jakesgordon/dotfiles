@@ -292,6 +292,12 @@ spawn-at-startup "swaybg" "-i" "/usr/share/backgrounds/gnome/drool-l.svg" "-m" "
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
+// XWayland: niri (25.08+) integrates xwayland-satellite automatically. As long as
+// the xwayland-satellite package is installed (see the arch/desktop provision role),
+// niri creates the X11 socket, exports $DISPLAY, and spawns it on demand for X11 apps
+// like Cryptomator (JavaFX). Do NOT manually spawn xwayland-satellite or set DISPLAY
+// here -- that breaks the automatic integration.
+
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
     // skip-at-startup
