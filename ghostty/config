@@ -20,5 +20,7 @@ window-padding-x=0
 window-padding-y=0
 window-padding-balance=true
 
+keybind = shift+insert=paste_from_clipboard
+
 # Disable ctrl+enter fullscreen toggle (fires accidentally during fast ctrl+l + enter)
 keybind = ctrl+enter=unbind
