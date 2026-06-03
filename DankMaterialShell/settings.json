@@ -192,7 +192,7 @@
   "dankLauncherV2BorderEnabled": false,
   "dankLauncherV2BorderThickness": 2,
   "dankLauncherV2BorderColor": "primary",
-  "dankLauncherV2ShowFooter": true,
+  "dankLauncherV2ShowFooter": false,
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": false,
   "weatherEnabled": true,
@@ -415,14 +415,11 @@
       ],
       "centerWidgets": [
         "music",
-        "clock",
-        "weather"
+        "clock"
       ],
       "rightWidgets": [
         "systemTray",
         "clipboard",
-        "cpuUsage",
-        "memUsage",
         "notificationButton",
         "battery",
         "controlCenterButton"
@@ -540,7 +537,15 @@
   "desktopWidgetGridSettings": {},
   "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
-  "builtInPluginSettings": {},
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?",
+      "enabled": false
+    },
+    "dms_notepad": {
+      "enabled": false
+    }
+  },
   "clipboardEnterToPaste": false,
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
