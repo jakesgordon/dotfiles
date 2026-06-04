@@ -3,9 +3,15 @@
 REALPATH=$(realpath $0)
 DOTFILES=$(dirname $REALPATH)
 
-mkdir -p $HOME/.backup
-mkdir -p $HOME/.config
-mkdir -p $HOME/.claude
+BACKUP=$HOME/.backup
+CONFIG=$HOME/.config
+LOCAL=$HOME/.local/state
+CLAUDE=$HOME/.claude
+
+mkdir -p $BACKUP
+mkdir -p $CONFIG
+mkdir -p $LOCAL/DankMaterialShell
+mkdir -p $CLAUDE
 
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.zprofile
@@ -15,23 +21,24 @@ rm -rf $HOME/.irbrc
 rm -rf $HOME/.ripgreprc
 rm -rf $HOME/.htoprc
 rm -rf $HOME/.tool-versions
-rm -rf $HOME/.config/nvim
-rm -rf $HOME/.config/fish
-rm -rf $HOME/.config/niri
-rm -rf $HOME/.config/sway
-rm -rf $HOME/.config/swaylock
-rm -rf $HOME/.config/swaynag
-rm -rf $HOME/.config/fuzzel
-rm -rf $HOME/.config/waybar
-rm -rf $HOME/.config/mako
-rm -rf $HOME/.config/ghostty
-rm -rf $HOME/.config/lsd
-rm -rf $HOME/.config/xdg-desktop-portal
-rm -rf $HOME/.config/environment.d
-rm -rf $HOME/.config/user-dirs.dirs
-rm -rf $HOME/.config/user-dirs.conf
-rm -rf $HOME/.config/DankMaterialShell
-rm -rf $HOME/.claude/settings.json
+rm -rf $CONFIG/nvim
+rm -rf $CONFIG/fish
+rm -rf $CONFIG/niri
+rm -rf $CONFIG/sway
+rm -rf $CONFIG/swaylock
+rm -rf $CONFIG/swaynag
+rm -rf $CONFIG/fuzzel
+rm -rf $CONFIG/waybar
+rm -rf $CONFIG/mako
+rm -rf $CONFIG/ghostty
+rm -rf $CONFIG/lsd
+rm -rf $CONFIG/xdg-desktop-portal
+rm -rf $CONFIG/environment.d
+rm -rf $CONFIG/user-dirs.dirs
+rm -rf $CONFIG/user-dirs.conf
+rm -rf $CONFIG/DankMaterialShell
+rm -rf $LOCAL/DankMaterialShell/session.json
+rm -rf $CLAUDE/settings.json
 
 ln -s $DOTFILES/bashrc                $HOME/.bashrc
 ln -s $DOTFILES/zprofile              $HOME/.zprofile
@@ -41,24 +48,21 @@ ln -s $DOTFILES/irbrc                 $HOME/.irbrc
 ln -s $DOTFILES/ripgreprc             $HOME/.ripgreprc
 ln -s $DOTFILES/htoprc                $HOME/.htoprc
 ln -s $DOTFILES/tool-versions         $HOME/.tool-versions
-ln -s $DOTFILES/nvim                  $HOME/.config/nvim
-ln -s $DOTFILES/fish                  $HOME/.config/fish
-ln -s $DOTFILES/sway                  $HOME/.config/sway
-ln -s $DOTFILES/niri                  $HOME/.config/niri
-ln -s $DOTFILES/swaylock              $HOME/.config/swaylock
-ln -s $DOTFILES/swaynag               $HOME/.config/swaynag
-ln -s $DOTFILES/fuzzel                $HOME/.config/fuzzel
-ln -s $DOTFILES/waybar                $HOME/.config/waybar
-ln -s $DOTFILES/mako                  $HOME/.config/mako
-ln -s $DOTFILES/ghostty               $HOME/.config/ghostty
-ln -s $DOTFILES/lsd                   $HOME/.config/lsd
-ln -s $DOTFILES/xdg-desktop-portal    $HOME/.config/xdg-desktop-portal
-ln -s $DOTFILES/environment.d         $HOME/.config/environment.d
-ln -s $DOTFILES/xdg/user-dirs.dirs    $HOME/.config/user-dirs.dirs
-ln -s $DOTFILES/xdg/user-dirs.conf    $HOME/.config/user-dirs.conf
-ln -s $DOTFILES/DankMaterialShell     $HOME/.config/DankMaterialShell
-ln -s $DOTFILES/claude/settings.json  $HOME/.claude/settings.json
-
-git -C $DOTFILES remote set-url origin git@github.com:jakesgordon/dotfiles.git
-git -C $DOTFILES config --local user.name "Jake Gordon"
-git -C $DOTFILES config --local user.email "jakesgordon@gmail.com"
+ln -s $DOTFILES/nvim                  $CONFIG/nvim
+ln -s $DOTFILES/fish                  $CONFIG/fish
+ln -s $DOTFILES/sway                  $CONFIG/sway
+ln -s $DOTFILES/niri                  $CONFIG/niri
+ln -s $DOTFILES/swaylock              $CONFIG/swaylock
+ln -s $DOTFILES/swaynag               $CONFIG/swaynag
+ln -s $DOTFILES/fuzzel                $CONFIG/fuzzel
+ln -s $DOTFILES/waybar                $CONFIG/waybar
+ln -s $DOTFILES/mako                  $CONFIG/mako
+ln -s $DOTFILES/ghostty               $CONFIG/ghostty
+ln -s $DOTFILES/lsd                   $CONFIG/lsd
+ln -s $DOTFILES/xdg-desktop-portal    $CONFIG/xdg-desktop-portal
+ln -s $DOTFILES/environment.d         $CONFIG/environment.d
+ln -s $DOTFILES/xdg/user-dirs.dirs    $CONFIG/user-dirs.dirs
+ln -s $DOTFILES/xdg/user-dirs.conf    $CONFIG/user-dirs.conf
+ln -s $DOTFILES/dms                   $CONFIG/DankMaterialShell
+ln -s $DOTFILES/claude/settings.json  $CLAUDE/settings.json
+ln -s $DOTFILES/dms/session.json      $LOCAL/DankMaterialShell/session.json
