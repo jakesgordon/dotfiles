@@ -254,7 +254,9 @@
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
-  "brightnessDevicePins": {},
+  "brightnessDevicePins": {
+    "eDP-1": "backlight:intel_backlight"
+  },
   "wifiNetworkPins": {},
   "bluetoothDevicePins": {},
   "audioInputDevicePins": {},
