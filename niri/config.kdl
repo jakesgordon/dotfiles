@@ -114,6 +114,9 @@ input {
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
+    // set background color - only flashes briefly before DMS wallpaper takes over
+    background-color "#1565c0"
+
     // Set gaps around windows in logical pixels.
     gaps 16
 
