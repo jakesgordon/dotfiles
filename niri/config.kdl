@@ -386,7 +386,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Ctrl+Return hotkey-overlay-title="Open a Terminal in a Split: ghostty" { spawn "/home/jake/.dotfiles/niri/scripts/term-split.sh"; }
     Mod+Shift+Return hotkey-overlay-title="Open a Browser: google-chrome-stable" { spawn "google-chrome-stable"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
 
     // DMS shell binds
     Mod+Space hotkey-overlay-title="Run an Application: dms" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
