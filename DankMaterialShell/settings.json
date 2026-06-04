@@ -124,7 +124,7 @@
       "width": 50
     }
   ],
-  "showWorkspaceIndex": false,
+  "showWorkspaceIndex": true,
   "showWorkspaceName": false,
   "showWorkspacePadding": false,
   "workspaceScrolling": false,
@@ -141,7 +141,7 @@
   "workspaceOccupiedColorMode": "none",
   "workspaceUnfocusedColorMode": "default",
   "workspaceUrgentColorMode": "default",
-  "workspaceFocusedBorderEnabled": false,
+  "workspaceFocusedBorderEnabled": true,
   "workspaceFocusedBorderColor": "primary",
   "workspaceFocusedBorderThickness": 2,
   "workspaceNameIcons": {},
@@ -412,19 +412,36 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         "launcherButton",
-        "workspaceSwitcher",
-        "focusedWindow"
+        "workspaceSwitcher"
       ],
       "centerWidgets": [
-        "music",
-        "clock"
+        "music"
       ],
       "rightWidgets": [
-        "systemTray",
-        "clipboard",
-        "notificationButton",
-        "battery",
-        "controlCenterButton"
+        {
+          "id": "clock",
+          "enabled": true
+        },
+        {
+          "id": "systemTray",
+          "enabled": true
+        },
+        {
+          "id": "clipboard",
+          "enabled": true
+        },
+        {
+          "id": "notificationButton",
+          "enabled": true
+        },
+        {
+          "id": "battery",
+          "enabled": true
+        },
+        {
+          "id": "controlCenterButton",
+          "enabled": true
+        }
       ],
       "spacing": 0,
       "innerPadding": 2,
