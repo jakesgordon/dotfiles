@@ -411,7 +411,6 @@
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
-        "launcherButton",
         "workspaceSwitcher"
       ],
       "centerWidgets": [

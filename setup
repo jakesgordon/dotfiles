@@ -31,6 +31,7 @@ rm -rf $CONFIG/fuzzel
 rm -rf $CONFIG/waybar
 rm -rf $CONFIG/mako
 rm -rf $CONFIG/ghostty
+rm -rf $CONFIG/onedrive
 rm -rf $CONFIG/lsd
 rm -rf $CONFIG/xdg-desktop-portal
 rm -rf $CONFIG/environment.d
@@ -58,6 +59,7 @@ ln -s $DOTFILES/fuzzel                $CONFIG/fuzzel
 ln -s $DOTFILES/waybar                $CONFIG/waybar
 ln -s $DOTFILES/mako                  $CONFIG/mako
 ln -s $DOTFILES/ghostty               $CONFIG/ghostty
+ln -s $DOTFILES/onedrive              $CONFIG/onedrive
 ln -s $DOTFILES/lsd                   $CONFIG/lsd
 ln -s $DOTFILES/xdg-desktop-portal    $CONFIG/xdg-desktop-portal
 ln -s $DOTFILES/environment.d         $CONFIG/environment.d
