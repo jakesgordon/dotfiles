@@ -1,7 +1,7 @@
 {
-  "theme": "dark",
-  "preferredNotifChannel": "notifications_disabled",
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true
-  }
+  },
+  "theme": "dark",
+  "preferredNotifChannel": "notifications_disabled"
 }

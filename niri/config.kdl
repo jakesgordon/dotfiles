@@ -296,6 +296,12 @@ window-rule {
 // like Cryptomator (JavaFX). Do NOT manually spawn xwayland-satellite or set DISPLAY
 // here -- that breaks the automatic integration.
 
+// Auto-mount/auto-unlock removable media via udiskie (udisks2 automounter; see
+// the arch/desktop provision role). -a automount; --no-tray since the tray only
+// offered eject (nautilus handles that). Notifications are on by default. The
+// LUKS passphrase prompt and automount all work fine without a tray icon.
+spawn-at-startup "udiskie" "-a" "--no-tray"
+
 // Watch for completed screenshots and open each one in satty to annotate. The
 // Print binds keep using niri's native screenshot actions; this watcher reacts
 // to the resulting ScreenshotCaptured event and pipes the clipboard into satty.
