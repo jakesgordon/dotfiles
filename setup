@@ -14,7 +14,6 @@ mkdir -p $LOCAL/DankMaterialShell
 mkdir -p $CLAUDE
 
 rm -rf $HOME/.bashrc
-rm -rf $HOME/.zprofile
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.gitignore
 rm -rf $HOME/.irbrc
@@ -24,16 +23,9 @@ rm -rf $HOME/.tool-versions
 rm -rf $CONFIG/nvim
 rm -rf $CONFIG/fish
 rm -rf $CONFIG/niri
-rm -rf $CONFIG/sway
-rm -rf $CONFIG/swaylock
-rm -rf $CONFIG/swaynag
-rm -rf $CONFIG/fuzzel
-rm -rf $CONFIG/waybar
-rm -rf $CONFIG/mako
 rm -rf $CONFIG/ghostty
 rm -rf $CONFIG/onedrive
 rm -rf $CONFIG/lsd
-rm -rf $CONFIG/xdg-desktop-portal
 rm -rf $CONFIG/environment.d
 rm -rf $CONFIG/user-dirs.dirs
 rm -rf $CONFIG/user-dirs.conf
@@ -42,7 +34,6 @@ rm -rf $LOCAL/DankMaterialShell/session.json
 rm -rf $CLAUDE/settings.json
 
 ln -s $DOTFILES/bashrc                $HOME/.bashrc
-ln -s $DOTFILES/zprofile              $HOME/.zprofile
 ln -s $DOTFILES/gitconfig             $HOME/.gitconfig
 ln -s $DOTFILES/gitignore             $HOME/.gitignore
 ln -s $DOTFILES/irbrc                 $HOME/.irbrc
@@ -51,17 +42,10 @@ ln -s $DOTFILES/htoprc                $HOME/.htoprc
 ln -s $DOTFILES/tool-versions         $HOME/.tool-versions
 ln -s $DOTFILES/nvim                  $CONFIG/nvim
 ln -s $DOTFILES/fish                  $CONFIG/fish
-ln -s $DOTFILES/sway                  $CONFIG/sway
 ln -s $DOTFILES/niri                  $CONFIG/niri
-ln -s $DOTFILES/swaylock              $CONFIG/swaylock
-ln -s $DOTFILES/swaynag               $CONFIG/swaynag
-ln -s $DOTFILES/fuzzel                $CONFIG/fuzzel
-ln -s $DOTFILES/waybar                $CONFIG/waybar
-ln -s $DOTFILES/mako                  $CONFIG/mako
 ln -s $DOTFILES/ghostty               $CONFIG/ghostty
 ln -s $DOTFILES/onedrive              $CONFIG/onedrive
 ln -s $DOTFILES/lsd                   $CONFIG/lsd
-ln -s $DOTFILES/xdg-desktop-portal    $CONFIG/xdg-desktop-portal
 ln -s $DOTFILES/environment.d         $CONFIG/environment.d
 ln -s $DOTFILES/xdg/user-dirs.dirs    $CONFIG/user-dirs.dirs
 ln -s $DOTFILES/xdg/user-dirs.conf    $CONFIG/user-dirs.conf
