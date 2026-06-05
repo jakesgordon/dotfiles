@@ -24,7 +24,6 @@ rm -rf $CONFIG/nvim
 rm -rf $CONFIG/fish
 rm -rf $CONFIG/niri
 rm -rf $CONFIG/ghostty
-rm -rf $CONFIG/onedrive
 rm -rf $CONFIG/lsd
 rm -rf $CONFIG/environment.d
 rm -rf $CONFIG/user-dirs.dirs
@@ -44,7 +43,6 @@ ln -s $DOTFILES/nvim                  $CONFIG/nvim
 ln -s $DOTFILES/fish                  $CONFIG/fish
 ln -s $DOTFILES/niri                  $CONFIG/niri
 ln -s $DOTFILES/ghostty               $CONFIG/ghostty
-ln -s $DOTFILES/onedrive              $CONFIG/onedrive
 ln -s $DOTFILES/lsd                   $CONFIG/lsd
 ln -s $DOTFILES/environment.d         $CONFIG/environment.d
 ln -s $DOTFILES/xdg/user-dirs.dirs    $CONFIG/user-dirs.dirs
