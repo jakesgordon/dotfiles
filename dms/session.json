@@ -67,12 +67,21 @@
   "enabledGpuPciIds": [],
   "wifiDeviceOverride": "",
   "weatherHourlyDetailed": true,
-  "hiddenApps": [],
+  "hiddenApps": [
+    "yazi",
+    "bssh",
+    "qvidcap",
+    "qv4l2",
+    "htop",
+    "avahi-discover"
+  ],
   "appOverrides": {},
   "searchAppActions": true,
   "vpnLastConnected": "",
   "deviceMaxVolumes": {},
-  "hiddenOutputDeviceNames": [],
+  "hiddenOutputDeviceNames": [
+    "alsa_output.usb-HP__Inc_HyperX_DuoCast_202011110001-00.analog-stereo"
+  ],
   "hiddenInputDeviceNames": [],
   "launcherLastMode": "all",
   "appDrawerLastMode": "apps",
