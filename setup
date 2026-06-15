@@ -7,11 +7,13 @@ BACKUP=$HOME/.backup
 CONFIG=$HOME/.config
 LOCAL=$HOME/.local/state
 CLAUDE=$HOME/.claude
+ONEDRIVE=$HOME/.config/onedrive
 
 mkdir -p $BACKUP
 mkdir -p $CONFIG
 mkdir -p $LOCAL/DankMaterialShell
 mkdir -p $CLAUDE
+mkdir -p $ONEDRIVE
 
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.gitconfig
@@ -32,6 +34,7 @@ rm -rf $CONFIG/user-dirs.conf
 rm -rf $CONFIG/DankMaterialShell
 rm -rf $LOCAL/DankMaterialShell/session.json
 rm -rf $CLAUDE/settings.json
+rm -rf $ONEDRIVE/config
 
 ln -s $DOTFILES/bashrc                $HOME/.bashrc
 ln -s $DOTFILES/gitconfig             $HOME/.gitconfig
@@ -51,4 +54,5 @@ ln -s $DOTFILES/xdg/user-dirs.dirs    $CONFIG/user-dirs.dirs
 ln -s $DOTFILES/xdg/user-dirs.conf    $CONFIG/user-dirs.conf
 ln -s $DOTFILES/dms                   $CONFIG/DankMaterialShell
 ln -s $DOTFILES/claude/settings.json  $CLAUDE/settings.json
+ln -s $DOTFILES/onedrive/config       $ONEDRIVE/config
 ln -s $DOTFILES/dms/session.json      $LOCAL/DankMaterialShell/session.json
