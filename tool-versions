@@ -6,7 +6,7 @@ ruby 4.0.5
 golang 1.26.4
 just 1.51.0
 python 3.14.5
-pipx 1.12.0
+pipx 1.14.0
 poetry 2.4.1
-uv 0.11.16
-pnpm 11.4.0
+uv 0.11.19
+pnpm 11.5.2
