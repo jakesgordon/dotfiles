@@ -42,9 +42,11 @@ if status is-interactive
     fish_add_path "$HOME/google-cloud-sdk/bin"
   end
 
-  if test -f "$HOME/.iks-claude-code-oauth-token"
-    abbr iks-claude 'env CLAUDE_CODE_OAUTH_TOKEN=$(cat $HOME/.iks-claude-code-oauth-token) claude'
-  end
+  # if test -f "$HOME/.iks-claude-code-oauth-token"
+  #   abbr iks-claude 'env CLAUDE_CODE_OAUTH_TOKEN=$(cat $HOME/.iks-claude-code-oauth-token) claude'
+  # end
+  abbr iks-claude 'CLAUDE_CONFIG_DIR=$HOME/.iks-claude claude'
+  abbr jake-claude 'CLAUDE_CONFIG_DIR=$HOME/.jake-claude claude'
 
   #==============================================================================
   # COMMON ALIASES
