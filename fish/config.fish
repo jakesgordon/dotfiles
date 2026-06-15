@@ -64,8 +64,7 @@ if status is-interactive
   abbr ports    'sudo lsof -i -P -n'
   abbr ubuntu   'lsb_release -a'
   abbr kernel   'uname -r'
-  abbr fancytop 'bpytop'
-  abbr ftop     'bpytop'
+  abbr ftop     '/usr/bin/python3 /usr/bin/bpytop'
   abbr prompt   "tide configure --auto --style=Lean --prompt_colors='True color' --show_time=No --lean_prompt_height='One line' --prompt_spacing=Compact --icons='Few icons' --transient=No"
 
   abbr ci        'cd ~/codeincomplete'
