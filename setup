@@ -25,6 +25,7 @@ rm -rf $CONFIG/fish
 rm -rf $CONFIG/niri
 rm -rf $CONFIG/ghostty
 rm -rf $CONFIG/lsd
+rm -rf $CONFIG/ncdu
 rm -rf $CONFIG/environment.d
 rm -rf $CONFIG/user-dirs.dirs
 rm -rf $CONFIG/user-dirs.conf
@@ -44,6 +45,7 @@ ln -s $DOTFILES/fish                  $CONFIG/fish
 ln -s $DOTFILES/niri                  $CONFIG/niri
 ln -s $DOTFILES/ghostty               $CONFIG/ghostty
 ln -s $DOTFILES/lsd                   $CONFIG/lsd
+ln -s $DOTFILES/ncdu                  $CONFIG/ncdu
 ln -s $DOTFILES/environment.d         $CONFIG/environment.d
 ln -s $DOTFILES/xdg/user-dirs.dirs    $CONFIG/user-dirs.dirs
 ln -s $DOTFILES/xdg/user-dirs.conf    $CONFIG/user-dirs.conf

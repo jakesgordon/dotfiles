@@ -1,0 +1,3 @@
+# ncdu config (one command-line option per line)
+# read-only: disable the delete feature so the 'd' key can't remove files
+--disable-delete
