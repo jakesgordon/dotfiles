@@ -62,7 +62,7 @@
   "systemTrayIconTintSaturation": 50,
   "systemTrayIconTintStrength": 135,
   "showClock": true,
-  "showNotificationButton": true,
+  "showNotificationButton": false,
   "showBattery": true,
   "showControlCenterButton": true,
   "showCapsLockIndicator": true,
@@ -427,10 +427,6 @@
         },
         {
           "id": "clipboard",
-          "enabled": true
-        },
-        {
-          "id": "notificationButton",
           "enabled": true
         },
         {
