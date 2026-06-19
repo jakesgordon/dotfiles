@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 REALPATH=$(realpath $0)
 DOTFILES=$(dirname $REALPATH)
@@ -27,6 +27,7 @@ rm -rf $CONFIG/fish
 rm -rf $CONFIG/niri
 rm -rf $CONFIG/ghostty
 rm -rf $CONFIG/lsd
+rm -rf $CONFIG/mpd
 rm -rf $CONFIG/ncdu
 rm -rf $CONFIG/environment.d
 rm -rf $CONFIG/user-dirs.dirs
@@ -48,6 +49,7 @@ ln -s $DOTFILES/fish                  $CONFIG/fish
 ln -s $DOTFILES/niri                  $CONFIG/niri
 ln -s $DOTFILES/ghostty               $CONFIG/ghostty
 ln -s $DOTFILES/lsd                   $CONFIG/lsd
+ln -s $DOTFILES/mpd                   $CONFIG/mpd
 ln -s $DOTFILES/ncdu                  $CONFIG/ncdu
 ln -s $DOTFILES/environment.d         $CONFIG/environment.d
 ln -s $DOTFILES/xdg/user-dirs.dirs    $CONFIG/user-dirs.dirs
@@ -56,3 +58,12 @@ ln -s $DOTFILES/dms                   $CONFIG/DankMaterialShell
 ln -s $DOTFILES/claude/settings.json  $CLAUDE/settings.json
 ln -s $DOTFILES/onedrive/config       $ONEDRIVE/config
 ln -s $DOTFILES/dms/session.json      $LOCAL/DankMaterialShell/session.json
+
+enable_user_service() {
+  systemctl --user cat "$1"        &>/dev/null || return  # skip: not installed
+  systemctl --user is-enabled "$1" &>/dev/null && return  # skip: already enabled
+  echo "enabling $1..."
+  systemctl --user enable --now "$1"
+}
+
+enable_user_service mpd
