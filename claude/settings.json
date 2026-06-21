@@ -1,8 +1,50 @@
 {
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "clangd-lsp@claude-plugins-official": true
   },
   "theme": "dark",
-  "preferredNotifChannel": "notifications_disabled"
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+    "filesystem": {
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws",
+        "~/.config",
+        "~/.local",
+        "~/.cache",
+        "~/.gnupg",
+        "~/.claude",
+        "**/.env",
+        "**/.env.*",
+        "**/*.pem",
+        "**/secrets"
+      ]
+    }
+  },
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/**)",
+      "Read(~/.local/**)",
+      "Read(~/.cache/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.claude/**)",
+      "Read(**/.env)",
+      "Read(**/.env*)",
+      "Read(**/*.pem)",
+      "Read(**/secrets/**)",
+      "Write(~/.ssh/**)",
+      "Write(~/.gnupg/**)",
+      "Write(~/.claude/**)",
+      "Edit(~/.ssh/**)",
+      "Edit(~/.gnupg/**)",
+      "Edit(~/.claude/**)"
+    ]
+  }
 }
