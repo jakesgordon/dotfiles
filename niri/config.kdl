@@ -416,22 +416,21 @@ binds {
     Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
 
     // DMS audio and brightness key binds
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
-    XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
-    XF86AudioMicMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
-		XF86AudioPause allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
-		XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
-		XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
-		XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
+    XF86AudioRaiseVolume      allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
+    XF86AudioLowerVolume      allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
+    XF86AudioMute             allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
+    XF86AudioMicMute          allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
 
-    // Music control fallbacks for keyboards without dedicated media keys.
-    // These call the same DMS mpris IPC as the XF86Audio* binds above, so both
-    // work together: media keys fire when present, these when they aren't.
-    Mod+Shift+P      allow-when-locked=true hotkey-overlay-title="Music: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
-    Mod+Shift+S      allow-when-locked=true hotkey-overlay-title="Music: Stop"       { spawn "dms" "ipc" "call" "mpris" "stop"; }
+		XF86AudioPause   allow-when-locked=true { spawn "~/.config/niri/scripts/music-toggle.sh"; }
+		XF86AudioPlay    allow-when-locked=true { spawn "~/.config/niri/scripts/music-toggle.sh"; }
+    XF86AudioStop    allow-when-locked=true { spawn "~/.config/niri/scripts/music-stop.sh"; }
+		XF86AudioPrev    allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
+		XF86AudioNext    allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
+
+    Mod+Shift+P      allow-when-locked=true hotkey-overlay-title="Music: Play/Pause" { spawn "~/.config/niri/scripts/music-toggle.sh"; }
+    Mod+Shift+S      allow-when-locked=true hotkey-overlay-title="Music: Stop"       { spawn "~/.config/niri/scripts/music-stop.sh"; }
     Mod+Shift+Comma  allow-when-locked=true hotkey-overlay-title="Music: Previous"   { spawn "dms" "ipc" "call" "mpris" "previous"; }
     Mod+Shift+Period allow-when-locked=true hotkey-overlay-title="Music: Next"       { spawn "dms" "ipc" "call" "mpris" "next"; }
 
