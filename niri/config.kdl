@@ -426,6 +426,14 @@ binds {
 		XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
+
+    // Music control fallbacks for keyboards without dedicated media keys.
+    // These call the same DMS mpris IPC as the XF86Audio* binds above, so both
+    // work together: media keys fire when present, these when they aren't.
+    Mod+Shift+P      allow-when-locked=true hotkey-overlay-title="Music: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    Mod+Shift+Comma  allow-when-locked=true hotkey-overlay-title="Music: Previous"   { spawn "dms" "ipc" "call" "mpris" "previous"; }
+    Mod+Shift+Period allow-when-locked=true hotkey-overlay-title="Music: Next"       { spawn "dms" "ipc" "call" "mpris" "next"; }
+
     XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
 
@@ -623,8 +631,4 @@ binds {
     Ctrl+Alt+Delete { quit; }
     Mod+Shift+Escape { quit; }
     Mod+Ctrl+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
 }
