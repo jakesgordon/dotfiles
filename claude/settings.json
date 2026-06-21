@@ -27,6 +27,7 @@
     }
   },
   "permissions": {
+    "defaultMode": "acceptEdits",
     "deny": [
       "Read(~/.ssh/**)",
       "Read(~/.aws/**)",
