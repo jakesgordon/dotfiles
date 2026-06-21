@@ -67,4 +67,3 @@ enable_user_service() {
 }
 
 enable_user_service mpd
-enable_user_service mpd-mpris

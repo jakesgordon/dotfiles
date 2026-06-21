@@ -423,16 +423,16 @@ binds {
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
 
-		XF86AudioPause   allow-when-locked=true { spawn "~/.config/niri/scripts/music-toggle.sh"; }
-		XF86AudioPlay    allow-when-locked=true { spawn "~/.config/niri/scripts/music-toggle.sh"; }
-    XF86AudioStop    allow-when-locked=true { spawn "~/.config/niri/scripts/music-stop.sh"; }
-		XF86AudioPrev    allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
-		XF86AudioNext    allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
+		XF86AudioPause   allow-when-locked=true { spawn "mpc" "pause"; }
+		XF86AudioPlay    allow-when-locked=true { spawn "mpc" "play"; }
+    XF86AudioStop    allow-when-locked=true { spawn "mpc" "stop"; }
+		XF86AudioPrev    allow-when-locked=true { spawn "mpc" "prev"; }
+		XF86AudioNext    allow-when-locked=true { spawn "mpc" "next"; }
 
-    Mod+Shift+P      allow-when-locked=true hotkey-overlay-title="Music: Play/Pause" { spawn "~/.config/niri/scripts/music-toggle.sh"; }
-    Mod+Shift+S      allow-when-locked=true hotkey-overlay-title="Music: Stop"       { spawn "~/.config/niri/scripts/music-stop.sh"; }
-    Mod+Shift+Comma  allow-when-locked=true hotkey-overlay-title="Music: Previous"   { spawn "dms" "ipc" "call" "mpris" "previous"; }
-    Mod+Shift+Period allow-when-locked=true hotkey-overlay-title="Music: Next"       { spawn "dms" "ipc" "call" "mpris" "next"; }
+    Mod+Shift+P      allow-when-locked=true hotkey-overlay-title="Music: Play/Pause" { spawn "mpc" "toggle"; }
+    Mod+Shift+S      allow-when-locked=true hotkey-overlay-title="Music: Stop"       { spawn "mpc" "stop"; }
+    Mod+Shift+Comma  allow-when-locked=true hotkey-overlay-title="Music: Previous"   { spawn "mpc" "prev"; }
+    Mod+Shift+Period allow-when-locked=true hotkey-overlay-title="Music: Next"       { spawn "mpc" "next"; }
 
     XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
