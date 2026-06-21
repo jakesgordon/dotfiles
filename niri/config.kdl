@@ -431,6 +431,7 @@ binds {
     // These call the same DMS mpris IPC as the XF86Audio* binds above, so both
     // work together: media keys fire when present, these when they aren't.
     Mod+Shift+P      allow-when-locked=true hotkey-overlay-title="Music: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    Mod+Shift+S      allow-when-locked=true hotkey-overlay-title="Music: Stop"       { spawn "dms" "ipc" "call" "mpris" "stop"; }
     Mod+Shift+Comma  allow-when-locked=true hotkey-overlay-title="Music: Previous"   { spawn "dms" "ipc" "call" "mpris" "previous"; }
     Mod+Shift+Period allow-when-locked=true hotkey-overlay-title="Music: Next"       { spawn "dms" "ipc" "call" "mpris" "next"; }
 
