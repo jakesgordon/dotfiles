@@ -19,6 +19,7 @@ vim.opt.hlsearch = true                        -- highlight search terms
 vim.opt.ignorecase = true                      -- case insensitive search by default
 vim.opt.incsearch = true                       -- do incremental searching
 vim.opt.laststatus = 2                         -- always put a status line in.
+vim.opt.mousescroll = "ver:1,hor:1"            -- scroll 1 line per wheel event (tame sensitive mouse wheel)
 vim.opt.foldenable = false                     -- disable code folding (I find it annoying)
 vim.opt.wrap = false                           -- no line wrapping
 vim.opt.number = true                          -- enable line numbers
