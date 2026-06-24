@@ -3,18 +3,21 @@
 REALPATH=$(realpath $0)
 DOTFILES=$(dirname $REALPATH)
 
+SSH=$HOME/.ssh
 BACKUP=$HOME/.backup
 CONFIG=$HOME/.config
 LOCAL=$HOME/.local/state
 CLAUDE=$HOME/.claude
 ONEDRIVE=$HOME/.config/onedrive
 
+mkdir -p $SSH
 mkdir -p $BACKUP
 mkdir -p $CONFIG
 mkdir -p $LOCAL/DankMaterialShell
 mkdir -p $CLAUDE
 mkdir -p $ONEDRIVE
 
+rm -rf $SSH/config
 rm -rf $HOME/.bashrc
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.gitignore
@@ -37,6 +40,7 @@ rm -rf $LOCAL/DankMaterialShell/session.json
 rm -rf $CLAUDE/settings.json
 rm -rf $ONEDRIVE/config
 
+ln -s $DOTFILES/ssh/config            $SSH/config
 ln -s $DOTFILES/bashrc                $HOME/.bashrc
 ln -s $DOTFILES/gitconfig             $HOME/.gitconfig
 ln -s $DOTFILES/gitignore             $HOME/.gitignore

@@ -1,0 +1,15 @@
+# Default github.com → personal account (jake@codeincomplete.com)
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/jake
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+
+# Work account (IKS / Robin-Healthcare). Use remote host "github.iks".
+Host github.iks
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/iks
+    IdentitiesOnly yes
+    AddKeysToAgent yes
