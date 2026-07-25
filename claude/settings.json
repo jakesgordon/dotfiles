@@ -1,10 +1,31 @@
 {
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/**)",
+      "Read(~/.local/**)",
+      "Read(~/.cache/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.claude/**)",
+      "Read(**/.env)",
+      "Read(**/.env*)",
+      "Read(**/*.pem)",
+      "Read(**/secrets/**)",
+      "Write(~/.ssh/**)",
+      "Write(~/.gnupg/**)",
+      "Write(~/.claude/**)",
+      "Edit(~/.ssh/**)",
+      "Edit(~/.gnupg/**)",
+      "Edit(~/.claude/**)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true
   },
-  "theme": "dark",
   "sandbox": {
     "enabled": false,
     "failIfUnavailable": true,
@@ -26,26 +47,5 @@
       ]
     }
   },
-  "permissions": {
-    "defaultMode": "acceptEdits",
-    "deny": [
-      "Read(~/.ssh/**)",
-      "Read(~/.aws/**)",
-      "Read(~/.config/**)",
-      "Read(~/.local/**)",
-      "Read(~/.cache/**)",
-      "Read(~/.gnupg/**)",
-      "Read(~/.claude/**)",
-      "Read(**/.env)",
-      "Read(**/.env*)",
-      "Read(**/*.pem)",
-      "Read(**/secrets/**)",
-      "Write(~/.ssh/**)",
-      "Write(~/.gnupg/**)",
-      "Write(~/.claude/**)",
-      "Edit(~/.ssh/**)",
-      "Edit(~/.gnupg/**)",
-      "Edit(~/.claude/**)"
-    ]
-  }
+  "theme": "dark"
 }
