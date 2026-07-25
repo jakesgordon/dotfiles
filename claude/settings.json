@@ -12,9 +12,6 @@
       "Read(**/.env*)",
       "Read(**/*.pem)",
       "Read(**/secrets/**)",
-      "Write(~/.ssh/**)",
-      "Write(~/.gnupg/**)",
-      "Write(~/.claude/**)",
       "Edit(~/.ssh/**)",
       "Edit(~/.gnupg/**)",
       "Edit(~/.claude/**)"

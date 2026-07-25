@@ -1,6 +1,8 @@
 {
   "isLightMode": false,
   "doNotDisturb": false,
+  "doNotDisturbUntil": 0,
+  "terminalOverride": "",
   "wallpaperPath": "#1565c0",
   "perMonitorWallpaper": false,
   "monitorWallpapers": {},
@@ -56,6 +58,8 @@
     "#1565c0"
   ],
   "showThirdPartyPlugins": false,
+  "pluginBrowserInstalledFirst": false,
+  "pluginBrowserSortMode": "default",
   "launchPrefix": "",
   "lastBrightnessDevice": "",
   "brightnessExponentialDevices": {},
@@ -78,13 +82,24 @@
   "appOverrides": {},
   "searchAppActions": true,
   "vpnLastConnected": "",
+  "lastPlayerIdentity": "",
   "deviceMaxVolumes": {},
   "hiddenOutputDeviceNames": [
     "alsa_output.usb-HP__Inc_HyperX_DuoCast_202011110001-00.analog-stereo"
   ],
   "hiddenInputDeviceNames": [],
+  "locale": "",
+  "timeLocale": "",
+  "notepadLastMode": "",
   "launcherLastMode": "all",
+  "launcherLastFileSearchType": "all",
+  "launcherLastQuery": "chrome",
+  "launcherQueryHistory": [
+    "chrome"
+  ],
   "appDrawerLastMode": "apps",
   "niriOverviewLastMode": "apps",
+  "settingsSidebarExpandedIds": ",",
+  "settingsSidebarCollapsedIds": ",",
   "configVersion": 3
 }
