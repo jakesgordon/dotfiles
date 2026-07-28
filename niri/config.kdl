@@ -630,3 +630,5 @@ binds {
     Mod+Shift+Escape { quit; }
     Mod+Ctrl+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 }
+
+include "host.kdl" optional=true

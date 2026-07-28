@@ -1,0 +1,3 @@
+layout {
+  default-column-width { proportion 0.333333; }
+}
