@@ -12,3 +12,4 @@ mpd/database
 mpd/state
 mpd/sticker.sql
 dms/.changelog*
+dms/session.json
