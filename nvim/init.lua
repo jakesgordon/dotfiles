@@ -276,6 +276,7 @@ local servers = {
   "json-lsp",
   "just-lsp",
   "lua-language-server",
+  "oxlint",
   "sqruff",
   "superhtml",
   "terraform-ls",
