@@ -9,5 +9,7 @@ return {
   workspace_required = true,
   root_markers = {
     ".oxlintrc.json",
+    ".oxlintrc.jsonc",
+    "oxlint.config.ts",
   },
 }
