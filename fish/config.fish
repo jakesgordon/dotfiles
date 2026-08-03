@@ -71,11 +71,8 @@ if status is-interactive
   abbr dot       'cd ~/.dotfiles'
   abbr provision 'cd ~/.provision'
   abbr id        'cd ~/id'
-  abbr ae        'cd ~/andthen/ensemble'
-  abbr aed       'cd ~/andthen/ensemble/experiences/detective'
-  abbr aep       'cd ~/andthen/ensemble/experiences/pitchable'
-  abbr aec       'cd ~/andthen/ensemble/experiences/change-my-mind'
   abbr iv        'cd ~/invoicery'
+  abbr rr        'cd ~/rubric'
 
   #==============================================================================
   # LSD
