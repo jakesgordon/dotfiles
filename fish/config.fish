@@ -136,6 +136,20 @@ if status is-interactive
     abbr nf 'npm run format'
   end
 
+  if type -q pnpm
+    abbr ppi 'pnpm install'
+    abbr ppr 'pnpm run'
+    abbr pps 'pnpm run start'
+    abbr ppb 'pnpm run build'
+    abbr ppp 'pnpm run prod'
+    abbr ppt 'pnpm run test'
+    abbr ppl 'pnpm run lint'
+    abbr ppf 'pnpm run format'
+    abbr ppc 'pnpm run cover'
+    abbr ppo 'pnpm outdated'
+    abbr ppa 'pnpm audit'
+  end
+
   if type -q bun
     abbr bi 'bun install'
     abbr br 'bun run'
