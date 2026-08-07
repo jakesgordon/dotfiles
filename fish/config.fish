@@ -146,6 +146,7 @@ if status is-interactive
     abbr ppl 'pnpm run lint'
     abbr ppf 'pnpm run format'
     abbr ppc 'pnpm run cover'
+    abbr ppd 'pnpm run db'
     abbr ppo 'pnpm outdated'
     abbr ppa 'pnpm audit'
   end

@@ -44,5 +44,6 @@
       ]
     }
   },
-  "theme": "dark"
+  "theme": "dark",
+  "model": "fable"
 }
