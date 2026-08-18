@@ -16,8 +16,9 @@
       "Edit(~/.gnupg/**)",
       "Edit(~/.claude/**)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
+  "model": "fable",
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
@@ -44,6 +45,6 @@
       ]
     }
   },
-  "theme": "dark",
-  "model": "fable"
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark"
 }
