@@ -7,14 +7,12 @@
       "Read(~/.local/**)",
       "Read(~/.cache/**)",
       "Read(~/.gnupg/**)",
-      "Read(~/.claude/**)",
       "Read(**/.env)",
       "Read(**/.env*)",
       "Read(**/*.pem)",
       "Read(**/secrets/**)",
       "Edit(~/.ssh/**)",
-      "Edit(~/.gnupg/**)",
-      "Edit(~/.claude/**)"
+      "Edit(~/.gnupg/**)"
     ],
     "defaultMode": "auto"
   },
@@ -37,7 +35,6 @@
         "~/.local",
         "~/.cache",
         "~/.gnupg",
-        "~/.claude",
         "**/.env",
         "**/.env.*",
         "**/*.pem",
