@@ -73,6 +73,8 @@ if status is-interactive
   abbr id        'cd ~/id'
   abbr iv        'cd ~/invoicery'
   abbr rr        'cd ~/rubric'
+  abbr ss        'cd ~/iks/scribble-server'
+  abbr tt        'cd ~/iks/terminology'
 
   #==============================================================================
   # LSD
