@@ -12,6 +12,11 @@ return {
     "package.json",
     ".git"
   },
+  settings = {
+    diagnostics = {
+      ignoredCodes = { 80007 },
+    },
+  },
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false -- let biome do this
   end,
