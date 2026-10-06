@@ -121,6 +121,7 @@ if status is-interactive
     abbr jp  'just prod'
     abbr jo  'just outdated'
     abbr jj  'just jake'
+    abbr jn  'just nuke'
     abbr jdb 'just db'
   end
 
