@@ -14,7 +14,7 @@ return {
   },
   settings = {
     diagnostics = {
-      ignoredCodes = { 80007 },
+      ignoredCodes = { 6385, 80007 },
     },
   },
   on_attach = function(client, _)
