@@ -48,7 +48,7 @@ if status is-interactive
 
   abbr v    'nvim'
   abbr vim  'nvim'
-  abbr c    'cursor-agent'
+  abbr ca   'cursor-agent'
   abbr less 'less -r'
   abbr ps   'ps xawf'
 
