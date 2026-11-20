@@ -20,3 +20,11 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[gpg]
+	format = ssh
+[user]
+	signingkey = /home/jake/.ssh/jake.pub
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /home/jake/.ssh/allowed_signers

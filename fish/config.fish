@@ -42,19 +42,13 @@ if status is-interactive
     fish_add_path "$HOME/google-cloud-sdk/bin"
   end
 
-  # if test -f "$HOME/.iks-claude-code-oauth-token"
-  #   abbr iks-claude 'env CLAUDE_CODE_OAUTH_TOKEN=$(cat $HOME/.iks-claude-code-oauth-token) claude'
-  # end
-  abbr iks-claude 'CLAUDE_CONFIG_DIR=$HOME/.iks-claude claude'
-  abbr jake-claude 'CLAUDE_CONFIG_DIR=$HOME/.jake-claude claude'
-
   #==============================================================================
   # COMMON ALIASES
   #==============================================================================
 
   abbr v    'nvim'
   abbr vim  'nvim'
-  abbr c    'clear'
+  abbr c    'cursor-agent'
   abbr less 'less -r'
   abbr ps   'ps xawf'
 
@@ -75,6 +69,7 @@ if status is-interactive
   abbr rr        'cd ~/rubric'
   abbr ss        'cd ~/iks/scribble-server'
   abbr tt        'cd ~/iks/terminology'
+  abbr cq        'cd ~/cirtiq'
 
   #==============================================================================
   # LSD
