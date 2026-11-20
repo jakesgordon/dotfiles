@@ -64,12 +64,11 @@ if status is-interactive
   abbr ci        'cd ~/codeincomplete'
   abbr dot       'cd ~/.dotfiles'
   abbr provision 'cd ~/.provision'
-  abbr id        'cd ~/id'
-  abbr iv        'cd ~/invoicery'
   abbr rr        'cd ~/rubric'
   abbr ss        'cd ~/iks/scribble-server'
   abbr tt        'cd ~/iks/terminology'
   abbr cq        'cd ~/cirtiq'
+  abbr dl        'cd ~/downloads'
 
   #==============================================================================
   # LSD
